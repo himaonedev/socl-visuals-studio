@@ -1,0 +1,40 @@
+{
+  "version": "whisper-v1.9.1-m1",
+  "note": "Binaries built by .github/workflows/build-whisper.yml (GGML_NATIVE=OFF) and uploaded to the releases repo under binaryTag. Models come straight from HuggingFace. sha256 values are of the exact uploaded files.",
+  "binaryTag": "whisper-cli-v1.9.1",
+  "binaries": {
+    "darwin-arm64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/whisper-cli-v1.9.1/whisper-cli-mac-arm64",
+      "sha256": "d4798680f6c4c7d42bb709d118eecd67f3a480d3607566703f5c3571828f6aff",
+      "exe": "whisper-cli"
+    },
+    "darwin-x64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/whisper-cli-v1.9.1/whisper-cli-mac-x64",
+      "sha256": "2da449afaf15d1a93d52361bafc178ff1d3ba522ece477eb3b4e75811c1b3f34",
+      "exe": "whisper-cli"
+    },
+    "win32-x64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/whisper-cli-v1.9.1/whisper-cli-win-x64.exe",
+      "sha256": "d3c02c56eb96d20812027bbe647b58e77d825cdd5f2a6de7c3e13daa7db78f21",
+      "exe": "whisper-cli.exe"
+    }
+  },
+  "vad": {
+    "note": "Silero VAD for whisper.cpp's --vad. Small enough to verify properly, unlike the models below: a real sha256, confirmed identical across two separate downloads. NOT part of isInstalled() on purpose — an existing install that already has the binary and a 181MB model must not be told it needs a download because this 0.9MB file is missing.",
+    "url": "https://huggingface.co/ggml-org/whisper-vad/resolve/main/ggml-silero-v5.1.2.bin",
+    "sha256": "29940d98d42b91fbd05ce489f3ecf7c72f0a42f027e4875919a28fb4c04ea2cf",
+    "size": 885098,
+    "minBytes": 500000,
+    "file": "vad-silero.bin"
+  },
+  "models": {
+    "small": {
+      "label": "Small (Q5) — 181 MB, seimbang",
+      "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small-q5_1.bin?download=true",
+      "sha256": "SKIP_VERIFY",
+      "size": 190085343,
+      "minBytes": 150000000
+    }
+  },
+  "defaultModel": "small"
+}

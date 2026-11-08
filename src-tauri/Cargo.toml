@@ -1,0 +1,60 @@
+[package]
+name = "socl-visuals-tauri"
+version = "2.4.41"
+license = "MIT"
+description = "SOCL Visuals Studio editor and clipping host"
+authors = []
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "socl_visuals_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tokio = { version = "1", features = ["sync", "time"] }
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-dialog = "2"
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+cosmic-text = { version = "0.19", default-features = false, features = ["std", "swash"] }
+png = "0.18.1"
+whisper-rs = "0.16"
+ureq = "3"
+sha2 = "0.11.0"
+# ONNX Runtime (MIT), for AI upscale. The runtime library is fetched at build time; models never are.
+# Text to speech tidies its text the way the voice model was trained (NFKD). MIT / Apache-2.0.
+
+
+# Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration
+# Speech recognition uses the GPU through Metal on macOS; elsewhere it runs on the CPU.
+[target.'cfg(target_os = "macos")'.dependencies]
+whisper-rs = { version = "0.16", features = ["metal"] }
+
+# Text drawing, PNG encoding and font parsing live in dependencies; unoptimised they make every text edit in
+# `tauri dev` visibly slow. Dependencies are optimised in dev builds too (our own code stays quick to compile).
+[profile.dev.package."cosmic-text"]
+opt-level = 3
+[profile.dev.package."swash"]
+opt-level = 3
+[profile.dev.package."png"]
+opt-level = 3
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+# NOT "abort": wry catches the Objective-C exception WebKit throws when a media request is answered
+# just after the preview cancelled it (seek / scrub), and that catch cannot work under panic=abort
+# (objc2 `exception::catch` docs). With "abort" every such race closed the app.
+strip = true
+

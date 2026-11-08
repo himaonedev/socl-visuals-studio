@@ -1,0 +1,33 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const { createMediaServer } = require('../engine/media.cjs');
+
+test('preview server enforces file grants, token, HEAD and byte ranges', async t => {
+  const scratchRoot = path.resolve(__dirname, '../.dev-tools/tests');
+  fs.mkdirSync(scratchRoot, { recursive: true });
+  const folder = fs.mkdtempSync(path.join(scratchRoot, 'media-'));
+  const allowed = path.join(folder, 'video #1.mp4');
+  const denied = path.join(folder, 'private.txt');
+  fs.writeFileSync(allowed, '0123456789');
+  fs.writeFileSync(denied, 'private');
+  const media = createMediaServer();
+  t.after(() => media.close());
+  media.grant(allowed);
+  const base = await media.listen();
+  const url = base + '?path=' + encodeURIComponent(allowed);
+  const range = await fetch(url, { headers: { Range: 'bytes=2-5' } });
+  assert.equal(range.status, 206);
+  assert.equal(range.headers.get('content-range'), 'bytes 2-5/10');
+  assert.equal(await range.text(), '2345');
+  const suffix = await fetch(url, { headers: { Range: 'bytes=-3' } });
+  assert.equal(await suffix.text(), '789');
+  const head = await fetch(url, { method: 'HEAD' });
+  assert.equal(head.headers.get('content-length'), '10');
+  assert.equal(await head.text(), '');
+  assert.equal((await fetch(base + '?path=' + encodeURIComponent(denied))).status, 403);
+  assert.equal((await fetch(base.replace(/\/[^/]+$/, '/wrong') + '?path=' + encodeURIComponent(allowed))).status, 403);
+  assert.equal((await fetch(url, { headers: { Range: 'bytes=90-100' } })).status, 416);
+  assert.equal((await fetch(url, { method: 'POST' })).status, 405);
+});

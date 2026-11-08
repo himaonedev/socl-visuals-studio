@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' file:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: file:; media-src 'self' file: blob:; connect-src 'self' https://generativelanguage.googleapis.com https://api.groq.com https://api.anthropic.com https://openrouter.ai https://api.opencode.ai; object-src 'none'; base-uri 'self'; frame-ancestors 'none';" />
+  <title>SOCL Visuals Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ─── Rail nav ──────────────────────────────────────── -->
+    <aside class="rail glass">
+      <div class="brand-mark"><img src="../assets/brand/icon.png" alt="SOCL Visuals" draggable="false"></div>
+
+      <button class="rail-btn active" data-panel="clip" title="Clip Options">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="7" r="2.5"/>
+          <circle cx="6" cy="17" r="2.5"/>
+          <path d="M8.2 8.5 19 19"/>
+          <path d="M19 5 11 13.5"/>
+          <path d="M8.2 15.5l3-3"/>
+        </svg>
+        <span class="rail-label">Clip</span>
+      </button>
+
+      <button class="rail-btn" id="openEditorBtn" title="Caption editor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+        </svg>
+        <span class="rail-label">Editor</span>
+      </button>
+
+      <button class="rail-btn" data-panel="crop" title="Crop / Frame">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 2v13a2 2 0 0 0 2 2h13"/>
+          <path d="M2 7h13a2 2 0 0 1 2 2v13"/>
+          <path d="M17 17l3 3"/>
+        </svg>
+        <span class="rail-label">Crop</span>
+      </button>
+
+      <button class="rail-btn" data-panel="history" title="History">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/>
+          <path d="M3 4v4.5h4.5"/>
+          <path d="M12 7.5V12l3 1.8"/>
+        </svg>
+        <span class="rail-label">History</span>
+      </button>
+
+      <div class="rail-spacer"></div>
+
+      <button class="rail-btn" id="openOutputBtn" title="Open output folder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8a2 2 0 0 1 2-2h4l1.8 2H19a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <path d="M12 11.5v5"/>
+          <path d="M9.5 14l2.5 2.5L14.5 14"/>
+        </svg>
+        <span class="rail-label">Output</span>
+      </button>
+
+      <button class="rail-btn" data-panel="settings" title="Settings · AI keys, cookies, export">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="6" r="2"/>
+          <circle cx="12" cy="18" r="2"/>
+          <circle cx="12" cy="12" r="2"/>
+          <path d="M4 6h6"/><path d="M14 6h6"/>
+          <path d="M4 12h6"/><path d="M14 12h6"/>
+          <path d="M4 18h6"/><path d="M14 18h6"/>
+        </svg>
+        <span class="rail-label">Settings</span>
+      </button>
+    </aside>
+
+    <!-- ─── Workspace ─────────────────────────────────────── -->
+    <main class="workspace">
+
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <p class="eyebrow">
+            SOCL Visuals Studio · AI Hook Clipper
+            <span id="licenseBadge" class="license-badge" hidden title="">Licensed</span>
+          </p>
+          <h1 id="topHeadline">Auto-detect viral moments, render hook clips.</h1>
+        </div>
+        <div class="top-actions">
+          <input id="urlInput" class="url-input" placeholder="Paste YouTube / TikTok / Reels URL…" />
+          <button id="pickVideo" class="ghost-btn">Import file</button>
+          <button id="runPipeline" class="primary-btn">Run pipeline</button>
+        </div>
+        <div class="import-meta" id="importMeta" hidden>
+          <span class="im-file" id="im_file"></span>
+          <button id="im_attach" class="mini-btn">＋ Attach transcript (SRT/VTT/TXT)</button>
+          <span class="im-sub" id="im_sub" hidden></span>
+          <button id="im_subClear" class="mini-btn" hidden>✕</button>
+          <span class="im-spacer"></span>
+          <label class="im-toggle"><input type="checkbox" id="im_noTrans"> Tanpa transcript</label>
+        </div>
+      </header>
+
+      <!-- Hero: preview + inspector -->
+      <section class="hero-grid">
+        <div class="preview-card">
+          <div class="preview-stage" id="previewStage">
+            <video id="previewVideo" class="preview-video" playsinline></video>
+            <div class="caption-overlay" id="captionOverlay"><span id="captionText"></span></div>
+          </div>
+          <div class="scene-tag glass" id="sceneTag">No clip loaded <span>—</span></div>
+          <div class="transport glass" id="transport">
+            <button id="prevClip" title="Previous clip">↺</button>
+            <button class="play" id="playBtn" title="Play / pause">▶</button>
+            <button id="nextClip" title="Next clip">↻</button>
+            <button id="cropBtn" title="Toggle crop preview">◱</button>
+            <button id="maxBtn" title="Maximize / minimize preview">⛶</button>
+            <span id="transportTime">00:00 / 00:00</span>
+          </div>
+          <button id="uiToggle" class="ui-toggle glass" title="Hide / show controls">◉</button>
+        </div>
+
+        <!-- Right inspector (switched by rail) -->
+        <aside class="inspector glass" id="inspector">
+          <div class="panel-title">
+            <span id="panelEyebrow">Clip options</span>
+            <b id="panelTitle">Hook detection</b>
+          </div>
+          <div class="panel-body" id="panelBody"><!-- injected by renderer.js --></div>
+        </aside>
+      </section>
+
+      <!-- Draggable splitter between preview and detected clips -->
+      <div class="split-handle" id="splitHandle" title="Drag to resize"><span></span></div>
+
+      <!-- Lower: gallery (full-width) + pipeline strip -->
+      <section class="lower-area">
+
+        <section class="gallery-section glass">
+          <div class="gallery-head">
+            <div class="gallery-head-left">
+              <span class="eyebrow">Detected clips</span>
+              <strong id="clipCountBadge">0</strong>
+            </div>
+            <div class="gallery-head-right">
+              <div class="chips" id="galleryChips">
+                <button class="active" data-filter="all">All <sup id="cntAll">0</sup></button>
+                <button data-filter="hot">Hot <sup id="cntHot">0</sup></button>
+                <button data-filter="saved">Rendered <sup id="cntSaved">0</sup></button>
+              </div>
+              <button id="reviewAllBtn" class="ghost-mini">Review all ↗</button>
+            </div>
+          </div>
+          <div class="clip-grid" id="galleryGrid">
+            <div class="empty">Belum ada clip terdeteksi. Run pipeline dulu.</div>
+          </div>
+          <!-- Batch re-render bar. Appears when there are clips. Used after
+               per-clip Apply from the Editor to re-render the whole batch. -->
+          <div class="gallery-batch" id="galleryBatch" hidden>
+            <span class="gallery-batch-hint">Re-render semua clip pakai styling terbaru:</span>
+            <button id="gb_renderHot" class="ghost-btn">⬇ Hot only</button>
+            <button id="gb_renderAll" class="primary-btn">⬇ Render All</button>
+            <span id="gb_status" class="gallery-batch-status"></span>
+          </div>
+        </section>
+
+        <!-- Compact pipeline strip -->
+        <section class="pipe-strip glass">
+          <div class="pipe-top">
+            <div class="pipe-left">
+              <span class="pipe-dot" id="pipeDot"></span>
+              <span class="pipe-step" id="pipeStepLabel">Idle</span>
+              <span class="pipe-pct" id="pipePct"></span>
+            </div>
+            <div class="pipe-center">
+              <div class="progress-bar"><i id="progressFill"></i></div>
+              <div id="statusLine" class="status-line">Paste URL atau import file untuk mulai.</div>
+            </div>
+            <div class="pipe-right">
+              <button id="logToggle" class="ghost-mini">⌄ log</button>
+            </div>
+          </div>
+          <div id="log" class="pipe-log" hidden></div>
+        </section>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ─── Full-width overlay panel ─── -->
+  <div id="overlay" class="overlay" hidden>
+    <div class="overlay-card glass">
+      <header class="overlay-head">
+        <div>
+          <p class="eyebrow" id="overlayEyebrow">Detected clips</p>
+          <h2 id="overlayTitle">Review</h2>
+        </div>
+        <button id="overlayClose" class="ghost-btn">Close ✕</button>
+      </header>
+      <div class="overlay-body" id="overlayBody"></div>
+    </div>
+  </div>
+
+  <!-- ─── Crop Studio (dedicated full-screen keyframe editor) ─── -->
+  <div id="cropStudio" class="crop-studio" hidden>
+    <header class="cs-head">
+      <div>
+        <p class="eyebrow">Crop Studio · keyframe framing</p>
+        <h2 id="csTitle">Adjust framing</h2>
+      </div>
+      <div class="cs-head-actions">
+        <div class="cs-aspect" id="csAspect">
+          <button data-a="9:16" class="active">9:16</button>
+          <button data-a="1:1">1:1</button>
+          <button data-a="16:9">16:9</button>
+          <button data-a="free">Free</button>
+        </div>
+        <button id="csApplyAll" class="ghost-btn" title="Copy current framing (aspect, rect, keyframes, zoom) to every clip">⇶ Apply to all</button>
+        <button id="csRender" class="primary-btn" title="Bake the current crop into the clip (no subtitles). Style captions afterwards in the Editor.">Apply crop</button>
+        <button id="csClose" class="ghost-btn">Close ✕</button>
+      </div>
+    </header>
+
+    <div class="cs-body">
+      <!-- Source stage: full frame + draggable crop window -->
+      <div class="cs-source-col">
+        <div class="cs-source-wrap" id="csSourceWrap">
+          <div class="cs-source" id="csSource">
+            <video id="csVideo" playsinline></video>
+            <div class="cs-cropbox" id="csCropBox">
+              <div class="cs-grid"></div>
+              <span class="cs-handle-label">9:16</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline + keyframes -->
+        <div class="cs-timeline-wrap">
+          <div class="cs-transport">
+            <button id="csPlay" class="cs-tbtn play" title="Play / pause">▶</button>
+            <span id="csTime" class="cs-time">0.0s / 0.0s</span>
+            <div class="cs-spacer"></div>
+            <button id="csAddKf" class="cs-tbtn kf" title="Add keyframe at playhead">＋ Keyframe</button>
+            <button id="csDelKf" class="cs-tbtn del" title="Delete nearest keyframe">✕ Keyframe</button>
+          </div>
+          <div class="cs-timeline" id="csTimeline">
+            <div class="cs-progress" id="csProgress"></div>
+            <div class="cs-playhead" id="csPlayhead"></div>
+            <!-- keyframe markers injected here -->
+          </div>
+          <p class="cs-hint">Drag the box to frame the face/scene, then add a keyframe to lock it. Each keyframe holds its framing until the next one — no drifting. Add more keyframes at later moments to switch framing during the clip.</p>
+        </div>
+      </div>
+
+      <!-- Live output preview (9:16 result) -->
+      <div class="cs-output-col">
+        <div class="cs-out-label">Live output · 9:16</div>
+        <div class="cs-output" id="csOutput">
+          <video id="csOutVideo" playsinline muted></video>
+        </div>
+        <div class="cs-zoom">
+          <div class="cs-zoom-head"><span>Zoom / resize crop</span><strong id="csZoomVal">100%</strong></div>
+          <input id="csZoom" type="range" min="30" max="100" value="100">
+          <p class="cs-hint" style="margin:4px 0 0">Drag to shrink the crop window — zoom past watermarks, black bars or stickers on the edges. Reposition by dragging the box.</p>
+        </div>
+        <div class="cs-kf-panel">
+          <div class="cs-kf-head"><span>Keyframes</span><strong id="csKfCount">0</strong></div>
+          <div class="cs-kf-list" id="csKfList"><div class="cs-kf-empty">No keyframes — static center crop. Add one to start panning.</div></div>
+          <button id="csReset" class="ghost-mini" style="width:100%;margin-top:8px">Reset to center</button>
+        </div>
+        <div id="csStatus" class="cs-status"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Settings (full-screen, AI BYOK + cookies + export) ─── -->
+  <div id="settingsView" class="settings-view" hidden>
+    <header class="sv-head">
+      <div>
+        <h2>Settings</h2>
+        <p class="sv-sub">AI keys, YouTube acquisition & export. Pengaturan disimpan lokal di komputermu.</p>
+      </div>
+      <button id="svClose" class="ghost-btn">Close ✕</button>
+    </header>
+
+    <div class="sv-body">
+      <!-- Left column -->
+      <div class="sv-col">
+        <!-- Bring Your Own Key -->
+        <section class="sv-card sv-card--cool">
+          <div class="sv-card-eyebrow">KECERDASAN BUATAN (AI)</div>
+          <h3>Bring Your Own Key</h3>
+          <div class="sv-note">🔒 API key <b>dienkripsi & disimpan aman di OS keychain</b> (Keychain di macOS, DPAPI di Windows). Tidak pernah dikirim ke server. Dipakai untuk memproses highlight & hook title secara gratis.</div>
+
+          <div class="sv-field">
+            <label>Provider aktif</label>
+            <select id="sv_provider" class="sv-input">
+              <option value="">Auto (Gemini → Groq → Free)</option>
+              <option value="gemini">Google Gemini (BYOK)</option>
+              <option value="groq">Groq · Llama (BYOK, free tier)</option>
+              <option value="free">Free (tanpa key)</option>
+              <option value="custom">Custom (OpenAI-compatible)</option>
+            </select>
+          </div>
+
+          <div class="sv-grid2">
+            <div class="sv-field">
+              <label>Google Gemini API Key</label>
+              <input id="sv_geminiKey" class="sv-input" type="password" placeholder="AIzaSy…">
+              <span class="sv-hint">Gratis di Google AI Studio.</span>
+            </div>
+            <div class="sv-field">
+              <label>Groq API Key <span class="sv-opt">(opsional)</span></label>
+              <input id="sv_groqKey" class="sv-input" type="password" placeholder="gsk_…">
+              <span class="sv-hint">Gratis di console.groq.com.</span>
+            </div>
+          </div>
+
+          <div class="sv-grid2">
+            <div class="sv-field">
+              <label>Model Gemini</label>
+              <select id="sv_geminiModel" class="sv-input">
+                <option value="gemini-2.5-flash">Gemini 2.5 Flash (Cepat & Murah)</option>
+                <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+                <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+                <option value="gemini-1.5-pro">Gemini 1.5 Pro (Akurat)</option>
+              </select>
+            </div>
+            <div class="sv-field">
+              <label>Model Groq (Llama)</label>
+              <select id="sv_groqModel" class="sv-input">
+                <option value="llama-3.3-70b-versatile">Llama 3.3 70B (Rekomendasi)</option>
+                <option value="llama-3.1-8b-instant">Llama 3.1 8B (Instant)</option>
+                <option value="openai/gpt-oss-120b">GPT-OSS 120B</option>
+                <option value="moonshotai/kimi-k2-instruct">Kimi K2 Instruct</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sv-field">
+            <label>Free model (tanpa key)</label>
+            <select id="sv_freeModel" class="sv-input">
+              <option value="nemotron-3-ultra-free">Free Tier (built-in)</option>
+              <option value="llama-3.3-70b-free">Llama 3.3 70B (Free)</option>
+            </select>
+            <span class="sv-hint">Dipakai saat provider = Free / tidak ada key. Llama 3.3 70B = paling akurat untuk hook title.</span>
+          </div>
+
+          <div class="sv-actions">
+            <button id="sv_save" class="primary-btn">Simpan Keys</button>
+            <span id="sv_saveMsg" class="sv-savemsg"></span>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right column -->
+      <div class="sv-col">
+        <section class="sv-card sv-card--lime">
+          <div class="sv-row-head">
+            <div><div class="sv-card-eyebrow">RENDER &amp; EXPORT</div><h3>Default Export Path</h3></div>
+            <span class="sv-badge" id="sv_exportStatus">internal</span>
+          </div>
+          <div class="sv-note">Pilih folder agar video hasil potongan langsung disalin ke sana setelah render selesai.</div>
+          <div class="sv-export-row">
+            <code id="sv_exportPath">(Default: Internal AppData/Sessions)</code>
+            <div style="display:flex;gap:8px">
+              <button id="sv_browseExport" class="primary-btn">Browse…</button>
+              <button id="sv_clearExport" class="ghost-btn">Reset</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tier 3 cookies -->
+        <section class="sv-card sv-card--warm">
+          <div class="sv-row-head">
+            <div><div class="sv-card-eyebrow">TIER 3 / MANUAL COOKIES</div><h3>Cookies.txt upload</h3></div>
+            <span class="sv-badge" id="sv_cookieStatus">STATUS empty</span>
+          </div>
+          <div class="sv-drop" id="sv_cookieDrop">
+            <div class="sv-drop-ico">⬆</div>
+            <div>Drag &amp; drop cookies.txt di sini, atau klik untuk browse</div>
+            <div class="sv-hint">Export dari ekstensi "Get cookies.txt LOCALLY" (Chrome/Firefox) saat buka tab youtube.com</div>
+          </div>
+          <button id="sv_cookieClear" class="sv-link" hidden>Hapus cookies</button>
+          <div class="sv-howto">
+            <div class="sv-card-eyebrow">CARA EXPORT COOKIES.TXT</div>
+            <ol>
+              <li>Install ekstensi <b>"Get cookies.txt LOCALLY"</b> di Chrome/Firefox</li>
+              <li>Buka tab youtube.com (pastikan sudah login)</li>
+              <li>Klik icon ekstensi → Export</li>
+              <li>Upload file yang ter-download di sini</li>
+            </ol>
+            <div class="sv-hint">Cookies disimpan di komputermu. Tidak pernah dikirim ke server.</div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <div id="historyOverlay" class="hg-overlay" hidden aria-hidden="true">
+    <div class="hg-panel" role="dialog" aria-label="History clip gallery">
+      <div class="hg-head">
+        <div class="hg-title-wrap">
+          <span class="hg-eyebrow">HISTORY</span>
+          <strong class="hg-title">CLIP GALLERY</strong>
+          <span class="hg-count" id="hgCount"></span>
+        </div>
+        <div class="hg-controls">
+          <input type="text" id="hgSearch" class="hg-search" placeholder="Cari judul klip / session…" />
+          <div class="hg-chips" id="hgChips">
+            <button class="hg-chip active" data-hgf="all">All</button>
+            <button class="hg-chip" data-hgf="hot">🔥 Hot</button>
+          </div>
+          <button class="hg-close" id="hgClose" title="Tutup (Esc)">✕</button>
+        </div>
+      </div>
+      <div class="hg-grid" id="hgGrid"></div>
+      <div class="hg-pager" id="hgPager" hidden>
+        <button class="hg-page-btn" id="hgPrev">‹ Prev</button>
+        <span class="hg-page-info" id="hgPageInfo"></span>
+        <button class="hg-page-btn" id="hgNext">Next ›</button>
+      </div>
+    </div>
+  </div>
+  <script src="history-gallery.js"></script>
+  <script src="cue-retime.js"></script>
+  <script src="manual-caption.js"></script>
+  <script src="edit-history.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

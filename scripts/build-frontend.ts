@@ -1,0 +1,14 @@
+const { spawnSync }: typeof import('node:child_process') = require('node:child_process');
+require('./prepare-runtime.cjs');
+require('./backend.cjs').buildBackend();
+require('./prepare-native-fonts.cjs');
+require('./prepare-ui.cjs');
+const check = spawnSync(process.execPath, [require.resolve('typescript/bin/tsc'), '--noEmit'], { stdio: 'inherit' });
+if (check.status !== 0) process.exit(check.status || 1);
+const backendCheck = spawnSync(process.execPath, [require.resolve('typescript/bin/tsc'), '-p', 'backend/tsconfig.json'], { stdio: 'inherit' });
+if (backendCheck.status !== 0) process.exit(backendCheck.status || 1);
+const legacyCheck = spawnSync(process.execPath, [require.resolve('typescript/bin/tsc'), '-p', 'frontend/legacy-src/tsconfig.json'], { stdio: 'inherit' });
+if (legacyCheck.status !== 0) process.exit(legacyCheck.status || 1);
+const toolingCheck = spawnSync(process.execPath, [require.resolve('typescript/bin/tsc'), '-p', 'scripts/tsconfig.json'], { stdio: 'inherit' });
+if (toolingCheck.status !== 0) process.exit(toolingCheck.status || 1);
+import('vite').then(vite => vite.build()).then(() => require('./stage-resources.cjs')).catch(error => { console.error(error); process.exit(1); });

@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "vite/client",
+      "node"
+    ],
+    "paths": {
+      "@/*": [
+        "./frontend/editor/*"
+      ]
+    }
+  },
+  "include": [
+    "frontend",
+    "vite.config.mts"
+  ],
+  "exclude": [
+    "frontend/legacy-src",
+    "frontend/editor/test",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ]
+}

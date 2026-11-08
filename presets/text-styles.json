@@ -1,0 +1,512 @@
+[
+  {
+    "id": "clean-caption",
+    "name": "Clean Caption",
+    "style": {
+      "font": "Nunito",
+      "bold": true,
+      "color": "#FFFFFF",
+      "shadow": {
+        "color": "#000000",
+        "blur": 0.08,
+        "x": 0,
+        "y": 0.04,
+        "opacity": 0.85
+      }
+    }
+  },
+  {
+    "id": "two-tone",
+    "name": "Two-Tone",
+    "style": {
+      "font": "Poppins",
+      "bold": true,
+      "color": "#FFFFFF",
+      "highlight": {
+        "color": "#FFD233",
+        "lines": "last"
+      },
+      "shadow": {
+        "color": "#000000",
+        "blur": 0.1,
+        "x": 0,
+        "y": 0.03,
+        "opacity": 0.8
+      }
+    }
+  },
+  {
+    "id": "outline-pop",
+    "name": "Outline Pop",
+    "style": {
+      "font": "Poppins",
+      "bold": true,
+      "color": "#FFFFFF",
+      "outline": {
+        "color": "#000000",
+        "width": 0.09
+      }
+    }
+  },
+  {
+    "id": "boxed",
+    "name": "Boxed",
+    "style": {
+      "font": "Open Sans",
+      "bold": true,
+      "color": "#FFFFFF",
+      "box": {
+        "color": "#000000",
+        "opacity": 0.7,
+        "shape": "rect",
+        "padding": 0.35,
+        "radius": 0.18
+      }
+    }
+  },
+  {
+    "id": "highlighter",
+    "name": "Highlighter",
+    "style": {
+      "font": "DM Sans",
+      "bold": true,
+      "color": "#141416",
+      "box": {
+        "color": "#FFE14A",
+        "opacity": 1,
+        "shape": "per-line",
+        "padding": 0.28,
+        "radius": 0.12
+      }
+    }
+  },
+  {
+    "id": "hot-take",
+    "name": "Hot Take",
+    "style": {
+      "font": "Anton",
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "box": {
+        "color": "#E5383B",
+        "opacity": 1,
+        "shape": "jagged",
+        "padding": 0.4,
+        "radius": 0
+      }
+    }
+  },
+  {
+    "id": "storybook",
+    "name": "Storybook",
+    "style": {
+      "font": "Playfair Display",
+      "bold": true,
+      "color": "#FFF4DC",
+      "shadow": {
+        "color": "#2B1A0E",
+        "blur": 0.12,
+        "x": 0.03,
+        "y": 0.05,
+        "opacity": 0.7
+      }
+    }
+  },
+  {
+    "id": "lyric-fade",
+    "name": "Lyric Fade",
+    "style": {
+      "font": "Fraunces",
+      "color": "#FFFFFF",
+      "shadow": {
+        "color": "#000000",
+        "blur": 0.18,
+        "x": 0,
+        "y": 0,
+        "opacity": 0.6
+      }
+    },
+    "fade": 0.5
+  },
+  {
+    "id": "neon-glow",
+    "name": "Neon Glow",
+    "style": {
+      "font": "Rubik",
+      "bold": true,
+      "color": "#FFFFFF",
+      "outline": {
+        "color": "#FF3CAC",
+        "width": 0.03
+      },
+      "shadow": {
+        "color": "#FF3CAC",
+        "blur": 0.22,
+        "x": 0,
+        "y": 0,
+        "opacity": 1
+      }
+    }
+  },
+  {
+    "id": "sticker-label",
+    "name": "Sticker Label",
+    "style": {
+      "font": "Luckiest Guy",
+      "color": "#FF5A5F",
+      "outline": {
+        "color": "#FFFFFF",
+        "width": 0.12
+      },
+      "shadow": {
+        "color": "#000000",
+        "blur": 0.02,
+        "x": 0.04,
+        "y": 0.06,
+        "opacity": 0.45
+      }
+    }
+  },
+  {
+    "id": "minimal",
+    "name": "Minimal",
+    "style": {
+      "font": "Work Sans",
+      "color": "#F2F0ED"
+    }
+  },
+  {
+    "id": "soft-pill",
+    "name": "Soft Pill",
+    "style": {
+      "font": "DM Sans",
+      "bold": true,
+      "color": "#FFFFFF",
+      "box": {
+        "color": "#000000",
+        "opacity": 0.55,
+        "shape": "per-line",
+        "padding": 0.32,
+        "radius": 0.5
+      }
+    }
+  },
+  {
+    "id": "headline",
+    "name": "Headline",
+    "style": {
+      "font": "Oswald",
+      "bold": true,
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "box": {
+        "color": "#111111",
+        "opacity": 1,
+        "shape": "rect",
+        "padding": 0.3,
+        "radius": 0
+      }
+    }
+  },
+  {
+    "id": "comic-burst",
+    "name": "Comic Burst",
+    "style": {
+      "font": "Rubik",
+      "bold": true,
+      "color": "#FFE14A",
+      "uppercase": true,
+      "outline": {
+        "color": "#141416",
+        "width": 0.11
+      },
+      "shadow": {
+        "color": "#141416",
+        "blur": 0,
+        "x": 0.05,
+        "y": 0.07,
+        "opacity": 1
+      }
+    }
+  },
+  {
+    "id": "chalk",
+    "name": "Chalk",
+    "style": {
+      "font": "Merienda",
+      "bold": true,
+      "color": "#FDFDF5",
+      "shadow": {
+        "color": "#000000",
+        "blur": 0.06,
+        "x": 0.02,
+        "y": 0.03,
+        "opacity": 0.5
+      }
+    }
+  },
+  {
+    "id": "karaoke",
+    "name": "Karaoke",
+    "style": {
+      "font": "Barlow",
+      "bold": true,
+      "color": "#FFFFFF",
+      "outline": {
+        "color": "#0B1E33",
+        "width": 0.06
+      },
+      "highlight": {
+        "color": "#39D5FF",
+        "lines": "even"
+      }
+    }
+  },
+  {
+    "id": "gold-leaf",
+    "name": "Gold Leaf",
+    "style": {
+      "font": "Playfair Display",
+      "bold": true,
+      "color": "#F4D58D",
+      "shadow": {
+        "color": "#1A1200",
+        "blur": 0.1,
+        "x": 0.02,
+        "y": 0.04,
+        "opacity": 0.85
+      }
+    }
+  },
+  {
+    "id": "mint-tag",
+    "name": "Mint Tag",
+    "style": {
+      "font": "Poppins",
+      "bold": true,
+      "color": "#0E3B2E",
+      "box": {
+        "color": "#9FF0D0",
+        "opacity": 1,
+        "shape": "per-line",
+        "padding": 0.26,
+        "radius": 0.3
+      }
+    }
+  },
+  {
+    "id": "midnight",
+    "name": "Midnight",
+    "style": {
+      "font": "Rubik",
+      "color": "#9BE7FF",
+      "box": {
+        "color": "#0B1E33",
+        "opacity": 0.9,
+        "shape": "rect",
+        "padding": 0.38,
+        "radius": 0.25
+      }
+    }
+  },
+  {
+    "id": "retro-pixel",
+    "name": "Retro Pixel",
+    "style": {
+      "font": "Bitcount Ink",
+      "color": "#7CFF6B",
+      "box": {
+        "color": "#0A0F0A",
+        "opacity": 0.85,
+        "shape": "rect",
+        "padding": 0.3,
+        "radius": 0
+      }
+    }
+  },
+  {
+    "id": "signature",
+    "name": "Signature",
+    "style": {
+      "font": "Alex Brush",
+      "color": "#FFFFFF",
+      "shadow": {
+        "color": "#000000",
+        "blur": 0.08,
+        "x": 0,
+        "y": 0.03,
+        "opacity": 0.7
+      }
+    }
+  },
+  {
+    "id": "hype-bar",
+    "name": "Hype Bar",
+    "style": {
+      "font": "Anton",
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "outline": {
+        "color": "#101012",
+        "width": 0.12
+      }
+    },
+    "tags": ["clipper", "word-timing"]
+  },
+  {
+    "id": "podcast-clean",
+    "name": "Podcast Clean",
+    "style": {
+      "font": "Work Sans",
+      "color": "#FFFFFF",
+      "box": {
+        "color": "#0E0E10",
+        "opacity": 0.62,
+        "shape": "rect",
+        "padding": 0.42,
+        "radius": 0.45
+      }
+    },
+    "tags": ["clipper"]
+  },
+  {
+    "id": "quote-card",
+    "name": "Quote Card",
+    "style": {
+      "font": "Playfair Display",
+      "color": "#FFFFFF",
+      "shadow": {
+        "color": "#000000",
+        "blur": 0.16,
+        "x": 0,
+        "y": 0.05,
+        "opacity": 0.6
+      }
+    },
+    "tags": ["clipper"]
+  },
+  {
+    "id": "money-green",
+    "name": "Money Green",
+    "style": {
+      "font": "Poppins",
+      "bold": true,
+      "color": "#2FD67B",
+      "uppercase": true,
+      "outline": {
+        "color": "#06230F",
+        "width": 0.09
+      }
+    },
+    "tags": ["clipper"]
+  },
+  {
+    "id": "shock-pop",
+    "name": "Shock Pop",
+    "style": {
+      "font": "Luckiest Guy",
+      "color": "#FFB627",
+      "outline": {
+        "color": "#000000",
+        "width": 0.14
+      }
+    },
+    "tags": ["clipper"]
+  },
+  {
+    "id": "orange-cut",
+    "name": "Orange Cut",
+    "style": {
+      "font": "Oswald",
+      "bold": true,
+      "color": "#141416",
+      "uppercase": true,
+      "box": {
+        "color": "#E5733A",
+        "opacity": 1,
+        "shape": "per-line",
+        "padding": 0.3,
+        "radius": 0.08
+      }
+    },
+    "tags": ["clipper"]
+  },
+  {
+    "id": "headline-blue",
+    "name": "Headline Blue",
+    "style": {
+      "font": "Barlow",
+      "bold": true,
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "box": {
+        "color": "#1E5BD8",
+        "opacity": 1,
+        "shape": "rect",
+        "padding": 0.32,
+        "radius": 0.06
+      }
+    },
+    "tags": ["clipper"]
+  },
+  {
+    "id": "glitch-split",
+    "name": "Glitch Split",
+    "style": {
+      "font": "Rubik",
+      "bold": true,
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "outline": {
+        "color": "#19E3FF",
+        "width": 0.03
+      },
+      "shadow": {
+        "color": "#FF2D6F",
+        "blur": 0,
+        "x": 0.07,
+        "y": 0,
+        "opacity": 1
+      }
+    },
+    "tags": ["clipper"]
+  },
+  {
+    "id": "story-time",
+    "name": "Story Time",
+    "style": {
+      "font": "Fraunces",
+      "bold": true,
+      "color": "#FFF4DC",
+      "shadow": {
+        "color": "#3A2412",
+        "blur": 0.1,
+        "x": 0,
+        "y": 0.05,
+        "opacity": 0.8
+      }
+    },
+    "tags": ["clipper"]
+  },
+  {
+    "id": "word-slam",
+    "name": "Word Slam",
+    "style": {
+      "font": "Anton",
+      "color": "#FFE14A",
+      "uppercase": true,
+      "outline": {
+        "color": "#000000",
+        "width": 0.1
+      },
+      "shadow": {
+        "color": "#000000",
+        "blur": 0,
+        "x": 0.05,
+        "y": 0.08,
+        "opacity": 1
+      }
+    },
+    "tags": ["clipper", "word-timing"]
+  }
+]

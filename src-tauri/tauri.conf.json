@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "SOCL Visuals Studio",
+  "version": "2.4.41",
+  "identifier": "com.soclvisuals.studio.tauri",
+  "build": {
+    "beforeDevCommand": "node scripts/dev-frontend.ts",
+    "devUrl": "http://127.0.0.1:1431",
+    "beforeBuildCommand": "node scripts/build-frontend.ts",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "SOCL Visuals Studio",
+        "width": 1360,
+        "height": 900,
+        "minWidth": 1180,
+        "minHeight": 760,
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: http://asset.localhost data: blob: https: http://127.0.0.1:*; media-src 'self' asset: http://asset.localhost blob: http://127.0.0.1:*; font-src 'self' data:; connect-src 'self' asset: http://asset.localhost ipc: http://ipc.localhost http://127.0.0.1:*; object-src 'none'; base-uri 'self'; frame-src 'none'",
+      "devCsp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$APPCACHE/thumbnails/**",
+          "$APPCACHE/reverse/**",
+          "$APPCACHE/previews/**",
+          "$APPCACHE/waveforms/**",
+          "$APPCACHE/font-previews/**",
+          "$APPCACHE/luts/**",
+          "$APPCACHE/look-previews/**",
+          "$APPCACHE/text-style-previews/**"
+        ]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/icon.ico",
+      "icons/icon.png"
+    ],
+    "resources": {
+      "../.dev-tools/tauri-resources/": "engine-resources/",
+      "assets/": "assets/",
+      "binaries/": "binaries/",
+      "../third-party/": "licenses/"
+    }
+  }
+}

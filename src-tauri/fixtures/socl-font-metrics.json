@@ -1,0 +1,356 @@
+{
+  "request": [
+    {
+      "style": "neon_green"
+    },
+    {
+      "style": "neon_green",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "neon_pink"
+    },
+    {
+      "style": "neon_pink",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "yellow"
+    },
+    {
+      "style": "yellow",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "bw"
+    },
+    {
+      "style": "bw",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "bw_neon_green"
+    },
+    {
+      "style": "bw_neon_green",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "bw_neon_yellow"
+    },
+    {
+      "style": "bw_neon_yellow",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "bw_hi_lime"
+    },
+    {
+      "style": "bw_hi_lime",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "bw_hi_red"
+    },
+    {
+      "style": "bw_hi_red",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "bw_hi_white"
+    },
+    {
+      "style": "bw_hi_white",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "bw_hi_rainbow"
+    },
+    {
+      "style": "bw_hi_rainbow",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "white_hi_lime"
+    },
+    {
+      "style": "white_hi_lime",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "cinematic_white"
+    },
+    {
+      "style": "cinematic_white",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "inverse_auto"
+    },
+    {
+      "style": "inverse_auto",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "white_clean"
+    },
+    {
+      "style": "white_clean",
+      "fn": "TimesNewRomanMTStd-BoldCond"
+    },
+    {
+      "style": "unknown"
+    },
+    {
+      "style": "bw",
+      "fn": "Missing Font"
+    },
+    {
+      "style": "bw",
+      "fn": "  Open   Sauce Two ExtraBold "
+    }
+  ],
+  "expected": {
+    "neon_green|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "neon_green|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "neon_pink|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "neon_pink|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "yellow|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "yellow|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "bw|": {
+      "face": "Times New Roman MT Condensed",
+      "emScale": 1.17,
+      "baselineEm": 0.92,
+      "capEm": 0.682,
+      "descEm": 0.25,
+      "inkCenterEm": 0.6445000000000001
+    },
+    "bw|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "bw_neon_green|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "bw_neon_green|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "bw_neon_yellow|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "bw_neon_yellow|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "bw_hi_lime|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "bw_hi_lime|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "bw_hi_red|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "bw_hi_red|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "bw_hi_white|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "bw_hi_white|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "bw_hi_rainbow|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "bw_hi_rainbow|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "white_hi_lime|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "white_hi_lime|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "cinematic_white|": {
+      "face": "Times New Roman MT Condensed",
+      "emScale": 1.17,
+      "baselineEm": 0.92,
+      "capEm": 0.682,
+      "descEm": 0.25,
+      "inkCenterEm": 0.6445000000000001
+    },
+    "cinematic_white|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "inverse_auto|": {
+      "face": "Open Sauce Two Bold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "inverse_auto|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "white_clean|": {
+      "face": "Open Sauce Two Bold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "white_clean|TimesNewRomanMTStd-BoldCond": {
+      "face": "TimesNewRomanMTStd-BoldCond",
+      "emScale": 1.168,
+      "baselineEm": 0.918,
+      "capEm": 0.682,
+      "descEm": 0.287,
+      "inkCenterEm": 0.71275
+    },
+    "unknown|": {
+      "face": "Open Sauce Two ExtraBold",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    },
+    "bw|Missing Font": null,
+    "bw|  Open   Sauce Two ExtraBold ": {
+      "face": "  Open   Sauce Two ExtraBold ",
+      "emScale": 1.237,
+      "baselineEm": 1,
+      "capEm": 0.763,
+      "descEm": 0.237,
+      "inkCenterEm": 0.6777500000000001
+    }
+  }
+}

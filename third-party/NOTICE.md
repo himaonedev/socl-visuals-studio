@@ -1,0 +1,1 @@
+Editor components and native media modules are adapted from the local CutVii fork (himaonedev/cutvii, upstream zidniryi/cutvii). See CutVii-LICENSE. Font and segmentation license notices remain with their assets.

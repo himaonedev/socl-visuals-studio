@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleDetection": "legacy",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "files": ["preload.ts", "ui-theme.ts", "edit-history.ts", "status-disclosure.ts", "media-lifecycle.ts"]
+}

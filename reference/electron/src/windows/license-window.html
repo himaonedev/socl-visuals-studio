@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none';">
+<title>Activate License</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #000000;
+    --panel: #0a0a0a;
+    --border: #1f1f1f;
+    --border-strong: #2a2a2a;
+    --text: #f7f7ef;
+    --muted: #888888;
+    --muted-2: #5a5a5a;
+    --lime: #f1ff00;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    user-select: none;
+    -webkit-app-region: drag;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    width: 360px;
+    -webkit-app-region: no-drag;
+  }
+
+  /* Logo */
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+  .logo {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    filter: drop-shadow(0 0 22px rgba(241,255,0,.22));
+  }
+  .logo svg { display: block; width: 72px; height: 72px; }
+
+  .brand {
+    font-size: 12px;
+    letter-spacing: .06em;
+    color: var(--muted);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -.01em;
+    text-align: center;
+  }
+  .subtitle {
+    margin: 0 0 26px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    margin: 16px 0 6px;
+    letter-spacing: .04em;
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color .12s, box-shadow .12s;
+    user-select: text;
+  }
+  input::placeholder { color: #3a3a3a; }
+  input:focus {
+    border-color: var(--lime);
+    box-shadow: 0 0 0 3px rgba(241,255,0,.08);
+  }
+  input.license-input {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  button.activate {
+    width: 100%;
+    height: 42px;
+    margin-top: 22px;
+    background: var(--lime);
+    color: #0a0a0a;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    font-family: inherit;
+    cursor: pointer;
+    transition: filter .12s, transform .08s;
+  }
+  button.activate:hover:not(:disabled) { filter: brightness(1.08); }
+  button.activate:active:not(:disabled) { transform: translateY(1px); }
+  button.activate:disabled {
+    background: var(--border);
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+
+  .message {
+    margin-top: 14px;
+    font-size: 12px;
+    display: none;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .message.error   { display: block; color: #ff6b6b; }
+  .message.success { display: block; color: var(--lime); }
+
+  .footer {
+    margin-top: 26px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 11.5px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.7;
+  }
+  .footer a {
+    color: var(--lime);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(241,255,0,.45);
+    padding-bottom: 1px;
+    cursor: pointer;
+  }
+  .footer a:hover { border-bottom-color: var(--lime); }
+  .footer .divider {
+    color: var(--muted-2);
+    margin: 0 4px;
+  }
+
+  /* Buy CTA — prominent button-like card */
+  .buy-cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 12px 14px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(241,255,0,.14), rgba(241,255,0,.02) 65%);
+    border: 1px solid rgba(241,255,0,.38);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: 0 6px 20px -6px rgba(241,255,0,.10);
+    transition: background .18s, border-color .18s, transform .08s, box-shadow .18s;
+  }
+  .buy-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120px 70px at 10% -10%, rgba(241,255,0,.30), transparent 70%);
+    pointer-events: none;
+  }
+  .buy-cta:hover {
+    background: linear-gradient(135deg, rgba(241,255,0,.20), rgba(241,255,0,.04) 65%);
+    border-color: rgba(241,255,0,.6);
+    box-shadow: 0 8px 26px -6px rgba(241,255,0,.20);
+  }
+  .buy-cta:active { transform: translateY(1px); }
+
+  .buy-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: rgba(241,255,0,.14);
+    display: grid;
+    place-items: center;
+  }
+  .buy-icon svg { width: 16px; height: 16px; color: var(--lime); }
+
+  .buy-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .buy-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .01em;
+  }
+  .buy-action {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--lime);
+    letter-spacing: .01em;
+  }
+
+  .buy-arrow-wrap {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: rgba(241,255,0,.14);
+    display: grid;
+    place-items: center;
+    transition: background .18s, transform .18s;
+  }
+  .buy-arrow-wrap svg { width: 13px; height: 13px; color: var(--lime); transition: color .18s; }
+  .buy-cta:hover .buy-arrow-wrap { background: var(--lime); transform: translateX(2px); }
+  .buy-cta:hover .buy-arrow-wrap svg { color: #0a0a0a; }
+
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wrap">
+      <div class="logo">
+        <!-- SOCL Visuals logo — kept byte-for-byte in sync with
+             assets/brand/scl-vsl.svg (the master app icon) so this popup
+             never drifts out of proportion with it again. -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+          <defs>
+            <radialGradient id="logo-g" cx="72%" cy="18%" r="80%">
+              <stop offset="0" stop-color="#F1FF00" stop-opacity="0.38"/>
+              <stop offset="0.48" stop-color="#11140A"/>
+              <stop offset="1" stop-color="#050604"/>
+            </radialGradient>
+            <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="10" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="1024" height="1024" rx="230" fill="url(#logo-g)"/>
+          <rect x="52" y="52" width="920" height="920" rx="205" fill="none" stroke="#F1FF00" stroke-opacity=".45" stroke-width="10"/>
+          <g filter="url(#glow)">
+            <text x="512" y="472" text-anchor="middle"
+                  font-family="Arial Black, Helvetica Neue, Helvetica, sans-serif"
+                  font-size="198" font-weight="900" letter-spacing="-8" fill="#F7F7EF">SCL</text>
+            <text x="512" y="642" text-anchor="middle"
+                  font-family="Arial Black, Helvetica Neue, Helvetica, sans-serif"
+                  font-size="198" font-weight="900" letter-spacing="-8" fill="#F1FF00">VSL</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="brand">Social Visuals Studio</div>
+
+    <h1>Activate license</h1>
+    <p class="subtitle">Masukkan email dan license key dari pembelian Anda.</p>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="you@example.com" autocomplete="off" />
+
+    <label for="license">License key</label>
+    <input id="license" class="license-input" type="text" placeholder="XXXXX-XXXXX-XXXXX-XXXXX-XXXXX" autocomplete="off" maxlength="29" />
+
+    <button id="activate-btn" class="activate">Activate</button>
+
+    <div id="message" class="message"></div>
+
+    <div class="footer">
+      1 license <span class="divider">·</span> 1 device <span class="divider">·</span> lifetime updates
+    </div>
+
+    <a id="purchase-link" href="#" class="buy-cta">
+      <span class="buy-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+          <path d="M3 6h18"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </span>
+      <span class="buy-text">
+        <span class="buy-label">Belum punya license?</span>
+        <span class="buy-action">Beli di Lynk.id</span>
+      </span>
+      <span class="buy-arrow-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 6l6 6-6 6"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+
+  <script src="./license-window.js"></script>
+</body>
+</html>

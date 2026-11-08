@@ -1,0 +1,122 @@
+[
+  {
+    "source": "frontend/legacy-src/preload.ts",
+    "output": "src/preload.js"
+  },
+  {
+    "source": "frontend/legacy-src/ui-theme.ts",
+    "output": "src/ui-theme.js"
+  },
+  {
+    "source": "frontend/legacy-src/ui-fx.ts",
+    "output": "src/ui-fx.js"
+  },
+  {
+    "source": "backend/src/watermark.ts",
+    "output": "src/watermark.js"
+  },
+  {
+    "source": "frontend/legacy-src/history-gallery.ts",
+    "output": "src/history-gallery.js"
+  },
+  {
+    "source": "frontend/legacy-src/cue-retime.ts",
+    "output": "src/cue-retime.js"
+  },
+  {
+    "source": "backend/src/manual-caption.ts",
+    "output": "src/manual-caption.js"
+  },
+  {
+    "source": "frontend/legacy-src/title-lane.ts",
+    "output": "src/title-lane.js"
+  },
+  {
+    "source": "frontend/legacy-src/edit-history.ts",
+    "output": "src/edit-history.js"
+  },
+  {
+    "source": "frontend/legacy-src/clip-select.ts",
+    "output": "src/clip-select.js"
+  },
+  {
+    "source": "frontend/legacy-src/batch-render.ts",
+    "output": "src/batch-render.js"
+  },
+  {
+    "source": "frontend/legacy-src/render-source.ts",
+    "output": "src/render-source.js"
+  },
+  {
+    "source": "frontend/legacy-src/clip-card.ts",
+    "output": "src/clip-card.js"
+  },
+  {
+    "source": "frontend/legacy-src/custom-chunks.ts",
+    "output": "src/custom-chunks.js"
+  },
+  {
+    "source": "frontend/legacy-src/live-preview-state.ts",
+    "output": "src/live-preview-state.js"
+  },
+  {
+    "source": "frontend/legacy-src/media-lifecycle.ts",
+    "output": "src/media-lifecycle.js"
+  },
+  {
+    "source": "frontend/legacy-src/status-disclosure.ts",
+    "output": "src/status-disclosure.js"
+  },
+  {
+    "source": "backend/src/emoji-map.ts",
+    "output": "src/emoji-map.js"
+  },
+  {
+    "source": "frontend/legacy-src/tour.ts",
+    "output": "src/tour.js"
+  },
+  {
+    "source": "backend/src/caption-box.ts",
+    "output": "src/caption-box.js"
+  },
+  {
+    "source": "frontend/legacy-src/caption-placement.ts",
+    "output": "src/caption-placement.js"
+  },
+  {
+    "source": "backend/src/title-layout.ts",
+    "output": "src/title-layout.js"
+  },
+  {
+    "source": "backend/src/hook-presets.ts",
+    "output": "src/hook-presets.js"
+  },
+  {
+    "source": "backend/src/kinetic-widths.ts",
+    "output": "src/kinetic-widths.js"
+  },
+  {
+    "source": "backend/src/kinetic-title.ts",
+    "output": "src/kinetic-title.js"
+  },
+  {
+    "source": "backend/src/video-fx.ts",
+    "output": "src/video-fx.js"
+  },
+  {
+    "source": "backend/src/preset-catalog.ts",
+    "output": "src/preset-catalog.js"
+  },
+  {
+    "source": "frontend/legacy-src/renderer.ts",
+    "output": "src/renderer.js"
+  },
+  {
+    "source": "backend/src/caption-extras.ts",
+    "output": "src/caption-extras.js"
+  },
+  {
+    "source": "frontend/legacy-src/caption-extras-ui.ts",
+    "output": "src/caption-extras-ui.js"
+  }
+]

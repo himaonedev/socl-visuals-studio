@@ -1,0 +1,2213 @@
+{
+  "sourceDigest": "84922bf9b4b4d8b0562336b2f14d9f7ea88e91201d3dd902b8d08caeb3dc239d",
+  "faces": {
+    "anton||": {
+      "ratio": 1.7333984375,
+      "inkCenterEm": 1.0599365234375,
+      "inkAscEm": 0.859375,
+      "inkDescEm": 0.3291015625,
+      "baselineOffsetEm": 1.404296875
+    },
+    "anton": {
+      "ratio": 1.7333984375,
+      "inkCenterEm": 1.0599365234375,
+      "inkAscEm": 0.859375,
+      "inkDescEm": 0.3291015625,
+      "baselineOffsetEm": 1.404296875
+    },
+    "anton regular||": {
+      "ratio": 1.7333984375,
+      "inkCenterEm": 1.0599365234375,
+      "inkAscEm": 0.859375,
+      "inkDescEm": 0.3291015625,
+      "baselineOffsetEm": 1.404296875
+    },
+    "anton regular": {
+      "ratio": 1.7333984375,
+      "inkCenterEm": 1.0599365234375,
+      "inkAscEm": 0.859375,
+      "inkDescEm": 0.3291015625,
+      "baselineOffsetEm": 1.404296875
+    },
+    "anton-regular||": {
+      "ratio": 1.7333984375,
+      "inkCenterEm": 1.0599365234375,
+      "inkAscEm": 0.859375,
+      "inkDescEm": 0.3291015625,
+      "baselineOffsetEm": 1.404296875
+    },
+    "anton-regular": {
+      "ratio": 1.7333984375,
+      "inkCenterEm": 1.0599365234375,
+      "inkAscEm": 0.859375,
+      "inkDescEm": 0.3291015625,
+      "baselineOffsetEm": 1.404296875
+    },
+    "apple garamond|b|": {
+      "ratio": 1.115,
+      "inkCenterEm": 0.5575,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.879
+    },
+    "apple garamond": {
+      "ratio": 1.115,
+      "inkCenterEm": 0.5575,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.879
+    },
+    "apple garamond bold|b|": {
+      "ratio": 1.115,
+      "inkCenterEm": 0.5575,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.879
+    },
+    "apple garamond bold": {
+      "ratio": 1.115,
+      "inkCenterEm": 0.5575,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.879
+    },
+    "applegaramond-bold|b|": {
+      "ratio": 1.115,
+      "inkCenterEm": 0.5575,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.879
+    },
+    "applegaramond-bold": {
+      "ratio": 1.115,
+      "inkCenterEm": 0.5575,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.879
+    },
+    "apple garamond||i": {
+      "ratio": 1.14,
+      "inkCenterEm": 0.5700000000000001,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.904
+    },
+    "apple garamond italic||i": {
+      "ratio": 1.14,
+      "inkCenterEm": 0.5700000000000001,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.904
+    },
+    "apple garamond italic": {
+      "ratio": 1.14,
+      "inkCenterEm": 0.5700000000000001,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.904
+    },
+    "applegaramond-italic||i": {
+      "ratio": 1.14,
+      "inkCenterEm": 0.5700000000000001,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.904
+    },
+    "applegaramond-italic": {
+      "ratio": 1.14,
+      "inkCenterEm": 0.5700000000000001,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.904
+    },
+    "apple garamond||": {
+      "ratio": 1.152,
+      "inkCenterEm": 0.5760000000000001,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.916
+    },
+    "applegaramond||": {
+      "ratio": 1.152,
+      "inkCenterEm": 0.5760000000000001,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.916
+    },
+    "applegaramond": {
+      "ratio": 1.152,
+      "inkCenterEm": 0.5760000000000001,
+      "inkAscEm": 0.63,
+      "inkDescEm": 0.236,
+      "baselineOffsetEm": 0.916
+    },
+    "arial nova cond||": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arial nova cond": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arialnovacond||": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arialnovacond": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arial nova||": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arial nova": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arial nova light||": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arial nova light": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arialnova-light||": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "arialnova-light": {
+      "ratio": 1.20947265625,
+      "inkCenterEm": 0.6712646484375,
+      "inkAscEm": 0.7158203125,
+      "inkDescEm": 0.2275390625,
+      "baselineOffsetEm": 0.98193359375
+    },
+    "atp-saltedbutter||": {
+      "ratio": 0.983,
+      "inkCenterEm": 0.4375,
+      "inkAscEm": 0.704,
+      "inkDescEm": 0.28,
+      "baselineOffsetEm": 0.719
+    },
+    "atp-saltedbutter": {
+      "ratio": 0.983,
+      "inkCenterEm": 0.4375,
+      "inkAscEm": 0.704,
+      "inkDescEm": 0.28,
+      "baselineOffsetEm": 0.719
+    },
+    "atp-saltedbutter regular||": {
+      "ratio": 0.983,
+      "inkCenterEm": 0.4375,
+      "inkAscEm": 0.704,
+      "inkDescEm": 0.28,
+      "baselineOffsetEm": 0.719
+    },
+    "atp-saltedbutter regular": {
+      "ratio": 0.983,
+      "inkCenterEm": 0.4375,
+      "inkAscEm": 0.704,
+      "inkDescEm": 0.28,
+      "baselineOffsetEm": 0.719
+    },
+    "atpsaltedbutter-regular||": {
+      "ratio": 0.983,
+      "inkCenterEm": 0.4375,
+      "inkAscEm": 0.704,
+      "inkDescEm": 0.28,
+      "baselineOffsetEm": 0.719
+    },
+    "atpsaltedbutter-regular": {
+      "ratio": 0.983,
+      "inkCenterEm": 0.4375,
+      "inkAscEm": 0.704,
+      "inkDescEm": 0.28,
+      "baselineOffsetEm": 0.719
+    },
+    "bangers||": {
+      "ratio": 1.757,
+      "inkCenterEm": 1.0905,
+      "inkAscEm": 0.721,
+      "inkDescEm": 0.181,
+      "baselineOffsetEm": 1.401
+    },
+    "bangers": {
+      "ratio": 1.757,
+      "inkCenterEm": 1.0905,
+      "inkAscEm": 0.721,
+      "inkDescEm": 0.181,
+      "baselineOffsetEm": 1.401
+    },
+    "bangers regular||": {
+      "ratio": 1.757,
+      "inkCenterEm": 1.0905,
+      "inkAscEm": 0.721,
+      "inkDescEm": 0.181,
+      "baselineOffsetEm": 1.401
+    },
+    "bangers regular": {
+      "ratio": 1.757,
+      "inkCenterEm": 1.0905,
+      "inkAscEm": 0.721,
+      "inkDescEm": 0.181,
+      "baselineOffsetEm": 1.401
+    },
+    "bangers-regular||": {
+      "ratio": 1.757,
+      "inkCenterEm": 1.0905,
+      "inkAscEm": 0.721,
+      "inkDescEm": 0.181,
+      "baselineOffsetEm": 1.401
+    },
+    "bangers-regular": {
+      "ratio": 1.757,
+      "inkCenterEm": 1.0905,
+      "inkAscEm": 0.721,
+      "inkDescEm": 0.181,
+      "baselineOffsetEm": 1.401
+    },
+    "bitblast sans||": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblast sans": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblast sans regular||": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblast sans regular": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblastsans-regular||": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblastsans-regular": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblast sans textured||": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblast sans textured": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblastsans-textured||": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblastsans-textured": {
+      "ratio": 1.5,
+      "inkCenterEm": 0.75,
+      "inkAscEm": 1.2,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.2
+    },
+    "bitblast serif||": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblast serif": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblast serif regular||": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblast serif regular": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblastserif-regular||": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblastserif-regular": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblast serif textured||": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblast serif textured": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblastserif-textured||": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bitblastserif-textured": {
+      "ratio": 1.21,
+      "inkCenterEm": 0.605,
+      "inkAscEm": 0.98,
+      "inkDescEm": 0.23,
+      "baselineOffsetEm": 0.98
+    },
+    "bootzy tm||": {
+      "ratio": 1,
+      "inkCenterEm": 0.5274658203125,
+      "inkAscEm": 0.64013671875,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.75
+    },
+    "bootzy tm": {
+      "ratio": 1,
+      "inkCenterEm": 0.5274658203125,
+      "inkAscEm": 0.64013671875,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.75
+    },
+    "bootzytm||": {
+      "ratio": 1,
+      "inkCenterEm": 0.5274658203125,
+      "inkAscEm": 0.64013671875,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.75
+    },
+    "bootzytm": {
+      "ratio": 1,
+      "inkCenterEm": 0.5274658203125,
+      "inkAscEm": 0.64013671875,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.75
+    },
+    "cooperblkbt-regular||": {
+      "ratio": 1.52,
+      "inkCenterEm": 0.96675,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.209,
+      "baselineOffsetEm": 1.242
+    },
+    "cooperblkbt-regular": {
+      "ratio": 1.52,
+      "inkCenterEm": 0.96675,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.209,
+      "baselineOffsetEm": 1.242
+    },
+    "cooper blk bt regular||": {
+      "ratio": 1.52,
+      "inkCenterEm": 0.96675,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.209,
+      "baselineOffsetEm": 1.242
+    },
+    "cooper blk bt regular": {
+      "ratio": 1.52,
+      "inkCenterEm": 0.96675,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.209,
+      "baselineOffsetEm": 1.242
+    },
+    "☞cooper blk bt regular||": {
+      "ratio": 1.52,
+      "inkCenterEm": 0.96675,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.209,
+      "baselineOffsetEm": 1.242
+    },
+    "☞cooper blk bt regular": {
+      "ratio": 1.52,
+      "inkCenterEm": 0.96675,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.209,
+      "baselineOffsetEm": 1.242
+    },
+    "cooperltbt-bold||": {
+      "ratio": 1.442,
+      "inkCenterEm": 0.8979999999999999,
+      "inkAscEm": 0.732,
+      "inkDescEm": 0.22,
+      "baselineOffsetEm": 1.166
+    },
+    "cooperltbt-bold": {
+      "ratio": 1.442,
+      "inkCenterEm": 0.8979999999999999,
+      "inkAscEm": 0.732,
+      "inkDescEm": 0.22,
+      "baselineOffsetEm": 1.166
+    },
+    "cooper lt bt bold||": {
+      "ratio": 1.442,
+      "inkCenterEm": 0.8979999999999999,
+      "inkAscEm": 0.732,
+      "inkDescEm": 0.22,
+      "baselineOffsetEm": 1.166
+    },
+    "cooper lt bt bold": {
+      "ratio": 1.442,
+      "inkCenterEm": 0.8979999999999999,
+      "inkAscEm": 0.732,
+      "inkDescEm": 0.22,
+      "baselineOffsetEm": 1.166
+    },
+    "☞cooper lt bt bold||": {
+      "ratio": 1.442,
+      "inkCenterEm": 0.8979999999999999,
+      "inkAscEm": 0.732,
+      "inkDescEm": 0.22,
+      "baselineOffsetEm": 1.166
+    },
+    "☞cooper lt bt bold": {
+      "ratio": 1.442,
+      "inkCenterEm": 0.8979999999999999,
+      "inkAscEm": 0.732,
+      "inkDescEm": 0.22,
+      "baselineOffsetEm": 1.166
+    },
+    "cooperltbt-regular||": {
+      "ratio": 1.31,
+      "inkCenterEm": 0.78525,
+      "inkAscEm": 0.731,
+      "inkDescEm": 0.224,
+      "baselineOffsetEm": 1.05
+    },
+    "cooperltbt-regular": {
+      "ratio": 1.31,
+      "inkCenterEm": 0.78525,
+      "inkAscEm": 0.731,
+      "inkDescEm": 0.224,
+      "baselineOffsetEm": 1.05
+    },
+    "cooper lt bt regular||": {
+      "ratio": 1.31,
+      "inkCenterEm": 0.78525,
+      "inkAscEm": 0.731,
+      "inkDescEm": 0.224,
+      "baselineOffsetEm": 1.05
+    },
+    "cooper lt bt regular": {
+      "ratio": 1.31,
+      "inkCenterEm": 0.78525,
+      "inkAscEm": 0.731,
+      "inkDescEm": 0.224,
+      "baselineOffsetEm": 1.05
+    },
+    "☞cooper lt bt regular||": {
+      "ratio": 1.31,
+      "inkCenterEm": 0.78525,
+      "inkAscEm": 0.731,
+      "inkDescEm": 0.224,
+      "baselineOffsetEm": 1.05
+    },
+    "☞cooper lt bt regular": {
+      "ratio": 1.31,
+      "inkCenterEm": 0.78525,
+      "inkAscEm": 0.731,
+      "inkDescEm": 0.224,
+      "baselineOffsetEm": 1.05
+    },
+    "coopermdbt-regular||": {
+      "ratio": 1.351,
+      "inkCenterEm": 0.8220000000000001,
+      "inkAscEm": 0.729,
+      "inkDescEm": 0.219,
+      "baselineOffsetEm": 1.09
+    },
+    "coopermdbt-regular": {
+      "ratio": 1.351,
+      "inkCenterEm": 0.8220000000000001,
+      "inkAscEm": 0.729,
+      "inkDescEm": 0.219,
+      "baselineOffsetEm": 1.09
+    },
+    "cooper md bt regular||": {
+      "ratio": 1.351,
+      "inkCenterEm": 0.8220000000000001,
+      "inkAscEm": 0.729,
+      "inkDescEm": 0.219,
+      "baselineOffsetEm": 1.09
+    },
+    "cooper md bt regular": {
+      "ratio": 1.351,
+      "inkCenterEm": 0.8220000000000001,
+      "inkAscEm": 0.729,
+      "inkDescEm": 0.219,
+      "baselineOffsetEm": 1.09
+    },
+    "☞cooper md bt regular||": {
+      "ratio": 1.351,
+      "inkCenterEm": 0.8220000000000001,
+      "inkAscEm": 0.729,
+      "inkDescEm": 0.219,
+      "baselineOffsetEm": 1.09
+    },
+    "☞cooper md bt regular": {
+      "ratio": 1.351,
+      "inkCenterEm": 0.8220000000000001,
+      "inkAscEm": 0.729,
+      "inkDescEm": 0.219,
+      "baselineOffsetEm": 1.09
+    },
+    "dm serif text||": {
+      "ratio": 1.371,
+      "inkCenterEm": 0.77925,
+      "inkAscEm": 0.661,
+      "inkDescEm": 0.335,
+      "baselineOffsetEm": 1.036
+    },
+    "dm serif text": {
+      "ratio": 1.371,
+      "inkCenterEm": 0.77925,
+      "inkAscEm": 0.661,
+      "inkDescEm": 0.335,
+      "baselineOffsetEm": 1.036
+    },
+    "dm serif text regular||": {
+      "ratio": 1.371,
+      "inkCenterEm": 0.77925,
+      "inkAscEm": 0.661,
+      "inkDescEm": 0.335,
+      "baselineOffsetEm": 1.036
+    },
+    "dm serif text regular": {
+      "ratio": 1.371,
+      "inkCenterEm": 0.77925,
+      "inkAscEm": 0.661,
+      "inkDescEm": 0.335,
+      "baselineOffsetEm": 1.036
+    },
+    "dmseriftext-regular||": {
+      "ratio": 1.371,
+      "inkCenterEm": 0.77925,
+      "inkAscEm": 0.661,
+      "inkDescEm": 0.335,
+      "baselineOffsetEm": 1.036
+    },
+    "dmseriftext-regular": {
+      "ratio": 1.371,
+      "inkCenterEm": 0.77925,
+      "inkAscEm": 0.661,
+      "inkDescEm": 0.335,
+      "baselineOffsetEm": 1.036
+    },
+    "editor's note|b|": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note bold|b|": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note bold": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-bold|b|": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-bold": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note|b|i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note bold italic|b|i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note bold italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-bolditalic|b|i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-bolditalic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note extralight||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note extralight": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-extralight||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-extralight": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note extralight||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note extralight italic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note extralight italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-extralightitalic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-extralightitalic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note hairline||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note hairline": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-hairline||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-hairline": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note hairline||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note hairline italic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note hairline italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-hairlineitalic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-hairlineitalic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note italic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-italic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note light||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note light": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-light||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-light": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note light||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note light italic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note light italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-lightitalic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-lightitalic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note medium||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note medium": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-medium||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-medium": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note medium||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note medium italic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note medium italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-mediumitalic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-mediumitalic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note regular||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note regular": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-regular||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-regular": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note semibold||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note semibold": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-semibold||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-semibold": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note semibold||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note semibold italic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note semibold italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-semibolditalic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-semibolditalic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note thin||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note thin": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-thin||": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-thin": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note thin||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note thin italic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor's note thin italic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-thinitalic||i": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "editor'snote-thinitalic": {
+      "ratio": 1.28,
+      "inkCenterEm": 0.718,
+      "inkAscEm": 0.728,
+      "inkDescEm": 0.24,
+      "baselineOffsetEm": 1.04
+    },
+    "hanken grotesk||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk regular||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk regular": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-regular||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-regular": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk medium||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk medium": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-medium||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-medium": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk semibold||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk semibold": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-semibold||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-semibold": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk|b|": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk bold|b|": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk bold": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-bold|b|": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-bold": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk extrabold||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hanken grotesk extrabold": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-extrabold||": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "hankengrotesk-extrabold": {
+      "ratio": 1.303,
+      "inkCenterEm": 0.72725,
+      "inkAscEm": 0.697,
+      "inkDescEm": 0.303,
+      "baselineOffsetEm": 1
+    },
+    "inter socl black||": {
+      "ratio": 1.43017578125,
+      "inkCenterEm": 0.804443359375,
+      "inkAscEm": 0.7275390625,
+      "inkDescEm": 0.2412109375,
+      "baselineOffsetEm": 1.10791015625
+    },
+    "inter socl black": {
+      "ratio": 1.43017578125,
+      "inkCenterEm": 0.804443359375,
+      "inkAscEm": 0.7275390625,
+      "inkDescEm": 0.2412109375,
+      "baselineOffsetEm": 1.10791015625
+    },
+    "intersoclblack||": {
+      "ratio": 1.43017578125,
+      "inkCenterEm": 0.804443359375,
+      "inkAscEm": 0.7275390625,
+      "inkDescEm": 0.2412109375,
+      "baselineOffsetEm": 1.10791015625
+    },
+    "intersoclblack": {
+      "ratio": 1.43017578125,
+      "inkCenterEm": 0.804443359375,
+      "inkAscEm": 0.7275390625,
+      "inkDescEm": 0.2412109375,
+      "baselineOffsetEm": 1.10791015625
+    },
+    "inter socl bold||": {
+      "ratio": 1.43017578125,
+      "inkCenterEm": 0.804443359375,
+      "inkAscEm": 0.7275390625,
+      "inkDescEm": 0.2412109375,
+      "baselineOffsetEm": 1.10791015625
+    },
+    "inter socl bold": {
+      "ratio": 1.43017578125,
+      "inkCenterEm": 0.804443359375,
+      "inkAscEm": 0.7275390625,
+      "inkDescEm": 0.2412109375,
+      "baselineOffsetEm": 1.10791015625
+    },
+    "intersoclbold||": {
+      "ratio": 1.43017578125,
+      "inkCenterEm": 0.804443359375,
+      "inkAscEm": 0.7275390625,
+      "inkDescEm": 0.2412109375,
+      "baselineOffsetEm": 1.10791015625
+    },
+    "intersoclbold": {
+      "ratio": 1.43017578125,
+      "inkCenterEm": 0.804443359375,
+      "inkAscEm": 0.7275390625,
+      "inkDescEm": 0.2412109375,
+      "baselineOffsetEm": 1.10791015625
+    },
+    "liberation sans narrow|b|": {
+      "ratio": 1.13232421875,
+      "inkCenterEm": 0.6219482421875,
+      "inkAscEm": 0.68798828125,
+      "inkDescEm": 0.2119140625,
+      "baselineOffsetEm": 0.921875
+    },
+    "liberation sans narrow": {
+      "ratio": 1.13232421875,
+      "inkCenterEm": 0.6219482421875,
+      "inkAscEm": 0.68798828125,
+      "inkDescEm": 0.2119140625,
+      "baselineOffsetEm": 0.921875
+    },
+    "liberation sans narrow bold|b|": {
+      "ratio": 1.13232421875,
+      "inkCenterEm": 0.6219482421875,
+      "inkAscEm": 0.68798828125,
+      "inkDescEm": 0.2119140625,
+      "baselineOffsetEm": 0.921875
+    },
+    "liberation sans narrow bold": {
+      "ratio": 1.13232421875,
+      "inkCenterEm": 0.6219482421875,
+      "inkAscEm": 0.68798828125,
+      "inkDescEm": 0.2119140625,
+      "baselineOffsetEm": 0.921875
+    },
+    "liberationsansnarrow-bold|b|": {
+      "ratio": 1.13232421875,
+      "inkCenterEm": 0.6219482421875,
+      "inkAscEm": 0.68798828125,
+      "inkDescEm": 0.2119140625,
+      "baselineOffsetEm": 0.921875
+    },
+    "liberationsansnarrow-bold": {
+      "ratio": 1.13232421875,
+      "inkCenterEm": 0.6219482421875,
+      "inkAscEm": 0.68798828125,
+      "inkDescEm": 0.2119140625,
+      "baselineOffsetEm": 0.921875
+    },
+    "luckiest guy||": {
+      "ratio": 1.2255859375,
+      "inkCenterEm": 0.7783203125,
+      "inkAscEm": 0.6953125,
+      "inkDescEm": 0.296875,
+      "baselineOffsetEm": 0.9794921875
+    },
+    "luckiest guy": {
+      "ratio": 1.2255859375,
+      "inkCenterEm": 0.7783203125,
+      "inkAscEm": 0.6953125,
+      "inkDescEm": 0.296875,
+      "baselineOffsetEm": 0.9794921875
+    },
+    "luckiest guy regular||": {
+      "ratio": 1.2255859375,
+      "inkCenterEm": 0.7783203125,
+      "inkAscEm": 0.6953125,
+      "inkDescEm": 0.296875,
+      "baselineOffsetEm": 0.9794921875
+    },
+    "luckiest guy regular": {
+      "ratio": 1.2255859375,
+      "inkCenterEm": 0.7783203125,
+      "inkAscEm": 0.6953125,
+      "inkDescEm": 0.296875,
+      "baselineOffsetEm": 0.9794921875
+    },
+    "luckiestguy-regular||": {
+      "ratio": 1.2255859375,
+      "inkCenterEm": 0.7783203125,
+      "inkAscEm": 0.6953125,
+      "inkDescEm": 0.296875,
+      "baselineOffsetEm": 0.9794921875
+    },
+    "luckiestguy-regular": {
+      "ratio": 1.2255859375,
+      "inkCenterEm": 0.7783203125,
+      "inkAscEm": 0.6953125,
+      "inkDescEm": 0.296875,
+      "baselineOffsetEm": 0.9794921875
+    },
+    "noto sans socl medium||": {
+      "ratio": 1.519,
+      "inkCenterEm": 0.8247500000000001,
+      "inkAscEm": 0.714,
+      "inkDescEm": 0.293,
+      "baselineOffsetEm": 1.124
+    },
+    "noto sans socl medium": {
+      "ratio": 1.519,
+      "inkCenterEm": 0.8247500000000001,
+      "inkAscEm": 0.714,
+      "inkDescEm": 0.293,
+      "baselineOffsetEm": 1.124
+    },
+    "notosanssoclmedium||": {
+      "ratio": 1.519,
+      "inkCenterEm": 0.8247500000000001,
+      "inkAscEm": 0.714,
+      "inkDescEm": 0.293,
+      "baselineOffsetEm": 1.124
+    },
+    "notosanssoclmedium": {
+      "ratio": 1.519,
+      "inkCenterEm": 0.8247500000000001,
+      "inkAscEm": 0.714,
+      "inkDescEm": 0.293,
+      "baselineOffsetEm": 1.124
+    },
+    "open sauce two bold||": {
+      "ratio": 1.237,
+      "inkCenterEm": 0.6777500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1
+    },
+    "open sauce two bold": {
+      "ratio": 1.237,
+      "inkCenterEm": 0.6777500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1
+    },
+    "opensaucetwobold||": {
+      "ratio": 1.237,
+      "inkCenterEm": 0.6777500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1
+    },
+    "opensaucetwobold": {
+      "ratio": 1.237,
+      "inkCenterEm": 0.6777500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1
+    },
+    "open sauce two bold italic||": {
+      "ratio": 1.293,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1.028
+    },
+    "open sauce two bold italic": {
+      "ratio": 1.293,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1.028
+    },
+    "opensaucetwobolditalic||": {
+      "ratio": 1.293,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1.028
+    },
+    "opensaucetwobolditalic": {
+      "ratio": 1.293,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1.028
+    },
+    "open sauce two extrabold||": {
+      "ratio": 1.237,
+      "inkCenterEm": 0.6777500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1
+    },
+    "open sauce two extrabold": {
+      "ratio": 1.237,
+      "inkCenterEm": 0.6777500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1
+    },
+    "opensaucetwoextrabold||": {
+      "ratio": 1.237,
+      "inkCenterEm": 0.6777500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1
+    },
+    "opensaucetwoextrabold": {
+      "ratio": 1.237,
+      "inkCenterEm": 0.6777500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1
+    },
+    "open sauce two extrabold italic||": {
+      "ratio": 1.293,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1.028
+    },
+    "open sauce two extrabold italic": {
+      "ratio": 1.293,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1.028
+    },
+    "opensaucetwoextrabolditalic||": {
+      "ratio": 1.293,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1.028
+    },
+    "opensaucetwoextrabolditalic": {
+      "ratio": 1.293,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.763,
+      "inkDescEm": 0.237,
+      "baselineOffsetEm": 1.028
+    },
+    "pinyon script||": {
+      "ratio": 1.24755859375,
+      "inkCenterEm": 0.730712890625,
+      "inkAscEm": 0.435546875,
+      "inkDescEm": 0.38427734375,
+      "baselineOffsetEm": 0.86328125
+    },
+    "pinyon script": {
+      "ratio": 1.24755859375,
+      "inkCenterEm": 0.730712890625,
+      "inkAscEm": 0.435546875,
+      "inkDescEm": 0.38427734375,
+      "baselineOffsetEm": 0.86328125
+    },
+    "pinyonscript||": {
+      "ratio": 1.24755859375,
+      "inkCenterEm": 0.730712890625,
+      "inkAscEm": 0.435546875,
+      "inkDescEm": 0.38427734375,
+      "baselineOffsetEm": 0.86328125
+    },
+    "pinyonscript": {
+      "ratio": 1.24755859375,
+      "inkCenterEm": 0.730712890625,
+      "inkAscEm": 0.435546875,
+      "inkDescEm": 0.38427734375,
+      "baselineOffsetEm": 0.86328125
+    },
+    "poppins|b|": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8712500000000001,
+      "inkAscEm": 0.705,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8712500000000001,
+      "inkAscEm": 0.705,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins bold|b|": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8712500000000001,
+      "inkAscEm": 0.705,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins bold": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8712500000000001,
+      "inkAscEm": 0.705,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins-bold|b|": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8712500000000001,
+      "inkAscEm": 0.705,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins-bold": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8712500000000001,
+      "inkAscEm": 0.705,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins light||": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8725,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins light": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8725,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins-light||": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8725,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins-light": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8725,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "poppins||": {
+      "ratio": 1.762,
+      "inkCenterEm": 0.8725,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.35,
+      "baselineOffsetEm": 1.135
+    },
+    "slow living club outline||": {
+      "ratio": 1.179,
+      "inkCenterEm": 0.70775,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 1.012
+    },
+    "slow living club outline": {
+      "ratio": 1.179,
+      "inkCenterEm": 0.70775,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 1.012
+    },
+    "slowlivingcluboutline||": {
+      "ratio": 1.179,
+      "inkCenterEm": 0.70775,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 1.012
+    },
+    "slowlivingcluboutline": {
+      "ratio": 1.179,
+      "inkCenterEm": 0.70775,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 1.012
+    },
+    "slow living club||": {
+      "ratio": 1.179,
+      "inkCenterEm": 0.70775,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 1.012
+    },
+    "slow living club": {
+      "ratio": 1.179,
+      "inkCenterEm": 0.70775,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 1.012
+    },
+    "slow living club rounded||": {
+      "ratio": 1.076,
+      "inkCenterEm": 0.66275,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 0.967
+    },
+    "slow living club rounded": {
+      "ratio": 1.076,
+      "inkCenterEm": 0.66275,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 0.967
+    },
+    "slowlivingclubrounded||": {
+      "ratio": 1.076,
+      "inkCenterEm": 0.66275,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 0.967
+    },
+    "slowlivingclubrounded": {
+      "ratio": 1.076,
+      "inkCenterEm": 0.66275,
+      "inkAscEm": 0.695,
+      "inkDescEm": 0.087,
+      "baselineOffsetEm": 0.967
+    },
+    "sour gummy socl bold||": {
+      "ratio": 1.458,
+      "inkCenterEm": 0.6739999999999999,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.296,
+      "baselineOffsetEm": 0.95
+    },
+    "sour gummy socl bold": {
+      "ratio": 1.458,
+      "inkCenterEm": 0.6739999999999999,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.296,
+      "baselineOffsetEm": 0.95
+    },
+    "sourgummysoclbold||": {
+      "ratio": 1.458,
+      "inkCenterEm": 0.6739999999999999,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.296,
+      "baselineOffsetEm": 0.95
+    },
+    "sourgummysoclbold": {
+      "ratio": 1.458,
+      "inkCenterEm": 0.6739999999999999,
+      "inkAscEm": 0.7,
+      "inkDescEm": 0.296,
+      "baselineOffsetEm": 0.95
+    },
+    "staatliches||": {
+      "ratio": 1.312,
+      "inkCenterEm": 0.7444999999999999,
+      "inkAscEm": 0.696,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.006
+    },
+    "staatliches": {
+      "ratio": 1.312,
+      "inkCenterEm": 0.7444999999999999,
+      "inkAscEm": 0.696,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.006
+    },
+    "staatliches regular||": {
+      "ratio": 1.312,
+      "inkCenterEm": 0.7444999999999999,
+      "inkAscEm": 0.696,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.006
+    },
+    "staatliches regular": {
+      "ratio": 1.312,
+      "inkCenterEm": 0.7444999999999999,
+      "inkAscEm": 0.696,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.006
+    },
+    "staatliches-regular||": {
+      "ratio": 1.312,
+      "inkCenterEm": 0.7444999999999999,
+      "inkAscEm": 0.696,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.006
+    },
+    "staatliches-regular": {
+      "ratio": 1.312,
+      "inkCenterEm": 0.7444999999999999,
+      "inkAscEm": 0.696,
+      "inkDescEm": 0.3,
+      "baselineOffsetEm": 1.006
+    },
+    "times new roman mt||": {
+      "ratio": 1.17,
+      "inkCenterEm": 0.6445000000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.92
+    },
+    "times new roman mt": {
+      "ratio": 1.17,
+      "inkCenterEm": 0.6445000000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.92
+    },
+    "times new roman mt condensed||": {
+      "ratio": 1.17,
+      "inkCenterEm": 0.6445000000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.92
+    },
+    "times new roman mt condensed": {
+      "ratio": 1.17,
+      "inkCenterEm": 0.6445000000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.92
+    },
+    "timesnewromanmt-cond||": {
+      "ratio": 1.17,
+      "inkCenterEm": 0.6445000000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.92
+    },
+    "timesnewromanmt-cond": {
+      "ratio": 1.17,
+      "inkCenterEm": 0.6445000000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.92
+    },
+    "times new roman mt std|b|": {
+      "ratio": 1.168,
+      "inkCenterEm": 0.71275,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.918
+    },
+    "times new roman mt std": {
+      "ratio": 1.168,
+      "inkCenterEm": 0.71275,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.918
+    },
+    "times new roman mt std bold condensed|b|": {
+      "ratio": 1.168,
+      "inkCenterEm": 0.71275,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.918
+    },
+    "times new roman mt std bold condensed": {
+      "ratio": 1.168,
+      "inkCenterEm": 0.71275,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.918
+    },
+    "timesnewromanmtstd-boldcond|b|": {
+      "ratio": 1.168,
+      "inkCenterEm": 0.71275,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.918
+    },
+    "timesnewromanmtstd-boldcond": {
+      "ratio": 1.168,
+      "inkCenterEm": 0.71275,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.918
+    },
+    "times new roman mt std cond|b|": {
+      "ratio": 1.168,
+      "inkCenterEm": 0.71275,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.918
+    },
+    "times new roman mt std cond": {
+      "ratio": 1.168,
+      "inkCenterEm": 0.71275,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.918
+    },
+    "times new roman mt cond italic||": {
+      "ratio": 1.161,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.911
+    },
+    "times new roman mt cond italic": {
+      "ratio": 1.161,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.911
+    },
+    "timesnewromanmtconditalic||": {
+      "ratio": 1.161,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.911
+    },
+    "timesnewromanmtconditalic": {
+      "ratio": 1.161,
+      "inkCenterEm": 0.7057500000000001,
+      "inkAscEm": 0.682,
+      "inkDescEm": 0.287,
+      "baselineOffsetEm": 0.911
+    },
+    "times nr condensed|b|": {
+      "ratio": 1.169921875,
+      "inkCenterEm": 0.5849609375,
+      "inkAscEm": 0.68212890625,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.919921875
+    },
+    "times nr condensed": {
+      "ratio": 1.169921875,
+      "inkCenterEm": 0.5849609375,
+      "inkAscEm": 0.68212890625,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.919921875
+    },
+    "times nr condensed bold|b|": {
+      "ratio": 1.169921875,
+      "inkCenterEm": 0.5849609375,
+      "inkAscEm": 0.68212890625,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.919921875
+    },
+    "times nr condensed bold": {
+      "ratio": 1.169921875,
+      "inkCenterEm": 0.5849609375,
+      "inkAscEm": 0.68212890625,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.919921875
+    },
+    "timesnrcondensedbold|b|": {
+      "ratio": 1.169921875,
+      "inkCenterEm": 0.5849609375,
+      "inkAscEm": 0.68212890625,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.919921875
+    },
+    "timesnrcondensedbold": {
+      "ratio": 1.169921875,
+      "inkCenterEm": 0.5849609375,
+      "inkAscEm": 0.68212890625,
+      "inkDescEm": 0.25,
+      "baselineOffsetEm": 0.919921875
+    }
+  },
+  "styles": {
+    "neon_green": {
+      "primary": "&H0000FFF1",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H0000FFF1",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "neon_pink": {
+      "primary": "&H006A4DFF",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H006A4DFF",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "yellow": {
+      "primary": "&H004095FF",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H004095FF",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "bw": {
+      "primary": "&H00FFFFFF",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 1,
+      "glow": "&H00000000",
+      "font": "Times New Roman MT Condensed",
+      "trackEm": -0.07
+    },
+    "bw_neon_green": {
+      "primary": "&H00EFF6F6",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H00000000",
+      "highlight": "&H0000FFF1",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "bw_neon_yellow": {
+      "primary": "&H00EFF6F6",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H00000000",
+      "highlight": "&H004095FF",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "bw_hi_lime": {
+      "primary": "&H00EFF6F6",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H00000000",
+      "highlight": "&H006FF9D2",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "bw_hi_red": {
+      "primary": "&H00EFF6F6",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H00000000",
+      "highlight": "&H00303BFF",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "bw_hi_white": {
+      "primary": "&H009A9A9A",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H00000000",
+      "highlight": "&H00FFFFFF",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "bw_hi_rainbow": {
+      "primary": "&H00EFF6F6",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H00000000",
+      "font": "Open Sauce Two ExtraBold",
+      "highlightCycle": [
+        "&H006FF9D2",
+        "&H00303BFF",
+        "&H0000FFF1",
+        "&H004095FF"
+      ]
+    },
+    "white_hi_lime": {
+      "primary": "&H00FFFFFF",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 0,
+      "glow": "&H00000000",
+      "highlight": "&H0032CD32",
+      "font": "Open Sauce Two ExtraBold"
+    },
+    "cinematic_white": {
+      "primary": "&H00FFFFFF",
+      "secondary": "&H00000000",
+      "outline": "&H00FFFFFF",
+      "back": "&H00000000",
+      "bold": 1,
+      "glow": "&H00FFFFFF",
+      "font": "Times New Roman MT Condensed",
+      "scaleX": 100,
+      "trackEm": -0.07,
+      "glowMul": 0.3,
+      "glowAlpha": "&HA0&",
+      "noEdge": true,
+      "softFade": true
+    },
+    "inverse_auto": {
+      "primary": "&H00FFFFFF",
+      "secondary": "&H00000000",
+      "outline": "&H00000000",
+      "back": "&H00000000",
+      "bold": 1,
+      "glow": "&H00000000",
+      "font": "Open Sauce Two Bold",
+      "scaleX": 100,
+      "trackEm": -0.07,
+      "noEdge": true,
+      "softFade": true
+    },
+    "white_clean": {
+      "primary": "&H00FFFFFF",
+      "secondary": "&H00000000",
+      "outline": "&H00FFFFFF",
+      "back": "&H00000000",
+      "bold": 1,
+      "glow": "&H00FFFFFF",
+      "font": "Open Sauce Two Bold",
+      "scaleX": 100,
+      "trackEm": -0.07,
+      "glowMul": 0.3,
+      "glowAlpha": "&HA0&",
+      "noEdge": true,
+      "softFade": true
+    }
+  }
+}

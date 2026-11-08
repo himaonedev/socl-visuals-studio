@@ -1,0 +1,22 @@
+{
+  "version": "0.2.18",
+  "baseUrl": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download",
+  "assets": {
+    "darwin-arm64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/tracker-v0.2.18/tracker-bundle-0.2.18-darwin-arm64.tar.gz",
+      "sha256": "334a3a626419529659d5b3b68611e2c5fc06fbe70443abfcaf80ed3c36bc5b6c"
+    },
+    "darwin-x64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/tracker-v0.2.18/tracker-bundle-0.2.18-darwin-x64.tar.gz",
+      "sha256": "79bbe7fbdca59f8201aebbab6e672d60bd9dafff0cad9d584e4364d4390cde41"
+    },
+    "win32-x64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/tracker-v0.2.18/tracker-bundle-0.2.18-win32-x64.tar.gz",
+      "sha256": "f153af9fd2847d289cd9c64127ffebdae9186a26ef3989b3b95cdf0994d8f6a4"
+    },
+    "linux-x64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/tracker-v0.2.18/tracker-bundle-0.2.18-linux-x64.tar.gz",
+      "sha256": "25e0e201266bc3068b072764c46972a92e35763562a5ba4c93c224f38e6c5b5b"
+    }
+  }
+}

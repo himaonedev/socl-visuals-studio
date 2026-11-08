@@ -1,0 +1,1851 @@
+/* SOCL Visuals Studio v03 — palette + layout migrated from SCL-VSL reference */
+/* ── Bundled fonts (offline-stable) ─────────────────── */
+@font-face{font-family:'Anton';src:url('../assets/fonts/Anton-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('../assets/fonts/HankenGrotesk-400.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('../assets/fonts/HankenGrotesk-500.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('../assets/fonts/HankenGrotesk-600.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('../assets/fonts/HankenGrotesk-700.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('../assets/fonts/HankenGrotesk-800.ttf') format('truetype');font-weight:800;font-display:swap}
+/* ── Added caption fonts (for per-word manual styling) ──
+   Family names match each font's normalized internal family so the HTML
+   preview renders identically to the libass burn. Each is its own family
+   (no shared family / no \b reliance) so \fn<name> maps 1:1 to one face. */
+@font-face{font-family:'Open Sauce Two Bold';src:url('../assets/fonts/OpenSauceTwo-Bold.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Open Sauce Two ExtraBold';src:url('../assets/fonts/OpenSauceTwo-ExtraBold.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pinyon Script';src:url('../assets/fonts/PinyonScript-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Times New Roman MT Condensed';src:url('../assets/fonts/TimesNewRomanMT-Condensed.otf') format('opentype');font-display:swap}
+/* Poppins — canonical family names ('Poppins Light'/'Poppins Bold') match what
+   libass resolves on burn; the hyphenated aliases keep clips saved with the old
+   PS-name values rendering correctly in the preview. */
+@font-face{font-family:'Poppins Light';src:url('../assets/fonts/Poppins-Light.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Poppins Bold';src:url('../assets/fonts/Poppins-Bold.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Poppins-Light';src:url('../assets/fonts/Poppins-Light.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Poppins-Bold';src:url('../assets/fonts/Poppins-Bold.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Times New Roman MT Cond Italic';src:url('../assets/fonts/TimesNewRomanMTStd-CondensedItalic.otf') format('opentype');font-display:swap}
+/* Bold-condensed variants (2026-07-05) — family names match each font's
+   internal Full name so libass picks the exact .ttf via fontsdir. */
+@font-face{font-family:'Times NR Condensed Bold';src:url('../assets/fonts/TimesNRCondensed-Bold.ttf') format('truetype');font-display:swap}
+/* libass fails to match this file's Full name (parses "Bold Condensed" wrong)
+   — the PostScript name is the only key that works, so we alias CSS to it too. */
+@font-face{font-family:'TimesNewRomanMTStd-BoldCond';src:url('../assets/fonts/TimesNewRomanMTStd-BoldCondensed.ttf') format('truetype');font-display:swap}
+/* Editor's Note + Apple Garamond — family = each file's PostScript name
+   so CSS preview and ASS burn use the SAME key (libass matches PS names
+   reliably; Full-name matching breaks on multi-word names with apostrophe).
+   Note the double quotes: single quotes would terminate on the ' in the name. */
+@font-face{font-family:"Editor'sNote-Hairline";src:url('../assets/fonts/EditorsNote-Hairline.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-HairlineItalic";src:url('../assets/fonts/EditorsNote-HairlineItalic.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-Thin";src:url('../assets/fonts/EditorsNote-Thin.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-ThinItalic";src:url('../assets/fonts/EditorsNote-ThinItalic.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-Extralight";src:url('../assets/fonts/EditorsNote-Extralight.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-ExtralightItalic";src:url('../assets/fonts/EditorsNote-ExtralightItalic.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-Light";src:url('../assets/fonts/EditorsNote-Light.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-LightItalic";src:url('../assets/fonts/EditorsNote-LightItalic.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-Regular";src:url('../assets/fonts/EditorsNote-Regular.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-Italic";src:url('../assets/fonts/EditorsNote-Italic.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-Medium";src:url('../assets/fonts/EditorsNote-Medium.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-MediumItalic";src:url('../assets/fonts/EditorsNote-MediumItalic.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-Semibold";src:url('../assets/fonts/EditorsNote-Semibold.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-SemiboldItalic";src:url('../assets/fonts/EditorsNote-SemiboldItalic.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-Bold";src:url('../assets/fonts/EditorsNote-Bold.otf') format('opentype');font-display:swap}
+@font-face{font-family:"Editor'sNote-BoldItalic";src:url('../assets/fonts/EditorsNote-BoldItalic.otf') format('opentype');font-display:swap}
+/* Apple Garamond — family names alias each weight so CSS uses the same value
+   the ASS burn does (libass picks these via family+subfamily on the font's
+   internal name table — see /tmp/font-proof/ag2.log for confirmation). */
+@font-face{font-family:'Apple Garamond';src:url('../assets/fonts/AppleGaramond-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Apple Garamond Italic';src:url('../assets/fonts/AppleGaramond-Italic.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Apple Garamond Bold';src:url('../assets/fonts/AppleGaramond-Bold.ttf') format('truetype');font-display:swap}
+/* Arial Nova Cond + Cooper BT (2026-07-11) — libass resolves Arial Nova by its
+   subfamily "Arial Nova Cond"; the Cooper TTFs only match on their odd internal
+   FAMILY names ("CooperBlkBT-Regular" etc) — the friendly full names ("Cooper
+   Blk BT Regular") silently fall back to Helvetica (verified via ffmpeg
+   fontselect logs). CSS aliases the exact same values so preview = burn. */
+@font-face{font-family:'Arial Nova Cond';src:url('../assets/fonts/ArialNova-Condensed.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Arial Nova Light';src:url('../assets/fonts/ArialNova-Light.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'CooperBlkBT-Regular';src:url('../assets/fonts/CooperBlkBT-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'CooperMdBT-Regular';src:url('../assets/fonts/CooperMdBT-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'CooperLtBT-Regular';src:url('../assets/fonts/CooperLtBT-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'CooperLtBT-Bold';src:url('../assets/fonts/CooperLtBT-Bold.ttf') format('truetype');font-display:swap}
+
+/* ─── Lime-Glass v3 design tokens ────────────────────────
+   Palette + scale + typography follow docs/redesign/2026-07-14-lime-glass-v3-mockup.html.
+   Legacy tokens (--panel, --purple, --grad-*) kept as aliases for now so existing
+   selectors keep resolving until each section is migrated. */
+:root{
+  /* Surfaces */
+  --bg:#0A0B08;
+  --surface:#111310;
+  --surface-2:#1A1D17;
+  --elevated:#22261E;
+  --hair:rgba(192,194,184,.08);
+  --hair-2:rgba(192,194,184,.16);
+  /* Ink */
+  --ink:#FFFFFF;
+  --ink-dim:#E5E7DE;
+  --grey:#C0C2B8;
+  --muted:#8A8C82;
+  --muted-2:#5A5C54;
+  /* Accent */
+  --lime:#D5FF40;
+  --lime-hover:#C4F52A;
+  --lime-deep:#A8CC33;
+  --lime-soft:rgba(213,255,64,.14);
+  --lime-glow:rgba(213,255,64,.35);
+  --hot:#FF9F45;
+  /* Semantic */
+  --danger:#ff5c4d;
+  --ok:#5cffb6;
+  /* Scale */
+  --pad:16px;
+  --gap:12px;
+  --radius:14px;
+  --rail-w:56px;
+  --panel-w:320px;
+  --scroll-thumb:rgba(192,194,184,.22);
+  /* Type — KEEP existing: Hanken Grotesk UI body + Anton display headers.
+     v3 mockup uses Poppins but user explicitly opted to retain current fonts. */
+  --font-body:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-display:'Anton','Arial Narrow',sans-serif;
+  --font: var(--font-body);
+  --mono: ui-monospace,'SF Mono','Cascadia Mono','Consolas',Menlo,monospace;
+  /* Legacy aliases — being migrated section by section */
+  --panel: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+  --panel-2: rgba(255,255,255,.02);
+  --line: var(--hair);
+  --purple:#7b2cff;
+  --pink:#e8bed9;
+  --orange:#ff6a1a;
+  --orange-2:#ff9540;
+  --blue:#2f6bff;
+  --blue-2:#5b9bff;
+  --grad-warm:linear-gradient(135deg,#ff7a1a 0%,#ff5e3a 100%);
+  --grad-cool:linear-gradient(135deg,#2f6bff 0%,#7b2cff 100%);
+  --grad-spectrum:linear-gradient(120deg,#ff7a1a 0%,#ff4d6a 32%,#7b2cff 66%,#2f6bff 100%);
+}
+/* Light theme — auto-swaps lime to darker shade for cream contrast.
+   Activate by setting <html data-theme="light">. */
+:root[data-theme="light"]{
+  --bg:#F4F3EC;
+  --surface:#FFFFFF;
+  --surface-2:#F8F7EF;
+  --elevated:#EEEDE3;
+  --hair:rgba(20,22,15,.09);
+  --hair-2:rgba(20,22,15,.16);
+  --ink:#0E1108;
+  --ink-dim:#242820;
+  --grey:#4A4C43;
+  --muted:#6B6E63;
+  --muted-2:#8A8C82;
+  --lime:#7DB425;
+  --lime-hover:#6BA019;
+  --lime-deep:#527A15;
+  --lime-soft:rgba(125,180,37,.14);
+  --lime-glow:rgba(125,180,37,.35);
+}
+/* Glass primitive — used by panels/cards/pills throughout v3 layout. */
+.glass{
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+  border: 1px solid var(--hair);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+:root[data-theme="light"] .glass{
+  background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.7));
+  border-color: var(--hair-2);
+}
+/* Cross-OS thin scrollbar */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--scroll-thumb);border-radius:99px;border:2px solid transparent;background-clip:padding-box}
+::-webkit-scrollbar-thumb:hover{background:rgba(192,194,184,.35)}
+*{scrollbar-width:thin;scrollbar-color:var(--scroll-thumb) transparent}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%;overflow:hidden}
+body{
+  /* v3: solid --bg. Subtle lime glow top-right kept for depth (much softer). */
+  background:
+    radial-gradient(120% 80% at 100% -10%, rgba(213,255,64,.04), transparent 45%),
+    var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  user-select:none;
+}
+/* ── Display typography (reference: bold condensed caps) ─ */
+.topbar h1,.gallery-head-left strong,
+.overlay-head h2,.cs-head h2,.inspector .panel-title b{
+  font-family:var(--font-display);
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:.01em;
+  line-height:.95;
+}
+button,input,select,textarea{font-family:inherit;color:inherit}
+button{cursor:pointer}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:rgba(241,255,0,.35)}
+
+/* ── Shell v3: workspace fills width; the rail lives INSIDE .hero-grid as a
+       vertical floating column beside the preview, so the Detected clips
+       gallery below still spans edge-to-edge. */
+.app-shell{height:100vh;display:flex;flex-direction:column;padding:14px;gap:12px;background:var(--bg)}
+/* v3 glass — simpler, no sheen overlay. Matches mockup: subtle inner tint
+   + hair border + backdrop blur. Old heavy .glass replaced. */
+.glass{
+  position:relative;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+  border:1px solid var(--hair);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+:root[data-theme="light"] .glass{
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.7));
+  border-color:var(--hair-2);
+  box-shadow:0 6px 24px rgba(0,0,0,.06);
+}
+/* Light glass variant kept for legacy caption-panel look */
+.glass-light{
+  background:linear-gradient(160deg,rgba(255,255,255,.92),rgba(232,236,255,.74));
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.6);
+  color:#11121a;
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+
+/* ── Rail nav v3: VERTICAL glass column, first column of .hero-grid ─────
+   Scoped to the hero row only, so the Detected clips gallery below spans
+   edge-to-edge. One frosted container, buttons stacked inside. */
+.rail{
+  width:56px;padding:10px 8px;align-self:stretch;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+  border:1px solid var(--hair);border-radius:16px;
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;
+  flex-shrink:0;
+  min-height:0;   /* [RAIL-FIT] grid items default to min-height:auto — pair with .workspace's 336px floor above */
+  position:relative;z-index:50;
+}
+:root[data-theme="light"] .rail{
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.7));
+  border-color:var(--hair-2);
+  box-shadow:0 6px 24px rgba(0,0,0,.06);
+}
+.brand-mark{
+  width:40px;height:40px;border-radius:10px;margin:0 auto 4px;
+  display:grid;place-items:center;overflow:hidden;
+  background:var(--lime);
+  box-shadow:0 8px 22px var(--lime-glow);
+  flex-shrink:0;
+}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none;image-rendering:-webkit-optimize-contrast;padding:4px}
+.rail-btn{
+  width:40px;height:40px;border:1px solid transparent;border-radius:10px;padding:0;
+  background:transparent;
+  color:var(--grey);
+  display:grid;place-items:center;margin:0;flex-shrink:0;
+  transition:background .15s,color .15s,border-color .15s,transform .12s;
+  position:relative;
+}
+.rail-btn svg{width:20px;height:20px;display:block}
+/* Tooltip pops RIGHT (rail is vertical) */
+.rail-label{position:absolute;left:100%;top:50%;margin-left:10px;padding:5px 10px;
+  background:var(--elevated);border:1px solid var(--hair);border-radius:6px;
+  font-size:11px;font-weight:500;color:var(--ink);white-space:nowrap;
+  opacity:0;pointer-events:none;transform:translate(-4px,-50%);transition:opacity .15s,transform .15s;
+  z-index:9999;box-shadow:0 8px 20px rgba(0,0,0,.5)}
+.rail-btn:hover .rail-label{opacity:1;transform:translate(0,-50%)}
+.rail-btn:hover{color:var(--ink);border-color:var(--hair-2);z-index:9999}
+.rail-btn.active{background:var(--lime-soft);color:var(--lime);border-color:var(--lime-glow)}
+.rail-btn.active svg{filter:drop-shadow(0 0 6px var(--lime-glow))}
+.rail-spacer{flex:1;min-height:8px}
+/* Thin horizontal divider between primary nav + settings (vertical rail) */
+.rail-divider{
+  height:1px;width:20px;background:var(--hair-2);margin:4px 0;
+  flex-shrink:0;
+}
+
+/* ── Light-mode fixes for elements with hardcoded dark-theme colors ──
+   Preview stage stays black (video canvas), so its floating pills keep a
+   dark background; flat-surface chips/text flip to ink instead. */
+:root[data-theme="light"] .scene-tag,
+:root[data-theme="light"] .transport{
+  background:rgba(14,17,8,.82);border-color:transparent;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+:root[data-theme="light"] .transport button{background:rgba(255,255,255,.14);color:#fff}
+:root[data-theme="light"] .transport .play{background:var(--lime);color:#111}
+:root[data-theme="light"] .gallery-head-left strong{color:var(--ink)}
+:root[data-theme="light"] .chips button{background:rgba(0,0,0,.06);color:var(--ink-dim)}
+:root[data-theme="light"] .chips button.active{background:var(--lime);color:#111}
+:root[data-theme="light"] .ap-switch i{background:rgba(0,0,0,.14)}
+:root[data-theme="light"] .ap-switch i::after{background:#fff}
+:root[data-theme="light"] .ap-switch input:checked ~ i::after{background:#fff}
+:root[data-theme="light"] .status-line{color:var(--lime-deep)}
+
+/* ── Theme toggle (topbar) — moon shown in dark, sun in light ── */
+.theme-toggle{padding:0;width:32px;justify-content:center}
+.theme-toggle .ic-sun{display:none}
+.theme-toggle.is-light .ic-sun{display:block}
+.theme-toggle.is-light .ic-moon{display:none}
+
+/* ── Workspace ───────────────────────────────────────── */
+/* v3: preview-first ratio — hero (preview + inspector) dominates, gallery
+   compact but resizable via .split-handle. --hero-h default 2.5fr keeps
+   preview ~2.5× the height of the bottom strip.
+   [RAIL-FIT] The hero row's floor height must be >= .rail's own minimum
+   content height, or the rail (6 buttons + divider + spacer, all
+   flex-shrink:0) overflows its grid cell and spills visibly into the tray
+   below it — .rail can't use overflow-y:auto to self-clip instead, because
+   its hover tooltips (.rail-label, position:absolute; left:100%) rely on
+   overflow-x:visible, and CSS computes overflow-x to auto (clipping them)
+   the moment overflow-y is anything but visible. Rail minimum = 20px
+   padding + 6×40px buttons + 7×8px gaps + ~9px divider ≈ 325px — 336px
+   below leaves a small safety margin. If a 7th rail button is ever added,
+   bump this number too (+48px per button+gap). */
+.workspace{flex:1;display:grid;grid-template-rows:auto minmax(336px,var(--hero-h,2.5fr)) 20px minmax(320px,1fr);gap:8px;min-width:0;overflow:hidden}
+/* Tray fullscreen — preview collapses to its min, tray takes the rest. */
+body.tray-max .workspace{grid-template-rows:auto 336px 20px minmax(0,1fr)}
+
+/* Draggable splitter — bigger target (20px) + always-visible pill so users
+   can never lose it. Double-click resets to default ratio. */
+.split-handle{
+  display:flex;align-items:center;justify-content:center;cursor:row-resize;
+  height:20px;border-radius:10px;transition:background .15s ease;
+  background:rgba(255,255,255,.02);position:relative;z-index:5;
+}
+.split-handle:hover{background:rgba(210,249,111,.06)}
+.split-handle span{display:block;width:64px;height:4px;border-radius:99px;background:rgba(255,255,255,.28);transition:background .15s ease}
+.split-handle:hover span{background:var(--lime);box-shadow:0 0 12px var(--lime-glow)}
+body.resizing{cursor:row-resize;user-select:none}
+body.resizing .split-handle span{background:var(--lime);box-shadow:0 0 12px var(--lime-glow)}
+body.resizing iframe,body.resizing video{pointer-events:none}
+
+/* ── Top bar v3: glass floating bar w/ brand + project pill + actions ── */
+.topbar{
+  display:flex;align-items:center;gap:14px;
+  padding:8px 14px;border-radius:var(--radius);
+  min-height:52px;
+}
+/* Brand block (lime tile + text stack) */
+.tb-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.tb-logo{
+  width:34px;height:34px;border-radius:9px;background:transparent;
+  display:grid;place-items:center;overflow:hidden;
+  flex-shrink:0;
+}
+/* Icon PNG has its own dark rounded tile — render it full-bleed (scale crops
+   the transparent margin baked into the asset), no lime container/outline. */
+.tb-logo img{width:100%;height:100%;object-fit:contain;transform:scale(1.22);user-select:none;-webkit-user-drag:none;image-rendering:-webkit-optimize-contrast}
+.tb-name-stack{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+.tb-name{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.tb-sub{font-size:11px;color:var(--muted);font-weight:400;margin-top:1px}
+/* Project pill */
+.tb-project-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 12px;border-radius:10px;
+  background:rgba(255,255,255,.03);border:1px solid var(--hair);
+  font-size:12px;color:var(--ink-dim);max-width:280px;
+  transition:background .15s,border-color .15s;
+}
+.tb-project-pill:hover{background:rgba(255,255,255,.06);border-color:var(--hair-2)}
+.tb-project-pill svg{color:var(--muted);flex-shrink:0}
+.tb-project-pill span{color:var(--muted);font-size:11px}
+.tb-project-pill b{color:var(--ink);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* Push actions to right */
+.top-actions{margin-left:auto;display:flex;gap:8px;align-items:center;flex-shrink:0}
+.topbar-left{min-width:0}   /* legacy — retained for edge cases */
+
+/* ── Auto-processing block (INSIDE Clip Options panel, TOP) ─── */
+.ap-block{
+  display:flex;flex-direction:column;gap:8px;padding:10px;
+  border-radius:12px;
+  background:linear-gradient(180deg,rgba(213,255,64,.06),rgba(213,255,64,.015));
+  border:1px solid var(--hair);
+  margin-bottom:4px;
+}
+.ap-block-head{
+  font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lime);padding:0 2px 2px;
+}
+.ap-lang-field{background:transparent!important;border:0!important;padding:2px 0 0!important;margin:0!important}
+.ap-lang-field label{font-size:11px;color:var(--muted);margin-bottom:4px;display:block}
+
+/* ── Auto-processing strip (legacy — no longer rendered) ─── */
+.ap-strip{
+  display:grid;grid-template-columns:auto 1fr 1fr auto;align-items:center;
+  gap:12px;padding:12px 14px;border-radius:var(--radius);
+  /* Subtle lime tint to signal "AI auto-runs" section */
+  background:linear-gradient(180deg,rgba(213,255,64,.05),rgba(213,255,64,.015)),
+             linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+}
+.ap-label{
+  font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);line-height:1.4;padding-right:8px;border-right:1px solid var(--hair);
+  min-width:120px;
+}
+.ap-label b{color:var(--lime);font-size:11px;letter-spacing:.06em;font-weight:600;text-transform:none}
+.ap-toggle-card{
+  display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;
+  background:rgba(255,255,255,.02);border:1px solid var(--hair);cursor:pointer;
+  transition:background .15s,border-color .15s;
+}
+.ap-toggle-card:hover{background:rgba(255,255,255,.05);border-color:var(--hair-2)}
+.ap-toggle-card:has(input:checked){background:var(--lime-soft);border-color:var(--lime-glow)}
+.ap-ico{
+  width:32px;height:32px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;
+  background:rgba(0,0,0,.35);color:var(--grey);
+}
+.ap-toggle-card:has(input:checked) .ap-ico{color:var(--lime);background:rgba(213,255,64,.08)}
+.ap-txt{display:flex;flex-direction:column;min-width:0;flex:1;line-height:1.25}
+.ap-title{font-size:12px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:6px}
+.ap-sub{font-size:10.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ap-badge{
+  font-size:9px;padding:1px 5px;border-radius:4px;background:var(--lime);color:#0A0B08;
+  font-weight:700;letter-spacing:.06em;
+}
+/* Switch */
+.ap-switch{position:relative;width:34px;height:20px;flex-shrink:0}
+.ap-switch input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0;z-index:2}
+.ap-switch i{
+  position:absolute;inset:0;background:rgba(255,255,255,.1);border-radius:999px;
+  transition:background .18s;
+}
+.ap-switch i::after{
+  content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;
+  background:var(--ink-dim);transition:transform .18s,background .18s;
+}
+.ap-switch input:checked ~ i{background:var(--lime)}
+.ap-switch input:checked ~ i::after{transform:translateX(14px);background:#0A0B08}
+/* Stat trio */
+.ap-stats{display:flex;gap:18px;padding-left:14px;border-left:1px solid var(--hair)}
+.ap-stat{display:flex;flex-direction:column;align-items:center;line-height:1;gap:3px;min-width:44px}
+.ap-stat b{font-size:20px;color:var(--lime);font-weight:700}
+.ap-stat.hot b{color:var(--hot)}
+.ap-stat span{font-size:9.5px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+@media (max-width:1240px){
+  .ap-strip{grid-template-columns:auto 1fr 1fr;grid-template-rows:auto auto;gap:8px}
+  .ap-stats{grid-column:1/-1;padding-left:0;border-left:0;border-top:1px dashed var(--hair);padding-top:8px;justify-content:center}
+}
+.eyebrow{
+  margin:0 0 3px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;
+  font-size:10px;font-weight:600;
+}
+.license-badge{
+  display:inline-flex;align-items:center;gap:5px;margin-left:10px;padding:2px 8px;
+  border:1px solid var(--lime-glow);border-radius:999px;background:var(--lime-soft);
+  color:var(--lime);font-size:9.5px;letter-spacing:.18em;font-weight:600;vertical-align:middle;
+}
+.license-badge::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--lime);
+  box-shadow:0 0 6px var(--lime-glow);
+}
+.topbar h1{
+  font-size:18px;line-height:1.15;margin:0;font-weight:700;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);
+  letter-spacing:-.01em;
+}
+.top-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.url-input{
+  width:340px;height:36px;border:1px solid var(--hair);border-radius:10px;
+  background:rgba(0,0,0,.35);color:var(--ink);padding:0 12px;outline:0;
+  font-size:12px;font-family:var(--mono);
+  transition:border-color .15s,background .15s;
+}
+:root[data-theme="light"] .url-input{background:rgba(0,0,0,.04)}
+.url-input::placeholder{color:var(--muted)}
+.url-input:focus{border-color:var(--lime);background:rgba(0,0,0,.5)}
+.ghost-btn,.primary-btn,.danger-btn{
+  height:36px;border:1px solid var(--hair);border-radius:10px;padding:0 14px;
+  font-weight:500;font-size:12px;display:inline-flex;align-items:center;gap:6px;
+  transition:transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.ghost-btn{background:rgba(255,255,255,.03);color:var(--ink-dim)}
+.ghost-btn:hover{background:rgba(255,255,255,.06);color:var(--ink);border-color:var(--hair-2)}
+.primary-btn{
+  background:var(--lime);color:#0A0B08;border-color:transparent;font-weight:600;
+  box-shadow:0 4px 18px var(--lime-glow);
+}
+.primary-btn:hover{background:var(--lime-hover);transform:translateY(-1px);box-shadow:0 8px 22px var(--lime-glow)}
+.primary-btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
+.danger-btn{background:rgba(255,92,77,.18);color:var(--danger);border-color:rgba(255,92,77,.32)}
+:root[data-theme="light"] .primary-btn{color:#fff}
+
+/* ── Hero grid: preview + inspector ──────────────────── */
+/* v3: preview + inspector — inspector fixed 320px per --panel-w */
+.hero-grid{display:grid;grid-template-columns:auto 1fr var(--panel-w);gap:12px;min-height:0;overflow:hidden}
+.preview-card{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  /* v3 glass floating look — matches mockup */
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+  border:1px solid var(--hair);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  min-height:0;display:grid;place-items:center;padding:14px;
+}
+.preview-stage{
+  position:relative;aspect-ratio:var(--stage-ar,9/16);border-radius:12px;overflow:hidden;
+  background:#000;box-shadow:0 12px 40px rgba(0,0,0,.55);
+  /* Fill available card space while respecting the aspect ratio */
+  max-width:100%;max-height:100%;height:auto;width:auto;
+  transition:aspect-ratio .25s ease;
+}
+/* When preview-card is bigger than stage, keep stage centered and fitted */
+.preview-stage{margin:auto}
+/* Fullscreen state — hides everything else, expands stage to viewport */
+.preview-card:fullscreen{padding:0;border-radius:0;background:#000;border:0}
+.preview-card:fullscreen .preview-stage{border-radius:0;box-shadow:none;max-width:100vw;max-height:100vh}
+.preview-card:-webkit-full-screen{padding:0;border-radius:0;background:#000;border:0}
+.preview-card:-webkit-full-screen .preview-stage{border-radius:0;box-shadow:none;max-width:100vw;max-height:100vh}
+/* Floating fullscreen button top-right of preview */
+.fs-btn{
+  position:absolute;top:20px;right:20px;width:32px;height:32px;
+  display:grid;place-items:center;border-radius:8px;border:1px solid var(--hair);
+  color:var(--ink-dim);cursor:pointer;z-index:5;
+  transition:background .15s,color .15s,transform .12s;
+}
+.fs-btn:hover{color:var(--ink);background:rgba(255,255,255,.08);transform:scale(1.05)}
+.preview-card:fullscreen .fs-btn,.preview-card:-webkit-full-screen .fs-btn{top:16px;right:16px}
+/* Prev / Next chevron arrows on preview sides */
+.prev-arrow,.next-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:40px;height:40px;border-radius:50%;
+  display:grid;place-items:center;z-index:5;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+  border:1px solid var(--hair);color:var(--ink-dim);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  transition:background .15s,color .15s,transform .12s,opacity .15s;
+  opacity:0;pointer-events:none;
+}
+.preview-card:hover .prev-arrow,.preview-card:hover .next-arrow{opacity:1;pointer-events:auto}
+.prev-arrow{left:20px}
+.next-arrow{right:20px}
+.prev-arrow:hover,.next-arrow:hover{color:var(--ink);background:rgba(255,255,255,.08);transform:translateY(-50%) scale(1.08)}
+.prev-arrow:disabled,.next-arrow:disabled{opacity:0!important;pointer-events:none}
+/* Swipe visual feedback on preview-stage */
+.preview-stage.swiping{transition:transform .05s linear}
+.preview-stage.snap-back{transition:transform .2s cubic-bezier(.2,.9,.35,1)}
+.preview-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#000}
+/* Width 92.59% = (1080-MarginL40-MarginR40)/1080 so preview line-wrapping matches
+   the burned ASS text region. No top/left transition: the overlay must track the
+   X/Y sliders instantly (realtime) instead of easing/floating behind them. */
+.caption-overlay{position:absolute;left:50%;transform:translateX(-50%);width:92.59%;text-align:center;pointer-events:none;z-index:3}
+.caption-overlay span{
+  /* [WYSIWYG-FONT] Open Sauce Two ExtraBold = the BUNDLED face the ASS burn
+     uses for neon styles ('Arial Black' isn't shipped in assets/fonts — libass
+     fell back to Helvetica and the render never matched). weight 400 = raw
+     face, mirroring the burn's Bold=0. letter-spacing 0 matches trackEm 0. */
+  display:inline-block;padding:0 6px;font-family:'Open Sauce Two ExtraBold','Arial Black','Helvetica Neue',sans-serif;font-weight:400;
+  font-size:18px;line-height:1.2;letter-spacing:0;color:#f1ff00;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:geometricPrecision;
+  /* crisp black edge + coloured glow halo — mirrors the burned ASS two-layer glow */
+  text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000,
+    0 0 10px rgba(241,255,0,.9),0 0 20px rgba(241,255,0,.55);
+}
+/* ── Caption intro animation (mirrors burned ASS pop/blur-in) ── */
+@keyframes capPop{0%{opacity:0;filter:blur(12px);transform:scale(.64)}55%{opacity:1}100%{opacity:1;filter:blur(0);transform:scale(1)}}
+@keyframes capBlur{0%{opacity:0;filter:blur(12px)}100%{opacity:1;filter:blur(0)}}
+@keyframes capWordIn{0%{opacity:0;filter:blur(4px)}100%{opacity:1;filter:blur(0)}}
+.pw-tok.tw{opacity:0;animation:capWordIn .16s ease-out forwards}
+/* True typewriter: each character fades in on its own staggered delay */
+.cap-tw-char{opacity:0;animation:capWordIn .13s ease-out forwards}
+.caption-overlay.anim-pop span,.cap-overlay.anim-pop span{animation:capPop .24s cubic-bezier(.2,.8,.3,1) both}
+.caption-overlay.anim-blur span,.cap-overlay.anim-blur span{animation:capBlur .24s ease-out both}
+/* Elegant CapCut-style intros (mirror burned ASS fade/rise/drop/zoom) */
+@keyframes capFade{0%{opacity:0}100%{opacity:1}}
+/* Smoother rise/drop: longer travel + slight scale-in + micro-blur cleanup for
+   a creamy in-motion feel. Duration bumped 0.30s → 0.55s and easing changed to
+   cubic-bezier(.16,1,.3,1) (soft-out, decelerating). Values must stay in lock-
+   step with pipeline-inverse-v1.js `slideMs` / `slidePx` for preview-vs-burn
+   WYSIWYG parity. */
+@keyframes capRise{0%{opacity:0;transform:translateY(38px) scale(.985);filter:blur(2px)}55%{opacity:1;filter:blur(.4px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes capDrop{0%{opacity:0;transform:translateY(-38px) scale(.985);filter:blur(2px)}55%{opacity:1;filter:blur(.4px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes capZoom{0%{opacity:0;transform:scale(.9)}100%{opacity:1;transform:scale(1)}}
+.caption-overlay.anim-fade span,.cap-overlay.anim-fade span{animation:capFade .26s ease-out both}
+.caption-overlay.anim-rise span,.cap-overlay.anim-rise span{animation:capRise .55s cubic-bezier(.16,1,.3,1) both}
+.caption-overlay.anim-drop span,.cap-overlay.anim-drop span{animation:capDrop .55s cubic-bezier(.16,1,.3,1) both}
+.caption-overlay.anim-zoom span,.cap-overlay.anim-zoom span{animation:capZoom .28s cubic-bezier(.2,.8,.3,1) both}
+/* Animation segment wraps to multiple rows when it has many options */
+/* Many-option segment (e.g. 8 animations) → even 4-col grid instead of a pill row */
+.segment.seg-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;border-radius:16px}
+.segment.seg-wrap button{flex:none;width:100%;padding:9px 4px}
+.caption-overlay.style-neon_pink span{color:#ff4d6a;text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000,0 0 10px rgba(255,77,106,.9),0 0 20px rgba(255,77,106,.55)}
+.caption-overlay.style-yellow span{color:#ff9540;text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000,0 0 10px rgba(255,149,64,.9),0 0 20px rgba(255,149,64,.55)}
+/* BW burns as Times New Roman MT Condensed bold (pipeline.js STYLE_MAP.bw) — both
+   previews must show the same font, not the Arial Black base. */
+.caption-overlay.style-bw span,.cap-overlay.style-bw span{font-family:'Times New Roman MT Condensed','Times New Roman',Times,serif;font-weight:700;letter-spacing:-0.04em;color:#f6f6ef;text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000,0 0 12px rgba(0,0,0,.95),0 0 22px rgba(0,0,0,.7)}
+.caption-overlay.style-bw_neon_green span,.caption-overlay.style-bw_neon_yellow span{color:#f6f6ef;text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000}
+.caption-overlay.style-cinematic_white span,.cap-overlay.style-cinematic_white span{
+  font-family:'Times New Roman MT Condensed','Times New Roman',Times,serif !important;
+  font-weight:400 !important;
+  letter-spacing:-0.05em;
+  color:#ffffff;
+  /* Soft white halo glow (no black outline). Multiple blur layers for smooth bloom. */
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.98),
+    0 0 14px rgba(255,255,255,0.65),
+    0 0 28px rgba(255,255,255,0.36),
+    0 0 48px rgba(255,255,255,0.18);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:geometricPrecision;
+}
+.caption-overlay.style-cinematic_white.no-glow span,.cap-overlay.style-cinematic_white.no-glow span{text-shadow:none}
+/* [INVERSE-V1] start — auto-inverting caption style.
+   CRITICAL: `mix-blend-mode` MUST be on the overlay itself, not the span.
+   The overlay has `transform: translateX(-50%)` which creates a stacking
+   context — if we put mix-blend-mode on the child span it only blends
+   against the transparent overlay backdrop (result: plain white), not
+   against the video below. Applied to the overlay, the flattened overlay
+   (containing white text on transparent bg) blends against the video =
+   automatic colour inversion where the text sits.
+   Font: Open Sauce Two Bold (Open Sans-adjacent), letters pulled tight. */
+.caption-overlay.style-inverse_auto,.cap-overlay.style-inverse_auto{
+  mix-blend-mode:difference;
+  /* NO `isolation:isolate` — that would isolate the blend from the video. */
+}
+.caption-overlay.style-inverse_auto span,.cap-overlay.style-inverse_auto span{
+  font-family:'Open Sauce Two Bold','Open Sans','Helvetica Neue',Arial,sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:-0.05em !important;
+  color:#ffffff !important;
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:geometricPrecision;
+}
+/* Highlight children inside inverse_auto: neutralise their coloured glow so
+   the blend stays clean (a bright pink halo would XOR to teal, ugly). */
+.caption-overlay.style-inverse_auto .cap-hi-green,.caption-overlay.style-inverse_auto .cap-hi-yellow,
+.cap-overlay.style-inverse_auto .cap-hi-green,.cap-overlay.style-inverse_auto .cap-hi-yellow{
+  color:#ffffff!important;text-shadow:none!important;
+}
+/* [WHITE-CLEAN] Pure-white Open Sauce Two Bold, tight/narrow, NO stroke, NO
+   shadow, NO glow — the flat editorial white look. Applies to dashboard
+   (.caption-overlay) + editor/title (.cap-overlay) previews. */
+.caption-overlay.style-white_clean span,.cap-overlay.style-white_clean span{
+  font-family:'Open Sauce Two Bold','Open Sans','Helvetica Neue',Arial,sans-serif;
+  font-weight:700;
+  letter-spacing:-0.05em;
+  color:#ffffff;
+  /* Soft white halo (glow ON) — same gentle size as cinematic_white. */
+  text-shadow:0 0 3px rgba(255,255,255,.4),0 0 8px rgba(255,255,255,.22),0 0 14px rgba(255,255,255,.1);
+  -webkit-text-stroke:0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:geometricPrecision;
+}
+/* Glow OFF → flat pure white, no halo. */
+.caption-overlay.style-white_clean.no-glow span,.cap-overlay.style-white_clean.no-glow span{text-shadow:none}
+/* [TITLE-V1] start — neon style rules for the .cap-overlay title layer.
+   The dashboard (.caption-overlay) already had neon_green/pink/yellow rules,
+   but the caption-editor title layer uses .cap-overlay, which only had bw /
+   cinematic_white / inverse_auto variants. Without these, a title set to a
+   neon style fell back to plain Arial-black white in the preview and did NOT
+   match the style dropdown. Colours mirror SUB_STYLES so preview == render. */
+.cap-overlay.style-neon_green span{color:#f1ff00;text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000,0 0 10px rgba(241,255,0,.9),0 0 20px rgba(241,255,0,.55)}
+.cap-overlay.style-neon_pink span{color:#ff4d6a;text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000,0 0 10px rgba(255,77,106,.9),0 0 20px rgba(255,77,106,.55)}
+.cap-overlay.style-yellow span{color:#ff9540;text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000,0 0 10px rgba(255,149,64,.9),0 0 20px rgba(255,149,64,.55)}
+/* [WYSIWYG-FONT] Neon styles use the bundled Open Sauce Two ExtraBold (what
+   the ASS burn resolves) — 'Arial Black' isn't in fontsdir, libass substituted
+   Helvetica and preview never matched render. weight 400 = raw face (Bold=0). */
+.cap-overlay.style-neon_green span,.cap-overlay.style-neon_pink span,.cap-overlay.style-yellow span{
+  font-family:'Open Sauce Two ExtraBold','Arial Black','Helvetica Neue',sans-serif;font-weight:400;
+}
+/* [TITLE-V1] end */
+/* [INVERSE-V1] end */
+/* [TITLE-V1] start — persistent-title layer inside the caption editor stage.
+   Overlays each title as an absolutely-positioned .cap-overlay so it inherits
+   the same per-style CSS rules as subtitles (including inverse_auto's blend).
+   Layer sits above the subtitle overlay so multiple titles + running caption
+   can co-exist. pointer-events on children only so the video controls still
+   receive clicks outside the title footprint. */
+.cap-stage .cap-title-layer{position:absolute;inset:0;pointer-events:none;z-index:4}
+.cap-stage .cap-title-layer .title-el{
+  /* Keep title text width auto — inline-block-like so translateX(-50%) centres it. */
+  width:auto;max-width:92.59%;
+}
+.cap-stage .cap-title-layer .title-el:hover{outline:1px dashed rgba(255,255,255,.3);outline-offset:4px}
+/* Per-word title tokens: inline spans so they wrap/space naturally, clickable
+   for selection. Selected word gets a lime outline so the user sees the target. */
+/* [TITLE-ANIM-FIX] inline-block so CSS transforms in the shared anim-* keyframes
+   (capDrop/capRise/capPop/capZoom use transform:) actually apply — inline boxes
+   ignore transform, which silently killed title drop/rise/pop/zoom in preview.
+   Mirrors caption tokens (.pw-tok are inline-block for the same reason). */
+.cap-stage .cap-title-layer .ttl-word{display:inline-block;cursor:pointer}
+.cap-stage .cap-title-layer .ttl-word.ttl-sel{outline:1.5px solid var(--lime);outline-offset:2px;border-radius:3px}
+/* Titles list is a bounded scroll area so adding many titles never grows the
+   editor unbounded. Thin cross-platform scrollbar (Windows shows a chunky
+   native bar otherwise, so we style it to match the macOS look). */
+/* [TITLE-REORDER-V1] Drag handle + dragged-state lift for the titles list. */
+.title-drag{cursor:grab;color:var(--muted);font-size:14px;line-height:1;padding:0 2px;user-select:none;touch-action:none}
+.title-drag:active{cursor:grabbing}
+.title-card{transition:box-shadow .12s ease}
+.title-card.dragging{position:relative;z-index:5;box-shadow:0 10px 26px rgba(0,0,0,.5);border-color:var(--lime-glow)!important}
+#ce_titles_list{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.25) transparent}
+#ce_titles_list::-webkit-scrollbar{width:8px}
+#ce_titles_list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:8px}
+#ce_titles_list::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.35)}
+#ce_titles_list::-webkit-scrollbar-track{background:transparent}
+/* [TITLE-V1] end */
+/* [HL-SOFT-GLOW] Highlight last word = soft cinematic glow, NO black stroke.
+   Only the coloured halo remains (mirrors ASS \bord0 + blurred glow layer). */
+.cap-hi-green{color:#f1ff00!important;text-shadow:0 0 6px rgba(241,255,0,.5),0 0 12px rgba(241,255,0,.28)!important}
+.cap-hi-yellow{color:#ff9540!important;text-shadow:0 0 6px rgba(255,149,64,.5),0 0 12px rgba(255,149,64,.28)!important}
+/* [HL-SOFT-GLOW] Glow-off highlight word: no halo AND no black stroke (matches
+   the ASS \bord0 in the glow-off highlight path) — just the accent colour. */
+.no-glow .cap-hi-green,.no-glow .cap-hi-yellow{text-shadow:none!important}
+/* "og" caption (glow off): keep the crisp black edge, drop the coloured halo. Wins on source order over the style-* rules above. */
+.caption-overlay.no-glow span{text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000}
+/* v3: two-pill overlay top-left of preview (clip counter + hot toggle) */
+.scene-tag{
+  position:absolute;top:20px;left:20px;z-index:4;
+  display:flex;gap:8px;align-items:center;
+  padding:0;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;
+}
+.scene-tag .st-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border-radius:999px;
+  background:rgba(10,11,8,.72);
+  border:1px solid var(--hair);
+  color:var(--ink);font-size:12px;font-weight:500;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  white-space:nowrap;
+}
+.scene-tag .st-pill.hot{
+  cursor:pointer;
+  border-color:var(--lime-glow);color:var(--lime);
+  background:rgba(213,255,64,.08);
+  transition:background .15s,border-color .15s;
+}
+.scene-tag .st-pill.hot:hover{background:rgba(213,255,64,.18);border-color:var(--lime)}
+.scene-tag .st-pill.hot.off{color:var(--muted);border-color:var(--hair);background:rgba(10,11,8,.72)}
+.scene-tag .st-pill svg{width:12px;height:12px}
+.scene-tag .st-pill b{color:var(--ink);font-weight:600}
+.scene-tag .st-pill.hot b{color:currentColor}
+.transport{
+  position:absolute;left:50%;bottom:34px;transform:translateX(-50%);
+  height:54px;border-radius:999px;display:flex;align-items:center;gap:10px;padding:8px 16px;z-index:4;
+}
+.transport button{width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:15px}
+.transport .play{background:var(--lime);color:#111}
+.transport span{font-size:13px;color:#ddd}
+.preview-card .transport,.preview-card .scene-tag{transition:opacity .25s ease,transform .25s ease}
+.preview-card.ui-hidden .transport,.preview-card.ui-hidden .scene-tag{opacity:0;pointer-events:none;transform:translateY(8px)}
+.preview-card.ui-hidden .transport{transform:translate(-50%,8px)}
+.ui-toggle{
+  position:absolute;top:34px;left:34px;width:38px;height:38px;border:0;border-radius:50%;
+  background:rgba(0,0,0,.55);color:#fff;font-size:14px;z-index:5;cursor:pointer;
+  display:grid;place-items:center;opacity:.55;transition:opacity .15s ease;
+}
+.ui-toggle:hover{opacity:1}
+.preview-card.ui-hidden .ui-toggle{opacity:.25}
+.preview-card.ui-hidden .ui-toggle:hover{opacity:.85}
+
+/* ── Maximized preview (fills the whole window) ───────── */
+.preview-card.maximized{
+  position:fixed;inset:0;z-index:200;border-radius:0;
+  padding:24px;background:#060705;
+}
+.preview-card.maximized .preview-stage{
+  box-shadow:0 30px 90px rgba(0,0,0,.7);
+}
+#maxBtn.is-on{background:var(--lime);color:#111}
+body.preview-maxed .rail,body.preview-maxed .topbar,
+body.preview-maxed .lower-area,body.preview-maxed .split-handle,
+body.preview-maxed .inspector{visibility:hidden}
+
+/* ── Inspector (right panel — switchable) ─────────────── */
+.inspector{
+  border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:12px;min-height:0;
+  /* v3 glass floating look */
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+  border:1px solid var(--hair);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  overflow:hidden;
+}
+.inspector .panel-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--hair)}
+.inspector .panel-title span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.inspector .panel-title b{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.005em}
+.inspector .panel-body{flex:1;min-height:0;overflow-y:auto;padding-right:6px;display:flex;flex-direction:column;gap:12px}
+.inspector .panel-body::-webkit-scrollbar{width:8px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.field input[type=text],.field input[type=number],.field input[type=password],.field select,.field textarea{
+  height:42px;border-radius:14px;border:1px solid var(--line);
+  background:rgba(0,0,0,.28);color:#fff;padding:0 14px;outline:0;font-size:13px;
+}
+.field textarea{height:auto;min-height:80px;padding:10px 14px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lime);background:rgba(0,0,0,.36)}
+.field-row{display:flex;gap:8px}
+.field-row > *{flex:1}
+.field-hint{font-size:11px;color:var(--muted);line-height:1.5;margin-top:2px}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 18px) 18px,calc(100% - 13px) 18px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:36px;cursor:pointer}
+
+.segment{display:flex;background:rgba(0,0,0,.32);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.segment button{flex:1;border:0;border-radius:999px;padding:9px 8px;background:transparent;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.segment button.active{background:rgba(255,255,255,.92);color:#0e0f18}
+
+.slider-row{display:flex;align-items:center;gap:10px}
+.slider-row input[type=range]{flex:1;accent-color:#cfd2e0;height:4px}
+.slider-row .val{min-width:42px;text-align:right;color:#fff;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+
+.chip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.chip-grid button{
+  border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);color:#fff;
+  padding:11px 10px;font-size:12px;text-align:left;
+  display:flex;align-items:center;gap:8px;
+}
+.chip-grid button.active{background:rgba(255,255,255,.92);color:#0e0f18;font-weight:700;border-color:transparent}
+/* Checkbox indicator at the left of each format chip */
+.chip-check{
+  width:14px;height:14px;border-radius:5px;flex-shrink:0;
+  border:1.5px solid rgba(255,255,255,.3);background:transparent;
+  display:grid;place-items:center;
+}
+.chip-grid button.active .chip-check{
+  background:var(--lime);border-color:var(--lime);
+}
+.chip-grid button.active .chip-check::after{
+  content:"";width:8px;height:5px;margin-top:-2px;
+  border-left:2px solid #0e0f18;border-bottom:2px solid #0e0f18;
+  transform:rotate(-45deg);
+}
+:root[data-theme="light"] .chip-check{border-color:rgba(0,0,0,.25)}
+
+/* Stepper − [n] + (clip count) — matched to .segment pill height so
+   Clip Count and Clip Duration read as one control family. */
+.stepper{
+  display:flex;align-items:center;justify-content:space-between;width:100%;
+  border:1px solid var(--line);background:rgba(0,0,0,.32);
+  border-radius:999px;padding:3px 4px;
+}
+.stepper button{
+  width:30px;height:28px;border:0;border-radius:999px;background:transparent;
+  color:var(--muted);font-size:16px;font-weight:500;line-height:1;
+  transition:background .15s,color .15s;flex-shrink:0;
+}
+.stepper button:hover{background:rgba(255,255,255,.06);color:var(--ink)}
+.stepper b{
+  flex:1;text-align:center;font-size:13px;font-weight:700;color:var(--ink);
+  font-variant-numeric:tabular-nums;letter-spacing:.02em;
+}
+.stepper input[type="number"]{
+  flex:1;min-width:0;width:100%;padding:4px 6px;margin:0;height:28px;
+  background:transparent;border:1px solid transparent;border-radius:999px;
+  text-align:center;font:inherit;color:var(--ink);
+  font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em;
+  outline:none;transition:border-color .15s,background .15s;
+  -moz-appearance:textfield;
+}
+.stepper input[type="number"]::-webkit-outer-spin-button,
+.stepper input[type="number"]::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0 }
+.stepper input[type="number"]:hover{background:rgba(255,255,255,.04)}
+.stepper input[type="number"]:focus{border-color:var(--lime);background:rgba(210,249,111,.06)}
+:root[data-theme="light"] .stepper{background:rgba(0,0,0,.04)}
+:root[data-theme="light"] .stepper button:hover{background:rgba(0,0,0,.08)}
+
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatch{
+  width:26px;height:26px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.18);cursor:pointer;
+  display:grid;place-items:center;font-size:0;
+  transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
+}
+.swatch.active{
+  border-color:#fff;transform:scale(1.08);
+  box-shadow:0 0 0 3px rgba(255,255,255,.10);
+}
+
+/* ── Lower area: gallery full-width + pipe strip ─────── */
+.lower-area{display:flex;flex-direction:column;gap:10px;min-height:0;overflow:hidden}
+
+.gallery-section{
+  border-radius:var(--radius);padding:12px 14px;overflow:hidden;display:flex;flex-direction:column;
+  /* v3 glass — matches preview-card / inspector */
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+  border:1px solid var(--hair);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  flex:1;min-height:0;
+}
+.gallery-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:12px}
+.gallery-head-left{display:flex;align-items:center;gap:14px}
+.gallery-head-left .eyebrow{margin:0}
+.gallery-head-left strong{font-size:32px;line-height:1;font-weight:700;color:#fff}
+.gallery-head-right{display:flex;align-items:center;gap:10px}
+
+.chips{display:flex;gap:6px}
+.chips button{border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;padding:6px 13px;font-size:11px;font-weight:600}
+.chips button.active{background:var(--lime);color:#111}
+.chips sup{margin-left:3px;color:var(--lime)}
+.chips button.active sup{color:#111}
+
+.gallery-sub{font-size:12px;color:var(--muted);white-space:nowrap}
+.gallery-sub:empty{display:none}
+
+/* Filter chips (gallery head) — reference styling: pill row, active = light-tinted, ✓ tick prefix on Rendered */
+.chips.gtl-chips button{padding:6px 12px;font-size:11px;font-weight:500;color:var(--grey);
+  background:rgba(255,255,255,.04);display:inline-flex;align-items:center;gap:5px}
+.chips.gtl-chips button.active{background:rgba(255,255,255,.14);color:var(--ink)}
+.chips.gtl-chips sup{margin-left:2px;color:var(--muted);font-weight:400}
+.chips.gtl-chips button.active sup{color:var(--ink)}
+.chips.gtl-chips .chip-fire{font-size:11px;line-height:1}
+.chips.gtl-chips .chip-tick{color:var(--lime);font-weight:700}
+/* Reference chip "Rendered" is highlighted with a blue-lime ring */
+.chips.gtl-chips button[data-filter="saved"].active{
+  background:rgba(255,255,255,.06);border:1px solid rgba(120,180,255,.55);
+  box-shadow:0 0 0 1px rgba(120,180,255,.15);
+}
+
+/* Icon toolbar on right of gallery head */
+.gtl-tools{display:flex;gap:2px}
+.gtl-tool{
+  width:30px;height:30px;border:0;border-radius:8px;background:transparent;
+  color:var(--grey);display:grid;place-items:center;transition:background .12s,color .12s;
+}
+.gtl-tool:hover{background:rgba(255,255,255,.06);color:var(--ink)}
+
+/* ── Detected clips strip — uniform thumbnail row, no timeline ────
+   Every clip renders as a portrait 9:16 tile (16:9 when format=landscape),
+   flush to a single row that scrolls horizontally when overflowing. */
+.gtl-strip{
+  display:flex;gap:8px;height:100%;width:100%;min-height:0;padding:4px 2px 8px;
+  overflow-x:auto;overflow-y:hidden;
+  /* Keep the strip vertically centered when tiles don't fill the row so
+     dragging the split-handle up/down feels natural (tiles float, not glued). */
+  align-items:center;justify-content:flex-start;
+  scroll-snap-type:x proximity;
+}
+.gtl-strip::-webkit-scrollbar{height:6px}
+.gtl-strip::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:6px}
+.gtl-strip::-webkit-scrollbar-thumb:hover{background:rgba(210,249,111,.4)}
+
+/* Frameless thumbnail tile — the clip thumbnail IS the tile.
+   Height follows the row height but capped so it never balloons; min guarantees
+   readable overlays even when the row is squeezed. Width follows 9:16 aspect. */
+.gtl-tile{
+  position:relative;flex:0 0 auto;
+  height:100%;max-height:260px;min-height:96px;
+  aspect-ratio:9/16;
+  border:0;border-radius:10px;padding:0;background:#0d0f0a;
+  display:block;overflow:hidden;cursor:pointer;scroll-snap-align:start;
+  transition:transform .15s ease,box-shadow .15s ease,opacity .15s;
+}
+.gtl-strip--wide .gtl-tile{aspect-ratio:16/9;max-height:220px}
+.gtl-strip--square .gtl-tile{aspect-ratio:1/1;max-height:260px}
+.gtl-tile > video,
+.gtl-tile > img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  filter:saturate(.95) contrast(1.02);
+}
+.gtl-tile .gtl-empty{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(210,249,111,.06),rgba(255,255,255,.02));
+}
+/* Subtle top+bottom fade keeps overlays legible over bright frames */
+.gtl-tile::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,transparent 30%,transparent 65%,rgba(0,0,0,.5) 100%);
+}
+.gtl-tile:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.5)}
+.gtl-tile b{
+  position:absolute;left:6px;bottom:5px;font-size:11px;font-weight:700;color:#fff;
+  font-variant-numeric:tabular-nums;line-height:1;letter-spacing:.03em;
+  text-shadow:0 1px 3px rgba(0,0,0,.7);
+}
+.gtl-tile i{
+  position:absolute;top:5px;right:6px;font-style:normal;font-size:11px;font-weight:800;
+  color:var(--lime);text-shadow:0 0 6px rgba(0,0,0,.9);
+}
+.gtl-check{
+  position:absolute;top:5px;right:5px;
+  filter:drop-shadow(0 1px 3px rgba(0,0,0,.7));
+}
+.gtl-tile.gtl-active{
+  box-shadow:
+    inset 0 0 0 2px var(--lime),
+    0 0 0 3px rgba(210,249,111,.18),
+    0 0 22px rgba(210,249,111,.35);
+  z-index:2;
+}
+.gtl-tile.gtl-hot::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--lime);box-shadow:0 0 8px var(--lime);
+}
+:root[data-theme="light"] .gtl-tile{background:linear-gradient(180deg,#f4f5ee 0%,#e5e7dc 100%);color:var(--ink)}
+
+/* Clip grid — horizontal scrolling row of cards */
+.clip-grid{display:flex;gap:10px;overflow-x:auto;flex:1;min-height:0;padding-bottom:4px;align-items:flex-start}
+.clip-grid::-webkit-scrollbar{height:4px}
+.clip-grid::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:4px}
+.clip-grid .empty{color:var(--muted);font-size:13px;padding:14px;white-space:nowrap;align-self:center;width:100%;text-align:center}
+
+/* Batch re-render bar under the gallery grid — reference: lime-tinted
+   notification pill with status dot, hint text, ghost Hot btn, primary Render
+   all btn, dismiss ✕. */
+.gallery-batch{
+  display:flex;align-items:center;gap:10px;margin-top:10px;padding:10px 14px;
+  border:1px solid rgba(210,249,111,.28);border-radius:12px;
+  background:linear-gradient(90deg,rgba(210,249,111,.06),rgba(210,249,111,.02));
+}
+.gb-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--lime);flex-shrink:0;
+  box-shadow:0 0 8px var(--lime),0 0 0 3px rgba(210,249,111,.15);
+}
+.gallery-batch-hint{font-size:12px;color:var(--ink-dim);flex:1;min-width:0}
+.gallery-batch-hint b{color:var(--lime);font-weight:700}
+.gb-ghost{
+  background:transparent;color:var(--ink);
+  border:1px solid rgba(255,255,255,.14);border-radius:10px;
+  padding:6px 12px;font-size:12px;font-weight:600;
+}
+.gb-ghost:hover{background:rgba(255,255,255,.05)}
+.gb-ghost span{color:var(--muted);font-weight:500;margin-left:2px}
+.gb-primary{
+  background:var(--lime);color:#0e120a;border:0;border-radius:10px;
+  padding:7px 16px;font-size:12px;font-weight:700;box-shadow:0 4px 14px var(--lime-glow);
+}
+.gb-primary:hover{filter:brightness(1.06)}
+.gb-x{
+  background:transparent;border:0;color:var(--muted);width:26px;height:26px;
+  border-radius:8px;font-size:16px;line-height:1;
+}
+.gb-x:hover{background:rgba(255,255,255,.06);color:var(--ink)}
+.gallery-batch-status{font-size:11px;color:var(--lime);min-width:0;text-align:right}
+:root[data-theme="light"] .gallery-batch{
+  background:linear-gradient(90deg,rgba(125,180,37,.08),rgba(125,180,37,.02));
+  border-color:rgba(125,180,37,.4);
+}
+
+.clip-card{
+  position:relative;flex-shrink:0;width:120px;aspect-ratio:9/16;border-radius:18px;overflow:hidden;
+  background:#0d0e08;border:1px solid var(--line);cursor:pointer;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:8px;
+  transition:transform .15s ease,border-color .15s ease;
+}
+.clip-card:hover{transform:translateY(-3px);border-color:rgba(241,255,0,.5)}
+.clip-card.active-card{border-color:var(--lime);box-shadow:0 0 0 2px rgba(241,255,0,.3)}
+.clip-card img,.clip-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.clip-card .cc-cat{position:absolute;top:7px;left:7px;z-index:2;font-size:9px;font-weight:800;letter-spacing:.05em;color:var(--cat,#3da5ff);background:color-mix(in srgb,var(--cat,#3da5ff) 22%,rgba(0,0,0,.62));border:1px solid color-mix(in srgb,var(--cat,#3da5ff) 50%,transparent);border-radius:6px;padding:2px 6px}
+.clip-card .cc-meta{position:absolute;top:7px;right:7px;z-index:2;background:rgba(0,0,0,.72);color:var(--lime);border-radius:7px;padding:2px 6px;font-size:9px;font-weight:700}
+.clip-card .cc-ratio{position:absolute;bottom:28px;left:7px;z-index:2;background:rgba(123,44,255,.75);color:#fff;border-radius:6px;padding:2px 6px;font-size:9px;font-weight:700;letter-spacing:.04em}
+.clip-card .cc-label{position:relative;z-index:2;font-size:9.5px;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.9);font-weight:700;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.clip-card .cc-hot{position:absolute;bottom:7px;right:7px;z-index:3;width:26px;height:26px;border:0;border-radius:50%;background:rgba(0,0,0,.55);font-size:12px;line-height:1;display:grid;place-items:center;cursor:pointer;filter:grayscale(1) opacity(.55);transition:filter .15s ease,transform .15s ease}
+.clip-card .cc-hot:hover{transform:scale(1.12);filter:grayscale(.4) opacity(.85)}
+.clip-card .cc-hot.cc-hot-on{filter:none;background:rgba(255,92,0,.28);box-shadow:0 0 10px rgba(255,120,0,.5)}
+
+.empty{color:var(--muted);font-size:13px;padding:14px;text-align:center}
+
+/* ── Pipeline strip (compact single row) ─────────────── */
+/* ── Pipeline strip (elegant) ───────────────────────────
+   Header: spinner + title/subtitle + big % + Log/Cancel buttons.
+   Then a row of 5 minimalist step cards, then a thin progress bar. */
+.pipe-strip{
+  border-radius:20px;padding:14px 18px 12px;display:flex;flex-direction:column;gap:12px;flex-shrink:0;
+}
+.pipe-head{display:flex;align-items:center;gap:14px}
+.pipe-spinner{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,.04);border:1px solid var(--hair);
+  display:grid;place-items:center;position:relative;overflow:hidden;
+}
+.pipe-spinner::after{
+  content:"";position:absolute;inset:3px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.14);border-top-color:transparent;
+}
+.pipe-spinner.active::after{
+  border-color:var(--lime);border-top-color:transparent;
+  animation:pipeSpin 1s linear infinite;
+  filter:drop-shadow(0 0 4px var(--lime-glow));
+}
+.pipe-spinner.done::after{border-color:var(--lime);border-top-color:var(--lime)}
+.pipe-spinner.error::after{border-color:var(--danger);border-top-color:var(--danger)}
+@keyframes pipeSpin{to{transform:rotate(360deg)}}
+
+.pipe-titles{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}
+.pipe-step{font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pipe-sub{font-size:11px;color:var(--muted);font-family:"JetBrains Mono","SF Mono",monospace;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.02em}
+
+.pipe-pct{font-size:28px;font-weight:800;color:var(--lime);font-variant-numeric:tabular-nums;
+  line-height:1;flex-shrink:0;letter-spacing:-.02em;min-width:0}
+.pipe-pct:empty{display:none}
+
+.pipe-actions{display:flex;gap:8px;flex-shrink:0}
+.pipe-actions .ghost-btn{padding:7px 14px;font-size:12px}
+.danger-btn{
+  background:transparent;color:var(--danger,#ff9540);border:1px solid var(--danger,#ff9540);
+  border-radius:12px;padding:7px 14px;font-size:12px;font-weight:600;letter-spacing:.02em;
+  transition:background .12s,color .12s;
+}
+.danger-btn:hover{background:rgba(255,149,64,.12)}
+
+/* Step cards row */
+.pipe-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.ps-card{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;
+  border:1px solid var(--hair);border-radius:12px;
+  background:rgba(255,255,255,.02);min-width:0;
+  transition:border-color .15s,background .15s;
+}
+.ps-mark{
+  width:22px;height:22px;border-radius:50%;flex-shrink:0;
+  display:grid;place-items:center;font-size:10px;font-weight:700;
+  background:rgba(255,255,255,.06);color:var(--muted);
+  font-variant-numeric:tabular-nums;
+}
+.ps-body{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+.ps-body b{font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ps-body span{font-size:10px;color:var(--muted);font-family:"JetBrains Mono","SF Mono",monospace;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.02em}
+.ps-idle{opacity:.55}
+.ps-idle .ps-mark{background:rgba(255,255,255,.05);color:var(--muted)}
+.ps-active{
+  border-color:var(--lime);background:rgba(210,249,111,.05);
+  box-shadow:0 0 0 1px rgba(210,249,111,.25),0 0 18px rgba(210,249,111,.12);
+}
+.ps-active .ps-mark{background:var(--lime);color:#10130a}
+.ps-done .ps-mark{background:var(--lime);color:#10130a}
+.ps-error{border-color:var(--danger)}
+.ps-error .ps-mark{background:var(--danger);color:#fff}
+
+.status-line{color:var(--lime);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.progress-bar{height:3px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.progress-bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--lime),#a8ff00);transition:width .35s ease}
+.pipe-progress{margin-top:2px}
+/* Minimized state — hide the heavy rows (steps + progress + raw log),
+   keep only the header so status stays visible without eating screen. */
+.pipe-strip.is-min{padding-bottom:14px}
+.pipe-strip.is-min .pipe-steps,
+.pipe-strip.is-min .pipe-progress,
+.pipe-strip.is-min .pipe-log{display:none}
+.ghost-mini{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;border-radius:999px;padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer;letter-spacing:.04em}
+.ghost-mini:hover{background:rgba(255,255,255,.16)}
+.pipe-log{
+  max-height:120px;overflow-y:auto;background:rgba(0,0,0,.36);
+  border-radius:10px;padding:8px 12px;font-family:"SF Mono","Menlo",monospace;font-size:10px;color:#cfd0c2;line-height:1.5;
+}
+.pipe-log[hidden]{display:none}
+.pipe-log .err{color:var(--danger)}
+.pipe-log .ok{color:var(--ok)}
+.pipe-log .lime{color:var(--lime)}
+@keyframes pulseDot{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ── Overlay (full-width panel triggered by rail) ───── */
+.overlay{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:30px;background:rgba(5,6,4,.72);backdrop-filter:blur(14px);animation:fadeIn .18s ease}
+.overlay[hidden]{display:none}
+.overlay-card{width:100%;max-width:1280px;max-height:92vh;border-radius:32px;display:flex;flex-direction:column;overflow:hidden;background:rgba(20,22,15,.92);border:1px solid var(--line)}
+.overlay-head{display:flex;justify-content:space-between;align-items:center;padding:24px 30px;border-bottom:1px solid var(--line)}
+.overlay-head h2{margin:0;font-size:26px;font-weight:700}
+.overlay-body{flex:1;overflow-y:auto;padding:24px 30px}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Clip review grid (inside overlay) */
+.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.review-card{background:rgba(0,0,0,.32);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s}
+.review-card:hover{border-color:rgba(241,255,0,.45)}
+.review-thumb{position:relative;aspect-ratio:9/16;background:#0a0b08;overflow:hidden}
+.review-thumb video,.review-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.review-thumb .score{position:absolute;top:10px;left:10px;background:rgba(241,255,0,.92);color:#111;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:800}
+.review-thumb .dur{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.7);color:#fff;border-radius:8px;padding:3px 7px;font-size:10px;font-weight:600}
+.review-meta{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.review-meta .ttl{font-size:13px;font-weight:700;line-height:1.3;color:#fff;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.review-actions{display:flex;gap:6px}
+.review-actions button{flex:1;border:0;border-radius:10px;padding:7px;font-size:11px;font-weight:700;cursor:pointer}
+.review-actions .btn-edit{background:var(--lime);color:#111}
+.review-actions .btn-open{background:rgba(255,255,255,.1);color:#fff}
+.review-actions .btn-preview{background:rgba(123,44,255,.4);color:#fff}
+
+/* Caption editor (inside overlay) */
+.cap-editor{display:grid;grid-template-columns:1fr 360px;gap:24px;min-height:540px}
+.cap-stage-wrap{position:relative;display:grid;place-items:center;background:#000;border-radius:22px;padding:16px;min-height:520px}
+/* [CAP-MAX] Expand button + expanded state: the stage wrapper (video AND the
+   HTML caption/title overlays) goes fixed fullscreen; native <video> fullscreen
+   can't be used because it excludes the sibling overlays. */
+.stage-max-btn{position:absolute;top:12px;right:12px;z-index:6;width:34px;height:34px;border:0;border-radius:10px;background:rgba(255,255,255,.14);color:#fff;font-size:15px;line-height:1;cursor:pointer;transition:background .15s}
+.stage-max-btn:hover{background:rgba(255,255,255,.3)}
+/* Mirrors the dashboard maximize look (.preview-card.maximized): same backdrop,
+   same stage shadow, same lime active-button state. */
+.cap-editor.cap-maxed .cap-stage-wrap{position:fixed;inset:0;z-index:300;border-radius:0;padding:24px;background:#060705}
+.cap-editor.cap-maxed .cap-stage{max-height:none;box-shadow:0 30px 90px rgba(0,0,0,.7)}
+.stage-max-btn.is-on{background:var(--lime);color:#111}
+/* [AR-FLEX] No hardcoded aspect — JS sets .cap-stage aspect-ratio from the real
+   video (see openCaptionEditor). Default 9/16 only as a pre-load placeholder. */
+.cap-stage{position:relative;aspect-ratio:9/16;height:100%;max-height:520px;max-width:100%;background:#111;border-radius:14px;overflow:hidden}
+/* contain (not cover): with a matching stage AR there are no bars; if metadata is
+   momentarily stale, letterbox instead of cropping the frame. */
+.cap-stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+/* [CAP-MAX] Hide the native fullscreen control: it fullscreens the raw <video>
+   only, WITHOUT the HTML caption/title overlays. Users must use the ⛶ expand
+   button, which enlarges the whole stage so subtitles stay visible. */
+.cap-stage video::-webkit-media-controls-fullscreen-button{display:none}
+.cap-stage .cap-overlay{position:absolute;left:50%;transform:translateX(-50%);width:92.59%;text-align:center;pointer-events:none}
+/* Base caption look for the editor stage — mirrors .caption-overlay span (dashboard
+   general preview) so both previews share one default font. Direct child ONLY:
+   paintCue renders every word as a .pw-tok span (and each char as .cap-tw-char in
+   Type mode); a bare `span` selector would hijack those tokens with Arial Black +
+   per-character padding, overriding the style font inherited from #capTx. */
+/* [TITLE-STYLE-LEAK-FIX] Direct-child ">" so this generic Arial-Black + black-outline
+   base applies ONLY to the subtitle overlay (#capOv, a direct child of .cap-stage),
+   NOT to title word spans nested under .cap-title-layer. Titles then render purely
+   from their own per-style rules (neon/bw carry their own stroke; cinematic/white_clean/
+   inverse stay clean), consistently regardless of how many titles exist. */
+/* [WYSIWYG-FONT] Base = bundled Open Sauce Two ExtraBold (matches the burn's
+   neon fallback); weight 400 + letter-spacing 0 mirror Bold=0 / trackEm 0. */
+.cap-stage > .cap-overlay > span{display:inline-block;padding:0 6px;font-family:'Open Sauce Two ExtraBold','Arial Black','Helvetica Neue',sans-serif;font-weight:400;line-height:1.2;letter-spacing:0;text-shadow:-1.5px 0 #000,1.5px 0 #000,0 -1.5px #000,0 1.5px #000,-1.5px -1.5px #000,1.5px 1.5px #000,-1.5px 1.5px #000,1.5px -1.5px #000}
+/* Word tokens need a box (not inline) so the anim-* transform keyframes apply;
+   everything else (font, colour, shadow) inherits from #capTx / style-* rules. */
+.cap-overlay .pw-tok{display:inline-block}
+.cap-controls{display:flex;flex-direction:column;gap:14px;overflow-y:auto;padding-right:4px}
+/* Action row: keep all three on one line, no wrapping. Render edit is the
+   emphasised CTA; Preview + Finder are compact ghost buttons. */
+.cap-actions{display:flex;gap:8px;margin-top:8px}
+.cap-actions .ghost-btn,.cap-actions .primary-btn{
+  height:44px;padding:0 14px;font-size:12.5px;white-space:nowrap;flex:1 1 0;min-width:0;
+}
+.cap-actions .primary-btn{flex:1.6 1 0}
+/* Tiny inline action (e.g. "Center" next to a slider label). */
+.mini-btn{font-size:10.5px;font-weight:600;color:var(--muted);background:rgba(255,255,255,.1);border:0;border-radius:6px;padding:2px 7px;margin-left:6px;cursor:pointer}
+.mini-btn:hover{background:rgba(255,255,255,.2);color:#fff}
+.mini-btn[disabled]{opacity:.45;cursor:not-allowed}
+/* Import meta row: appears under the source input after a local-file import. */
+.import-meta{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.import-meta[hidden]{display:none}
+.im-file{color:#fff;font-weight:600}
+.im-sub{color:var(--lime)}
+.im-spacer{flex:1}
+.im-toggle{display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none}
+
+/* ── Crop Studio (dedicated full-screen keyframe editor) ─ */
+.crop-studio{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:rgba(5,6,4,.97);backdrop-filter:blur(18px);animation:fadeIn .18s ease}
+.crop-studio[hidden]{display:none}
+.cs-head{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:1px solid var(--line);flex-shrink:0}
+.cs-head-actions{display:flex;align-items:center;gap:12px}
+.cs-aspect{display:flex;gap:4px;background:rgba(0,0,0,.32);border:1px solid var(--line);border-radius:999px;padding:3px}
+.cs-aspect button{border:0;background:transparent;color:var(--muted);font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;cursor:pointer}
+.cs-aspect button.active{background:#fff;color:#111}
+/* Resize handles — only shown in free mode (cropbox gets the .free class). */
+.cs-handle{position:absolute;width:14px;height:14px;background:var(--lime);border:2px solid #111;border-radius:3px;display:none;z-index:3}
+#csCropBox.free .cs-handle{display:block}
+#csCropBox.free .cs-nw{left:-7px;top:-7px;cursor:nwse-resize}
+#csCropBox.free .cs-ne{right:-7px;top:-7px;cursor:nesw-resize}
+#csCropBox.free .cs-sw{left:-7px;bottom:-7px;cursor:nesw-resize}
+#csCropBox.free .cs-se{right:-7px;bottom:-7px;cursor:nwse-resize}
+/* Free mode: zoom + keyframes don't apply, hide them to keep the UI honest. */
+.cs-free .cs-zoom,.cs-free .cs-kf-panel{display:none}
+.cs-head h2{margin:2px 0 0;font-size:24px;font-weight:700}
+.cs-head-actions{display:flex;gap:10px;align-items:center}
+
+.cs-body{flex:1;display:grid;grid-template-columns:1fr 360px;gap:22px;padding:22px 28px;min-height:0;overflow:hidden}
+.cs-source-col{display:flex;flex-direction:column;gap:14px;min-height:0;min-width:0}
+
+.cs-source-wrap{flex:1;display:grid;place-items:center;background:#000;border-radius:20px;padding:14px;min-height:0;overflow:hidden}
+.cs-source{position:relative;max-width:100%;max-height:100%;border-radius:12px;overflow:hidden;background:#0a0b08}
+.cs-source video{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block}
+.cs-cropbox{position:absolute;top:0;left:0;border:2px solid var(--lime);box-shadow:0 0 0 9999px rgba(0,0,0,.5);cursor:grab;border-radius:4px;touch-action:none}
+.cs-cropbox:active{cursor:grabbing}
+.cs-cropbox .cs-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px);background-size:33.33% 33.33%}
+.cs-handle-label{position:absolute;top:6px;left:6px;background:var(--lime);color:#111;font-size:10px;font-weight:800;padding:2px 7px;border-radius:6px}
+
+.cs-timeline-wrap{flex-shrink:0;display:flex;flex-direction:column;gap:10px}
+.cs-transport{display:flex;align-items:center;gap:10px}
+.cs-spacer{flex:1}
+.cs-tbtn{border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;cursor:pointer}
+.cs-tbtn:hover{background:rgba(255,255,255,.16)}
+.cs-tbtn.play{width:42px;height:42px;padding:0;border-radius:50%;background:var(--lime);color:#111;font-size:14px}
+.cs-tbtn.kf{background:rgba(241,255,0,.16);border-color:rgba(241,255,0,.4);color:var(--lime)}
+.cs-tbtn.del{background:rgba(255,92,77,.14);border-color:rgba(255,92,77,.35);color:var(--danger)}
+.cs-time{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:96px}
+.cs-timeline{position:relative;height:34px;border-radius:10px;background:rgba(255,255,255,.07);overflow:hidden;cursor:pointer}
+.cs-progress{position:absolute;top:0;left:0;bottom:0;width:0;background:rgba(241,255,0,.12)}
+.cs-playhead{position:absolute;top:0;bottom:0;width:2px;background:var(--lime);left:0;box-shadow:0 0 8px var(--lime);pointer-events:none}
+.cs-kf-marker{position:absolute;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:var(--lime);border:2px solid #0a0b08;cursor:pointer;z-index:2;transition:transform .1s}
+.cs-kf-marker:hover{transform:translate(-50%,-50%) scale(1.25)}
+.cs-hint{margin:0;font-size:11px;color:var(--muted);line-height:1.5}
+
+.cs-output-col{display:flex;flex-direction:column;gap:10px;min-height:0}
+.cs-out-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);font-weight:700}
+.cs-output{position:relative;aspect-ratio:9/16;background:#000;border-radius:16px;overflow:hidden;border:1px solid var(--line);flex-shrink:0;max-height:46vh;margin:0 auto;width:auto}
+.cs-output video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cs-kf-panel{flex:1;min-height:0;display:flex;flex-direction:column;background:rgba(0,0,0,.26);border-radius:16px;padding:14px}
+.cs-kf-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.cs-kf-head span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cs-kf-head strong{font-size:22px;color:#fff}
+.cs-kf-list{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:6px}
+.cs-kf-empty{color:var(--muted);font-size:11px;line-height:1.5;padding:6px}
+.cs-kf-row{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border-radius:10px;padding:7px 10px;font-size:12px}
+.cs-kf-row.active{border:1px solid var(--lime);background:rgba(241,255,0,.08)}
+.cs-kf-row .kf-t{color:var(--lime);font-weight:700;font-variant-numeric:tabular-nums}
+.cs-kf-row .kf-xy{color:var(--muted);font-size:11px}
+.cs-kf-row .kf-go{margin-left:auto;background:rgba(255,255,255,.1);border:0;color:#fff;border-radius:7px;padding:3px 8px;font-size:11px;cursor:pointer}
+.cs-kf-row .kf-del{background:rgba(255,92,77,.18);border:0;color:var(--danger);border-radius:7px;padding:3px 8px;font-size:11px;cursor:pointer}
+.cs-status{font-size:11px;color:var(--lime);min-height:15px}
+
+/* ── Viral hook cards (review overlay) ──────────────── */
+.hook-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px}
+.hook-card{
+  position:relative;display:flex;flex-direction:column;gap:10px;
+  background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(0,0,0,.32));
+  border:1px solid var(--line);border-left:3px solid var(--cat,#3da5ff);
+  border-radius:18px;padding:16px 16px 14px;min-height:188px;
+  transition:transform .14s ease,border-color .14s ease,box-shadow .14s ease;
+}
+.hook-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.hook-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.hook-cat{
+  font-size:10px;font-weight:800;letter-spacing:.1em;color:var(--cat,#3da5ff);
+  background:color-mix(in srgb,var(--cat,#3da5ff) 16%,transparent);
+  border:1px solid color-mix(in srgb,var(--cat,#3da5ff) 40%,transparent);
+  padding:3px 9px;border-radius:999px;white-space:nowrap;
+}
+.hook-score{font-size:11px;color:var(--muted);font-weight:600;white-space:nowrap}
+.hook-title{font-size:16px;font-weight:800;line-height:1.25;color:#fff;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.hook-desc{font-size:12.5px;line-height:1.5;color:var(--muted);flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.hook-actions{display:flex;gap:8px;margin-top:2px}
+.hook-btn{border:0;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:700;cursor:pointer;transition:filter .12s ease,background .12s ease}
+.hook-btn.open{background:rgba(255,255,255,.09);color:#fff;flex:0 0 auto}
+.hook-btn.open:hover{background:rgba(255,255,255,.18)}
+.hook-btn.edit{background:var(--lime);color:#111;flex:1}
+.hook-btn.edit:hover{filter:brightness(1.06)}
+
+/* ── Settings (full-screen) — minimalist glass, matches app shell ──
+   2026-07-11 redesign: dropped the per-card colour blooms/stripes and the
+   yellow note pills; one quiet glass card language (same recipe as .glass),
+   centred max-width column so the layout reads as a tidy sheet. */
+/* ── Settings (lime-glass, mirrors mockup 04) ─────────
+   Full-screen overlay. Section marker at top (04 / SETTINGS · App settings ·
+   crumbs), then a plain header with title + close, then 2-col body. */
+.settings-view{
+  position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;
+  background:
+    radial-gradient(60% 45% at 85% -5%,rgba(210,249,111,.06),transparent 60%),
+    radial-gradient(50% 40% at -5% 100%,rgba(210,249,111,.04),transparent 60%),
+    var(--bg);
+  animation:fadeIn .18s ease;overflow-y:auto;
+}
+.settings-view[hidden]{display:none}
+
+/* Section marker row (04 / SETTINGS · App settings · crumbs) */
+.sv-section-marker{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;
+  padding:18px 40px 4px;border-bottom:1px solid var(--hair);
+  font-family:"JetBrains Mono","SF Mono",monospace;
+}
+.sv-marker-num{
+  font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.14em;
+}
+.sv-marker-title{
+  margin:0;font-family:inherit;font-size:15px;font-weight:600;color:var(--ink);
+  letter-spacing:.02em;
+}
+.sv-marker-title em{color:var(--lime);font-style:italic;font-weight:700}
+.sv-crumbs{
+  font-size:11px;color:var(--muted);letter-spacing:.06em;
+}
+
+.sv-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding:24px 40px 16px;flex-shrink:0;gap:14px;max-width:1400px;margin:0 auto;width:100%;
+}
+.sv-head-title{display:flex;flex-direction:column;gap:4px;min-width:0}
+.sv-head h2{margin:0;font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:26px;font-weight:700;letter-spacing:-.015em;color:var(--ink);
+  text-transform:none;line-height:1.1}
+.sv-sub{margin:2px 0 0;color:var(--muted);font-size:12px;max-width:560px;line-height:1.55}
+.sv-close-btn{
+  padding:8px 16px;border-radius:12px;flex-shrink:0;
+  background:rgba(255,255,255,.04);border:1px solid var(--hair);color:var(--grey);
+  font-size:12px;font-weight:500;transition:background .15s,color .15s,border-color .15s;
+}
+.sv-close-btn:hover{background:rgba(255,255,255,.08);color:var(--ink);border-color:var(--hair-2)}
+
+.sv-body{
+  flex:1;padding:8px 40px 48px;
+  display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:start;
+  width:100%;max-width:1400px;margin:0 auto;
+}
+.sv-col{display:flex;flex-direction:column;gap:16px;min-width:0}
+
+/* Card = lime-glass primitive (matches inspector/preview-card). */
+.sv-card{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+  border:1px solid var(--hair);border-radius:16px;padding:20px 22px 22px;
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.sv-card--lime{border-color:rgba(210,249,111,.28);
+  background:linear-gradient(180deg,rgba(210,249,111,.05),rgba(210,249,111,.01))}
+.sv-card--warm,.sv-card--cool{}
+.sv-card--license{border-color:rgba(210,249,111,.18)}
+
+.sv-card-eyebrow{font-size:10px;letter-spacing:.16em;color:var(--muted);font-weight:600;text-transform:uppercase}
+.sv-card h3{margin:4px 0 0;font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.012em;
+  text-transform:none;line-height:1.2}
+.sv-note{margin:14px 0 2px;border-left:2px solid var(--lime);padding:2px 0 2px 12px;font-size:11.5px;color:var(--ink-dim);line-height:1.6}
+.sv-note b{color:var(--ink);font-weight:600}
+
+.sv-field{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.sv-field label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.sv-opt{color:rgba(255,255,255,.3)}
+.sv-input{
+  height:38px;border-radius:10px;border:1px solid var(--hair);
+  background:rgba(0,0,0,.24);color:var(--ink);padding:0 12px;outline:0;
+  font-size:12.5px;transition:border-color .15s,background .15s;
+}
+.sv-input:hover{border-color:var(--hair-2)}
+.sv-input:focus{border-color:var(--lime);background:rgba(210,249,111,.05);
+  box-shadow:0 0 0 3px rgba(210,249,111,.12)}
+select.sv-input{appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238A8C82' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;background-position:right 13px center;padding-right:34px}
+.sv-hint{font-size:11px;color:var(--muted);line-height:1.5}
+.sv-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sv-actions{display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.sv-savemsg{color:var(--lime);font-size:11.5px;font-weight:600}
+.sv-row-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.sv-badge{
+  flex-shrink:0;font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);background:rgba(255,255,255,.04);
+  border:1px solid var(--hair);border-radius:999px;padding:4px 10px;font-weight:700;
+}
+.sv-badge.ok{color:var(--lime);border-color:rgba(210,249,111,.4);background:rgba(210,249,111,.06)}
+.sv-badge.warn{color:#ffb74d;border-color:rgba(255,183,77,.35)}
+.sv-badge.err{color:var(--danger);border-color:rgba(255,80,80,.4)}
+.sv-badge--license{min-width:56px;text-align:center}
+
+.sv-drop{
+  margin-top:14px;border:1px dashed rgba(255,255,255,.18);border-radius:12px;
+  padding:22px 16px;text-align:center;cursor:pointer;color:var(--ink-dim);font-size:12px;
+  transition:border-color .15s,background .15s,color .15s;
+}
+.sv-drop:hover,.sv-drop.drag{
+  border-color:var(--lime);background:rgba(210,249,111,.04);color:var(--ink);
+}
+.sv-drop-ico{font-size:20px;margin-bottom:6px;color:var(--muted)}
+.sv-drop:hover .sv-drop-ico{color:var(--lime)}
+.sv-drop .sv-hint{margin-top:6px;display:block}
+.sv-link{background:none;border:0;color:var(--danger);font-size:12px;cursor:pointer;margin-top:8px;padding:4px 0}
+.sv-howto{margin-top:18px;border-top:1px solid var(--hair);padding-top:14px}
+.sv-howto ol{margin:8px 0 6px;padding-left:18px;color:var(--muted);font-size:11.5px;line-height:1.7}
+.sv-howto ol b{color:var(--ink)}
+.sv-export-row{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  margin-top:14px;background:rgba(0,0,0,.24);border:1px solid var(--hair);
+  border-radius:12px;padding:10px 14px;flex-wrap:wrap;
+}
+.sv-export-row code{font-size:12px;color:var(--ink);font-family:"SF Mono","Menlo",monospace;word-break:break-all}
+
+/* SAVED chip on filled-in API key labels */
+.sv-saved{
+  display:inline-block;margin-left:6px;padding:2px 7px;font-size:9px;
+  font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--lime);color:#10130a;border-radius:5px;vertical-align:middle;
+}
+.sv-lock{display:inline-block;margin-right:6px;font-size:12px}
+
+/* Input row: input flex-grow + inline Add/Edit button */
+.sv-input-row{display:flex;gap:6px;align-items:stretch}
+.sv-input-row .sv-input{flex:1;min-width:0}
+.sv-input[readonly]{background:rgba(0,0,0,.16);color:var(--muted);cursor:default}
+.sv-input-btn{
+  height:38px;padding:0 14px;border-radius:10px;flex-shrink:0;
+  background:transparent;color:var(--grey);border:1px solid var(--hair);
+  font-size:11.5px;font-weight:500;letter-spacing:.02em;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.sv-input-btn:hover{background:rgba(255,255,255,.06);color:var(--ink);border-color:var(--hair-2)}
+
+/* Inline note (Export card, single-line grey text under head) */
+.sv-inline-note{margin:10px 0 0;font-size:12px;color:var(--muted);line-height:1.55}
+
+/* Button group inline */
+.sv-btn-group{display:flex;gap:8px;flex-shrink:0;align-items:center}
+.sv-btn-group--gap{margin-top:14px;flex-wrap:wrap}
+
+/* Cookies drop zone (updated) */
+.sv-drop-title{color:var(--ink);font-size:13px;margin-top:2px}
+.sv-drop-title b{color:var(--lime);font-weight:600}
+.sv-drop-sub{color:var(--muted);font-size:11.5px;margin-top:4px}
+
+/* Collapsible howto */
+.sv-details{margin-top:14px}
+.sv-details summary{
+  cursor:pointer;list-style:none;color:var(--lime);font-size:11px;
+  font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 0;
+}
+.sv-details summary::-webkit-details-marker{display:none}
+.sv-details[open] summary{margin-bottom:6px}
+.sv-details ol{margin:6px 0;padding-left:18px;color:var(--muted);font-size:11.5px;line-height:1.7}
+.sv-details ol b{color:var(--ink)}
+
+/* License card — diamond badge, single-line info */
+.sv-badge--lic{
+  font-family:"JetBrains Mono","SF Mono",monospace;letter-spacing:.06em;
+  padding:5px 10px;font-size:10px;
+}
+.sv-badge--lic.ok{color:var(--lime);border-color:rgba(210,249,111,.4);background:rgba(210,249,111,.08)}
+.sv-badge--lic.warn{color:#ffb74d;border-color:rgba(255,183,77,.35);background:rgba(255,183,77,.06)}
+.sv-badge--lic.err{color:var(--danger);border-color:rgba(255,80,80,.4);background:rgba(255,80,80,.06)}
+.sv-lic-line{
+  margin:12px 0 0;padding:12px 14px;font-size:12.5px;color:var(--ink-dim);
+  background:rgba(0,0,0,.24);border:1px solid var(--hair);border-radius:10px;line-height:1.55;
+}
+.sv-lic-line b{color:var(--ink);font-weight:600}
+.sv-lic-line code{font-family:"JetBrains Mono","SF Mono",monospace;font-size:11.5px;color:var(--ink);
+  background:rgba(210,249,111,.08);border:1px solid rgba(210,249,111,.2);border-radius:5px;padding:1px 5px}
+
+:root[data-theme="light"] .settings-view{background:var(--bg)}
+:root[data-theme="light"] .sv-card{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.7));border-color:var(--hair-2);box-shadow:0 6px 24px rgba(0,0,0,.06)}
+:root[data-theme="light"] .sv-input{background:rgba(0,0,0,.03)}
+:root[data-theme="light"] .sv-lic-row{background:rgba(0,0,0,.03)}
+
+@media(max-width:1100px){.sv-body{grid-template-columns:1fr}}
+
+/* ── Toast ──────────────────────────────────────────── */
+.toast{
+  position:fixed;bottom:24px;right:24px;z-index:99;
+  background:rgba(20,22,15,.94);border:1px solid var(--lime);border-radius:14px;
+  padding:14px 18px;color:#fff;font-size:13px;max-width:380px;
+  box-shadow:0 14px 40px rgba(0,0,0,.5);
+  transform:translateY(20px);opacity:0;transition:all .3s ease;
+}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.err{border-color:var(--danger)}
+
+/* ── Responsive ─────────────────────────────────────── */
+/* Tight 2-column layout for typical Windows viewports (1366×768, 1536×864 at
+   125% DPI). Inspector trimmed, preview gets stricter height cap so the lower
+   detected-clips section stays visible without scrolling. */
+@media(max-width:1500px){
+  .hero-grid{grid-template-columns:auto 1fr 340px;gap:12px}
+  .inspector{padding:16px}
+  .inspector .panel-title b{font-size:16px}
+  .preview-card{padding:12px;border-radius:28px}
+  .workspace{grid-template-rows:auto minmax(260px,var(--hero-h,2.4fr)) 18px minmax(300px,1fr);gap:6px}
+}
+/* Single-column fallback only when truly narrow. Inspector becomes a compact
+   scrollable strip so the preview + detected clips both stay on screen. */
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:auto 1fr;gap:10px}
+  .hero-grid .inspector{grid-column:1 / -1}
+  .inspector{max-height:280px}
+  .preview-card{max-height:42vh}
+}
+/* Shorter viewports (Windows laptops at 768–900px height): compress vertical
+   chrome so the gallery row never gets squeezed out of view. */
+/* ── Per-word styling editor (caption editor) ─────────── */
+.pw-section{border-top:1px solid rgba(255,255,255,.08);padding-top:12px}
+.pw-style-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+.pw-style-bar[data-empty="1"]{opacity:.45}
+.pw-input{height:32px;border:0;border-radius:9px;background:rgba(255,255,255,.1);color:#fff;font-size:12px;padding:0 8px}
+.pw-input:disabled,.pw-tog:disabled,.pw-color:disabled{cursor:not-allowed}
+.pw-size{width:62px}
+.pw-text{flex:1;min-width:110px}
+.pw-tog{height:32px;min-width:32px;border:0;border-radius:9px;background:rgba(255,255,255,.1);color:#fff;font-size:13px;font-weight:700;cursor:pointer}
+.pw-tog.on{background:var(--lime);color:#111}
+.pw-color{width:38px;height:32px;border:0;border-radius:9px;background:rgba(255,255,255,.1);padding:2px;cursor:pointer}
+.pw-words{display:flex;flex-direction:column;gap:6px;max-height:160px;overflow-y:auto;background:rgba(0,0,0,.22);border-radius:12px;padding:8px}
+.pw-cue{display:flex;flex-wrap:wrap;gap:5px;padding-bottom:5px;border-bottom:1px dashed rgba(255,255,255,.06)}
+.pw-cue:last-child{border-bottom:0;padding-bottom:0}
+.pw-word{padding:3px 7px;border-radius:7px;background:rgba(255,255,255,.08);color:#e9e9e4;font-size:12px;cursor:pointer;transition:background .12s ease}
+.pw-word:hover{background:rgba(255,255,255,.18)}
+.pw-word.is-styled{box-shadow:inset 0 0 0 1px var(--lime)}
+.pw-word.sel{background:var(--lime);color:#111;font-weight:600}
+.pw-empty{color:var(--muted);font-size:12px;padding:4px}
+/* ── Crop Studio zoom / resize ────────────────────────── */
+.cs-zoom{background:rgba(0,0,0,.26);border-radius:16px;padding:12px 14px;margin-bottom:10px}
+.cs-zoom-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.cs-zoom-head span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cs-zoom-head strong{font-size:15px;color:#fff}
+.cs-zoom input[type=range]{width:100%}
+
+@media(max-height:820px){
+  .workspace{grid-template-rows:auto minmax(260px,var(--hero-h,2.2fr)) 10px minmax(270px,1fr);gap:6px}
+  .topbar{padding-top:2px}
+  .topbar h1{font-size:18px}
+  .url-input,.ghost-btn,.primary-btn,.danger-btn{height:40px}
+  .preview-card{padding:10px;border-radius:22px}
+  .inspector{padding:14px;border-radius:22px}
+  .gallery-section{padding:12px 16px 10px;border-radius:22px}
+}
+
+/* ── History Clip Gallery (overlay, mirrors mockup) ────── */
+.hg-overlay{
+  position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;
+  padding:3vh 3vw;background:rgba(4,6,3,.72);backdrop-filter:blur(14px);
+}
+.hg-overlay[hidden]{display:none}
+.hg-panel{
+  width:min(1400px,94vw);height:min(920px,90vh);display:flex;flex-direction:column;gap:14px;
+  border-radius:20px;padding:20px 22px;overflow:hidden;
+}
+/* Head */
+.hg-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.hg-head-l{display:flex;align-items:baseline;gap:12px}
+.hg-head-l h3{
+  margin:0;font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.015em;
+  text-transform:none;line-height:1.1;
+}
+.hg-head-l .hg-count{font-size:11.5px;color:var(--muted)}
+.hg-head-l .hg-count b{color:var(--lime);font-weight:700}
+.hg-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hg-search{
+  display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;
+  background:rgba(0,0,0,.26);border:1px solid var(--hair);color:var(--muted);
+}
+.hg-search svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none}
+.hg-search input{
+  flex:1;color:var(--ink);font-size:12.5px;background:transparent;border:0;outline:0;
+  min-width:220px;
+}
+.hg-search input::placeholder{color:var(--muted)}
+/* tl-chips (shared with timeline chips) */
+.tl-chips{display:flex;gap:4px;padding:3px;background:rgba(0,0,0,.24);
+  border:1px solid var(--hair);border-radius:12px}
+.tl-chips button{
+  border:0;background:transparent;color:var(--muted);
+  padding:6px 12px;font-size:11.5px;font-weight:500;border-radius:9px;
+  transition:background .12s,color .12s;
+}
+.tl-chips button:hover{color:var(--ink);background:rgba(255,255,255,.04)}
+.tl-chips button.on{background:var(--lime);color:#0e120a;font-weight:700}
+/* .btn.btn-ghost (mockup) — small ghost pill */
+.btn.btn-ghost{
+  background:transparent;color:var(--ink-dim);border:1px solid var(--hair);
+  border-radius:10px;padding:7px 14px;font-size:12px;font-weight:500;
+  transition:background .12s,color .12s,border-color .12s;
+}
+.btn.btn-ghost:hover:not(:disabled){background:rgba(255,255,255,.05);color:var(--ink);border-color:var(--hair-2)}
+.btn.btn-ghost:disabled{opacity:.35;cursor:default}
+
+/* Grid — flex reels feed: fixed 6 cols × 3 rows = 18 tiles per page.
+   No vertical scroll — grid-auto-rows:1fr splits remaining height evenly,
+   tiles crop content via object-fit:cover so aspect looks portrait but the
+   tile height is dictated by the row height (not aspect-ratio). Result:
+   captions never get truncated by an overflowing row. */
+.hg-grid{
+  flex:1;min-height:0;overflow:hidden;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  grid-auto-rows:minmax(0,1fr);
+  gap:10px;
+}
+/* Responsive fallback: on narrower viewports drop to 5 or 4 cols so tiles
+   don't get too skinny for the caption. */
+@media(max-width:1200px){.hg-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:900px){.hg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.hg-grid::-webkit-scrollbar{width:8px}
+.hg-grid::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:6px}
+.hg-grid .empty{grid-column:1/-1;color:var(--muted);font-size:13px;padding:40px;text-align:center}
+
+/* Clip tile — full-bleed card, size dictated by grid (no aspect-ratio lock).
+   Thumbnail cropped via object-fit:cover so any source shape (16:9 landscape
+   podcast, 9:16 face) fills the tile without letterboxing. */
+.hg-clip{
+  position:relative;overflow:hidden;min-height:0;
+  border-radius:12px;border:1px solid var(--hair);
+  background:linear-gradient(180deg,#3A4030,#08090A);
+  cursor:pointer;transition:transform .16s,border-color .16s,box-shadow .16s;
+}
+.hg-clip:hover{
+  transform:translateY(-2px);border-color:var(--lime);
+  box-shadow:0 20px 40px rgba(0,0,0,.55),0 0 0 1px rgba(210,249,111,.25);
+}
+.hg-thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hg-clip > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1}
+/* Ambient vignette + reels-style bottom scrim for legibility */
+.hg-clip::before{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.55) 0%,transparent 22%,transparent 55%,rgba(0,0,0,.55) 78%,rgba(0,0,0,.9) 100%);
+}
+
+/* Top pills */
+.hg-rank{
+  position:absolute;top:8px;left:8px;z-index:3;
+  font-family:"JetBrains Mono","SF Mono",monospace;font-size:9.5px;font-weight:700;
+  color:#FFF;background:rgba(0,0,0,.6);padding:3px 7px;border-radius:5px;letter-spacing:.04em;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.hg-status{
+  position:absolute;top:8px;right:8px;z-index:3;
+  font-family:"JetBrains Mono","SF Mono",monospace;font-size:9.5px;font-weight:700;
+  padding:3px 7px;border-radius:5px;letter-spacing:.04em;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.hg-status.hot{color:#FF9F45;background:rgba(255,159,69,.18);border:1px solid rgba(255,159,69,.4)}
+.hg-status.saved{color:var(--lime);background:rgba(210,249,111,.14);border:1px solid rgba(210,249,111,.4)}
+.hg-dur{
+  position:absolute;bottom:10px;right:10px;z-index:4;
+  font-family:"JetBrains Mono","SF Mono",monospace;font-size:9.5px;color:#FFF;
+  background:rgba(0,0,0,.62);padding:3px 6px;border-radius:4px;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+
+/* Hero caption — larger + 3 lines so 3-5 word hooks never get truncated */
+.hg-cap{
+  position:absolute;left:10px;right:10px;bottom:58px;z-index:3;
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:14.5px;font-weight:700;color:#FFF;line-height:1.22;
+  text-shadow:0 2px 10px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.95);letter-spacing:-.01em;
+  text-align:left;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.hg-cap span{color:var(--lime)}
+
+/* Bottom overlay meta — single-line title + source · res */
+.hg-overlay-meta{
+  position:absolute;left:10px;right:10px;bottom:8px;z-index:4;
+  display:flex;flex-direction:column;gap:3px;
+}
+.hg-overlay-meta .hg-title{
+  font-size:11px;color:#FFF;font-weight:600;line-height:1.28;letter-spacing:0;
+  text-shadow:0 1px 4px rgba(0,0,0,.9);
+  font-family:"Hanken Grotesk",system-ui,sans-serif;text-transform:none;
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
+}
+.hg-overlay-meta .hg-sub{
+  display:flex;justify-content:space-between;align-items:center;gap:6px;
+  font-family:"JetBrains Mono","SF Mono",monospace;font-size:9px;
+  color:rgba(255,255,255,.72);letter-spacing:.04em;
+  text-shadow:0 1px 3px rgba(0,0,0,.85);
+}
+.hg-overlay-meta .hg-sub span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hg-overlay-meta .hg-sub .r{color:var(--lime);flex-shrink:0}
+
+/* Pager */
+.hg-pager{
+  margin-top:14px;display:flex;justify-content:space-between;align-items:center;
+  padding:10px 14px;border-radius:10px;
+  background:rgba(255,255,255,.02);border:1px solid var(--hair);
+  font-size:11.5px;color:var(--muted);flex-shrink:0;
+}
+.hg-pager[hidden]{display:none}
+.hg-pager .info{font-family:"JetBrains Mono","SF Mono",monospace;letter-spacing:.04em}
+
+:root[data-theme="light"] .hg-overlay{background:rgba(240,240,235,.72)}
+:root[data-theme="light"] .hg-session{background:rgba(0,0,0,.03)}
+:root[data-theme="light"] .hg-search{background:rgba(255,255,255,.7)}
+:root[data-theme="light"] .hg-head-l .hg-count b{color:var(--lime-deep,#7DB425)}
+:root[data-theme="light"] .hg-status.saved{color:var(--lime-deep,#7DB425)}
+
+/* ── [MOMO] Caption editor redesign ─────────────────────── */
+.cap-editor.cap-momo{display:flex;flex-direction:column;gap:12px;min-height:0;height:100%;grid-template-columns:unset}
+.cap-momo .cap-main{display:flex;gap:12px;flex:1;min-height:0}
+.cap-momo .cap-stage-wrap{flex:1;min-width:0;min-height:0;border-radius:18px;border:1px solid #16180f;padding:14px}
+/* v3: wider side panel + sticky tabs + tighter field cards for less scroll fatigue */
+.cap-momo .cap-panel{
+  width:400px;flex:0 0 400px;display:flex;flex-direction:column;gap:10px;min-height:0;
+  background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:12px;
+}
+.cap-momo .cap-tabs{
+  display:flex;background:var(--surface-2);border:1px solid var(--hair);
+  border-radius:10px;padding:3px;gap:3px;
+  position:sticky;top:0;z-index:5;   /* stays visible while inner page scrolls */
+}
+.cap-momo .cap-tab{
+  flex:1;height:32px;border:0;border-radius:8px;background:transparent;
+  color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;
+  transition:background .12s,color .12s;
+}
+.cap-momo .cap-tab:hover{color:var(--ink-dim);background:rgba(255,255,255,.04)}
+.cap-momo .cap-tab.active{background:var(--lime);color:#0A0B08;font-weight:600}
+.cap-momo .cap-tabpage{
+  flex:1;overflow-y:auto;overscroll-behavior:contain;
+  display:flex;flex-direction:column;gap:8px;padding:2px 6px 12px 2px;min-height:0;
+  /* Subtle scrollbar cue so user knows content extends past viewport */
+  scrollbar-gutter:stable;
+}
+.cap-momo .cap-tabpage[hidden]{display:none}
+.cap-momo .field{
+  background:var(--surface-2);border:1px solid var(--hair);border-radius:10px;
+  padding:9px 11px;margin:0;
+}
+.cap-momo .field:hover{border-color:var(--hair-2)}
+/* Section headers within a tab — split the long Style tab into readable groups.
+   Insert <div class="cap-sec">Label</div> in HTML template to opt in. */
+.cap-sec{
+  margin:6px 2px 2px;font-size:10px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+.cap-sec:first-child{margin-top:0}
+/* Iter 4: section card — groups several fields under one cap-sec label.
+   Fields inside go flat (card provides the surface) to avoid double borders. */
+.cap-momo .cap-card{
+  background:var(--surface-2);border:1px solid var(--hair);border-radius:12px;
+  padding:10px 11px;display:flex;flex-direction:column;gap:6px;flex-shrink:0;
+}
+.cap-momo .cap-card .cap-sec{margin:0 0 2px}
+.cap-momo .cap-card .field{background:transparent;border:0;padding:5px 2px;border-radius:0}
+.cap-momo .cap-card .field:hover{border-color:transparent}
+.cap-momo .cap-card .field+.field{border-top:1px solid var(--hair)}
+.cap-momo .cap-stage{max-height:none}
+/* Timeline card */
+.cap-timeline{background:#12140d;border:1px solid #1c1f14;border-radius:16px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;flex:0 0 auto}
+.tl-top{display:flex;align-items:center;gap:8px}
+.tl-btn{width:26px;height:26px;border-radius:999px;border:1px solid #22251b;background:#1b1e13;color:#dde;cursor:pointer;font-size:11px}
+.tl-play{width:32px;height:32px;background:var(--lime);color:#111;border:0;font-weight:800}
+.tl-time{color:#fff;font-weight:700;font-size:12px}
+.tl-time span{color:var(--muted);font-weight:400;font-size:11px}
+.tl-zoom{margin-left:auto;display:flex;align-items:center;gap:6px;color:var(--muted);font-size:11px}
+.tl-zoom input{width:90px}
+.tl-scroll{overflow-x:auto;overflow-y:hidden}
+.tl-track{position:relative;min-width:100%}
+/* [FILM-V1] Thumbnail filmstrip above the ruler/lane — equal-width flex
+   slots so it stays aligned with the ruler/cue percentage-based layout at
+   any zoom level without regenerating frames. */
+/* Tiles are positioned by time-percentage (left/width), not equal flex
+   division — the same coordinate system .tl-ruler ticks and .tl-lane cues
+   use, so the strip stays pixel-aligned with the cue lane at any zoom
+   level: zooming changes #tl_track's width, .tl-film stretches to match
+   (plain block child, no explicit width), and every tile's % position
+   scales right along with it. */
+.tl-film{position:relative;height:44px;border-radius:8px;overflow:hidden;background:#0d0f09;margin-bottom:6px;border:1px solid #1c1f14;display:block}
+.tl-film img{position:absolute;top:0;height:100%;object-fit:cover;display:block;border-right:1px solid rgba(0,0,0,.35);pointer-events:none}
+.tl-film img:last-child{border-right:0}
+.tl-film.loading{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:10px}
+.tl-ruler{height:14px;position:relative;border-bottom:1px solid #1c1f14;color:#556;font-size:9px}
+.tl-ruler .tick{position:absolute;top:0;transform:translateX(-50%)}
+.tl-lane{position:relative;height:40px;margin-top:4px}
+.tl-cue{position:absolute;top:0;bottom:0;background:#1b1e13;border:1px solid #262a1d;border-radius:8px;color:#cdd;font-size:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;cursor:grab;padding:0 6px;user-select:none}
+.tl-cue.on{border:1.5px solid var(--lime);color:#fff;box-shadow:0 0 10px rgba(241,255,0,.22)}
+.tl-cue .hnd{position:absolute;top:22%;bottom:22%;width:5px;border-radius:3px;background:var(--lime);opacity:0;cursor:ew-resize}
+.tl-cue.on .hnd{opacity:1}
+.tl-cue .hnd.l{left:-2px}.tl-cue .hnd.r{right:-2px}
+.tl-playhead{position:absolute;top:0;bottom:0;width:1.5px;background:var(--lime);pointer-events:none;z-index:3}
+.tl-playhead span{position:absolute;top:-2px;left:50%;transform:translate(-50%,-100%);background:var(--lime);color:#111;font-size:9px;font-weight:800;padding:1px 6px;border-radius:999px;white-space:nowrap}
+.tl-foot{display:flex;align-items:center;gap:8px}
+.tl-chip{background:#1b1e13;border:1px solid #22251b;border-radius:10px;color:#cdd;padding:5px 10px;font-size:11px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.tl-chip b{color:var(--lime)}
+.tl-in{width:64px;background:#12140d;border:1px solid #2a2d22;border-radius:6px;color:#fff;font-size:11px;padding:2px 4px}
+.tl-mini{width:20px;height:20px;border-radius:6px;border:1px solid #2a2d22;background:#12140d;color:#dde;cursor:pointer}
+/* [CUE-SHIFT]/[CUE-DELETE] text-bearing minis need natural width */
+.tl-shift{margin-left:auto;display:flex;align-items:center;gap:4px;color:var(--muted);font-size:11px}
+.tl-shift .tl-mini{width:auto;padding:0 8px;font-size:10.5px}
+.tl-del{width:auto;padding:0 8px;font-size:10.5px;color:#ff8080;border-color:#3a2222}
+.tl-sel{background:#12140d;border:1px solid #2a2d22;border-radius:6px;color:#dde;font-size:11px;padding:2px 4px;max-width:130px}
+.tl-foot .cap-actions{margin-left:auto;margin-top:0}
+/* Overlay body must give the editor full height */
+.overlay-body:has(.cap-momo){display:flex;flex-direction:column}
+/* [PREVIEW-FIXED] .overlay-card only has max-height (shrink-to-fit), so with
+   no definite height anywhere in the chain the whole modal — including the
+   video stage, since .cap-stage inherits height:100% down through .cap-main/
+   .cap-stage-wrap — grows or shrinks to match whichever tab (Style/Words/
+   Titles) happens to be tallest or shortest right now. Giving the card a
+   fixed height (not just a cap) here makes .overlay-body's flex:1 resolve to
+   a real number, so the stage size becomes independent of tab content and
+   only .cap-tabpage scrolls internally.  Scoped to the caption editor only —
+   other overlays (clip review grid, etc.) keep shrinking to fit their content. */
+.overlay-card:has(.cap-momo){height:92vh}

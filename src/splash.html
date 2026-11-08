@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>SOCL Visuals Studio — Loading</title>
+  <link rel="stylesheet" href="splash.css" />
+</head>
+<body>
+  <!-- [SPLASH-V2] Jet-black stage: blurred light, film grain, vignette. -->
+  <div class="bg" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="grain"></div>
+  </div>
+
+  <main class="splash">
+    <header class="brand">
+      <div class="word">
+        <span class="name">SCL-VSL<span class="mark" aria-label="copyright">C</span></span>
+        <span class="sub">Social Visuals Studio</span>
+      </div>
+      <span class="step" id="stepCount"></span>
+    </header>
+
+    <section class="block">
+      <p class="status" id="statusText">Initializing…</p>
+      <!-- data-state: idle (no progress yet) → run → done | error -->
+      <div class="bar" id="bar" data-state="idle"><div class="fill" id="progressFill"><i class="sheen"></i></div></div>
+      <div class="meta">
+        <span id="detailText">Preparing…</span>
+        <span class="pct" id="pctText"></span>
+      </div>
+    </section>
+
+    <p class="note">First-time setup mengunduh komponen yang diperlukan. Jangan tutup aplikasi.</p>
+  </main>
+
+  <script>
+    const statusEl = document.getElementById('statusText');
+    const detailEl = document.getElementById('detailText');
+    const stepEl   = document.getElementById('stepCount');
+    const fillEl   = document.getElementById('progressFill');
+    const barEl    = document.getElementById('bar');
+    const pctEl    = document.getElementById('pctText');
+    const pad2 = n => String(n).padStart(2, '0');
+
+    function applyStatus(value) {
+      const m = /\((\d+)\s*of\s*(\d+)\)/i.exec(value);
+      if (m) {
+        stepEl.textContent = `${pad2(m[1])} / ${pad2(m[2])}`;
+        statusEl.textContent = value.replace(/\s*\(\d+\s*of\s*\d+\)\s*$/i, '').trim();
+      } else {
+        statusEl.textContent = value;
+      }
+      // An error freezes the line red; the last % would read like success.
+      if (/^error\b/i.test(value)) { barEl.dataset.state = 'error'; pctEl.textContent = ''; }
+    }
+
+    function applyProgress(value) {
+      const p = Math.max(0, Math.min(1, Number(value) || 0));
+      fillEl.style.width = Math.round(p * 100) + '%';
+      if (barEl.dataset.state === 'error') return;
+      pctEl.textContent = Math.round(p * 100) + '%';
+      barEl.dataset.state = p >= 1 ? 'done' : p > 0 ? 'run' : 'idle';
+    }
+
+    window.splash.onUpdate(({ type, value }) => {
+      if (type === 'status')   applyStatus(value);
+      if (type === 'detail')   detailEl.textContent = value;
+      if (type === 'progress') applyProgress(value);
+    });
+  </script>
+</body>
+</html>

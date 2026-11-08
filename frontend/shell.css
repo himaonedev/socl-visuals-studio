@@ -1,0 +1,20 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+#root, #legacy-workspace { width: 100%; min-height: 100vh; }
+.startup-state { position: fixed; inset: 0; z-index: 99999; display: grid; place-content: center; gap: 16px; background: #101116; color: #f4f4f5; font: 16px system-ui; padding: 48px; }
+.startup-state p { max-width: 900px; overflow-wrap: anywhere; white-space: pre-wrap; }
+.native-modal { padding: 28px; max-width: 600px; border: 1px solid #42424c; border-radius: 16px; background: #18191f; color: #f4f4f5; font: 15px system-ui; }
+.native-modal::backdrop { background: #000a; }
+.native-modal p { white-space: pre-wrap; }
+.native-modal footer { display: flex; gap: 8px; margin-top: 24px; flex-wrap: wrap; }
+.native-modal button, .startup-state button { padding: 10px 18px; border-radius: 9px; background: #4141c9; color: white; border: 0; cursor: pointer; }
+.socl-effects-workspace { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; background: var(--bg,#0a0b08); color: var(--text,#f4f5ef); font-family: Inter,system-ui,sans-serif; }
+.socl-effects-nav { height: 54px; flex-shrink: 0; display: flex; align-items: center; gap: 22px; padding: 0 18px; border-bottom: 1px solid var(--border,#303626); background: var(--surface-1,#141610); }
+.socl-effects-nav button { padding: 7px 12px; border: 1px solid var(--border); border-radius: 9px; font-size: 12px; cursor: pointer; background: var(--surface-2); color: var(--text); }
+.socl-effects-nav div { display: flex; align-items: center; gap: 12px; font-size: 13px; }.socl-effects-nav div span { color: var(--accent,#d5ff40); font-size: 11px; }
+.socl-effects-nav p { margin-left: auto; display: flex; gap: 22px; color: var(--text-muted); font-size: 11px; }.socl-effects-nav p b { color: var(--accent,#d5ff40); font-weight: 600; }
+.socl-effects-content { flex: 1; min-height: 0; position: relative; display: flex; flex-direction: column; }.socl-effects-content > * { min-height: 0; }
+.socl-effects-notice { padding: 12px 20px; background: #4a2718; color: #ffd1b9; display: flex; justify-content: space-between; }.socl-effects-loading { padding: 60px; text-align: center; }
+.socl-effects-entry { color: var(--lime); }.socl-effects-entry span:last-child { font-size: 9px; }
+@media(max-width:1000px){.socl-effects-nav p{display:none}}

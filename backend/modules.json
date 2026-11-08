@@ -1,0 +1,214 @@
+[
+  {
+    "source": "backend/engine/contracts.ts",
+    "output": "engine/contracts.js"
+  },
+  {
+    "source": "backend/engine/media.ts",
+    "output": "engine/media.cjs"
+  },
+  {
+    "source": "backend/engine/network.ts",
+    "output": "engine/network.cjs"
+  },
+  {
+    "source": "backend/engine/platform.ts",
+    "output": "engine/platform.cjs"
+  },
+  {
+    "source": "backend/engine/server.ts",
+    "output": "engine/server.cjs"
+  },
+  {
+    "source": "backend/src/asr-resource-plan.ts",
+    "output": "src/asr-resource-plan.js"
+  },
+  {
+    "source": "backend/src/audit.ts",
+    "output": "src/audit.js"
+  },
+  {
+    "source": "backend/src/bootstrap.ts",
+    "output": "src/bootstrap.js"
+  },
+  {
+    "source": "backend/src/bundle-cleanup.ts",
+    "output": "src/bundle-cleanup.js"
+  },
+  {
+    "source": "backend/src/bundle-download.ts",
+    "output": "src/bundle-download.js"
+  },
+  {
+    "source": "backend/src/caption-box.ts",
+    "output": "src/caption-box.js"
+  },
+  {
+    "source": "backend/src/caption-extras.ts",
+    "output": "src/caption-extras.js"
+  },
+  {
+    "source": "backend/src/catalog-loader.ts",
+    "output": "src/catalog-loader.js"
+  },
+  {
+    "source": "backend/src/clip-history.ts",
+    "output": "src/clip-history.js"
+  },
+  {
+    "source": "backend/src/clip-hook.ts",
+    "output": "src/clip-hook.js"
+  },
+  {
+    "source": "backend/src/clip-report.ts",
+    "output": "src/clip-report.js"
+  },
+  {
+    "source": "backend/src/context-model/bundle.ts",
+    "output": "src/context-model/bundle.js"
+  },
+  {
+    "source": "backend/src/context-model/index.ts",
+    "output": "src/context-model/index.js"
+  },
+  {
+    "source": "backend/src/context-model/picker.ts",
+    "output": "src/context-model/picker.js"
+  },
+  {
+    "source": "backend/src/context-model/tokenizer.ts",
+    "output": "src/context-model/tokenizer.js"
+  },
+  {
+    "source": "backend/src/context-model/worker.ts",
+    "output": "src/context-model/worker.js"
+  },
+  {
+    "source": "backend/src/cookies-file.ts",
+    "output": "src/cookies-file.js"
+  },
+  {
+    "source": "backend/src/edit-input.ts",
+    "output": "src/edit-input.js"
+  },
+  {
+    "source": "backend/src/emoji-map.ts",
+    "output": "src/emoji-map.js"
+  },
+  {
+    "source": "backend/src/engine-main.ts",
+    "output": "src/engine-main.cjs"
+  },
+  {
+    "source": "backend/src/font-metrics.ts",
+    "output": "src/font-metrics.js"
+  },
+  {
+    "source": "backend/src/hook-autoburn.ts",
+    "output": "src/hook-autoburn.js"
+  },
+  {
+    "source": "backend/src/hook-presets.ts",
+    "output": "src/hook-presets.js"
+  },
+  {
+    "source": "backend/src/hw-accel.ts",
+    "output": "src/hw-accel.js"
+  },
+  {
+    "source": "backend/src/innertube-transcript.ts",
+    "output": "src/innertube-transcript.js"
+  },
+  {
+    "source": "backend/src/kinetic-title.ts",
+    "output": "src/kinetic-title.js"
+  },
+  {
+    "source": "backend/src/kinetic-widths.ts",
+    "output": "src/kinetic-widths.js"
+  },
+  {
+    "source": "backend/src/legacy-hook-model-cleanup.ts",
+    "output": "src/legacy-hook-model-cleanup.js"
+  },
+  {
+    "source": "backend/src/manual-caption.ts",
+    "output": "src/manual-caption.js"
+  },
+  {
+    "source": "backend/src/mem-available.ts",
+    "output": "src/mem-available.js"
+  },
+  {
+    "source": "backend/src/pipeline-inverse-v1.ts",
+    "output": "src/pipeline-inverse-v1.js"
+  },
+  {
+    "source": "backend/src/pipeline-preview.ts",
+    "output": "src/pipeline-preview.js"
+  },
+  {
+    "source": "backend/src/preset-catalog-key.ts",
+    "output": "src/preset-catalog-key.js"
+  },
+  {
+    "source": "backend/src/preset-catalog.ts",
+    "output": "src/preset-catalog.js"
+  },
+  {
+    "source": "backend/src/sanitize.ts",
+    "output": "src/sanitize.js"
+  },
+  {
+    "source": "backend/src/secrets.ts",
+    "output": "src/secrets.js"
+  },
+  {
+    "source": "backend/src/session-files.ts",
+    "output": "src/session-files.js"
+  },
+  {
+    "source": "backend/src/source-acquisition.ts",
+    "output": "src/source-acquisition.js"
+  },
+  {
+    "source": "backend/src/subtitle-track-selector.ts",
+    "output": "src/subtitle-track-selector.js"
+  },
+  {
+    "source": "backend/src/title-layout.ts",
+    "output": "src/title-layout.js"
+  },
+  {
+    "source": "backend/src/topic-select.ts",
+    "output": "src/topic-select.js"
+  },
+  {
+    "source": "backend/src/track-plan.ts",
+    "output": "src/track-plan.js"
+  },
+  {
+    "source": "backend/src/tracker-bundle.ts",
+    "output": "src/tracker-bundle.js"
+  },
+  {
+    "source": "backend/src/update-check.ts",
+    "output": "src/update-check.js"
+  },
+  {
+    "source": "backend/src/video-fx.ts",
+    "output": "src/video-fx.js"
+  },
+  {
+    "source": "backend/src/watermark.ts",
+    "output": "src/watermark.js"
+  },
+  {
+    "source": "backend/src/whisper-bundle.ts",
+    "output": "src/whisper-bundle.js"
+  },
+  {
+    "source": "backend/src/work-root.ts",
+    "output": "src/work-root.js"
+  }
+]

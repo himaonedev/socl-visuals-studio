@@ -1,0 +1,147 @@
+@font-face{font-family:'Hanken Grotesk';src:url('../assets/fonts/HankenGrotesk-500.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('../assets/fonts/HankenGrotesk-600.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('../assets/fonts/HankenGrotesk-800.ttf') format('truetype');font-weight:800;font-display:swap}
+/* Poppins Bold's one face is registered at the normal weight — keep weight
+   400 so Chromium does not embolden it a second time (same as .tb-name). */
+@font-face{font-family:'Poppins Bold';src:url('../assets/fonts/Poppins-Bold.ttf') format('truetype');font-display:swap}
+
+/* [SPLASH-V2] Jet black, one lime light, grain. The loading line follows the
+   hook-row scroll cue: a 2px track and a lit segment that glows. */
+:root{
+  --bg:#020203;
+  --ink:#f4f5ef;
+  --muted:#7d7f78;
+  --lime:#d5ff40;
+  --lime-glow:rgba(213,255,64,.55);
+  --err:#ff5a52;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink);
+  font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:13px;-webkit-font-smoothing:antialiased}
+
+/* ── Background: blurred light + grain + vignette ───────────────── */
+/* .bg is position:fixed, so it is its own stacking context: the grain's
+   overlay blend only sees what is painted INSIDE it. Without its own black
+   the noise blended against nothing and lifted the whole window to grey. */
+.bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;background:var(--bg)}
+.glow{
+  position:absolute;inset:-40%;
+  background:
+    radial-gradient(36% 32% at 80% 78%, rgba(213,255,64,.18), transparent 70%),
+    radial-gradient(28% 24% at 18% 14%, rgba(170,190,255,.025), transparent 70%),
+    radial-gradient(26% 22% at 56% 112%, rgba(213,255,64,.08), transparent 70%);
+  filter:blur(28px);
+  animation:drift 16s ease-in-out infinite alternate;
+}
+.grain{
+  position:absolute;inset:-50%;
+  background-image:var(--grain);background-size:160px 160px;
+  opacity:.16;mix-blend-mode:overlay;
+  animation:grain 1s steps(5) infinite;
+}
+.bg::after{ /* vignette: the edges fall to pure black */
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(0,0,0,.75) 100%);
+}
+@keyframes drift{
+  0%  {transform:translate3d(0,0,0) scale(1)}
+  100%{transform:translate3d(-6%,-4%,0) scale(1.08)}
+}
+@keyframes grain{
+  0%{transform:translate(0,0)} 20%{transform:translate(-4%,3%)} 40%{transform:translate(3%,-5%)}
+  60%{transform:translate(-2%,-2%)} 80%{transform:translate(5%,4%)} 100%{transform:translate(0,0)}
+}
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+.splash{
+  position:relative;height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 34px 26px;gap:22px;
+  -webkit-app-region:drag;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+/* brand — the app's wordmark */
+.brand{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.word{display:flex;flex-direction:column;line-height:1.05}
+.name{font-family:'Poppins Bold',sans-serif;font-weight:400;font-size:17px;letter-spacing:.03em;color:var(--ink)}
+.mark{
+  display:inline-grid;place-items:center;width:10px;height:10px;margin-left:3px;
+  vertical-align:8px;border:1px solid rgba(213,255,64,.7);border-radius:50%;
+  font-size:6.5px;font-weight:800;line-height:1;letter-spacing:0;color:rgba(213,255,64,.85);
+}
+.sub{font-size:10.5px;font-weight:500;color:var(--muted);margin-top:3px;letter-spacing:.04em}
+.step{
+  font-size:10.5px;font-weight:600;letter-spacing:.18em;color:var(--lime);
+  font-variant-numeric:tabular-nums;text-shadow:0 0 10px rgba(213,255,64,.35);
+}
+
+/* status + loading line */
+.block{display:flex;flex-direction:column;gap:12px}
+.status{font-size:16px;font-weight:600;letter-spacing:-.005em;color:var(--ink);min-height:20px}
+.bar{position:relative;height:14px;margin:-6px 0} /* 14px box, 2px line */
+.bar::before{ /* track */
+  content:"";position:absolute;left:0;right:0;top:6px;height:2px;border-radius:2px;
+  background:rgba(255,255,255,.07);
+}
+.fill{
+  position:absolute;top:6px;left:0;height:2px;width:0%;border-radius:2px;
+  background:linear-gradient(90deg, rgba(213,255,64,0), rgba(213,255,64,.6) 35%, var(--lime));
+  /* drop-shadow follows the gradient's alpha; box-shadow lit a flat band
+     under the transparent tail too. */
+  filter:drop-shadow(0 0 4px var(--lime-glow));
+  transition:width .45s cubic-bezier(.2,.8,.2,1);
+  overflow:visible;
+}
+.fill::after{ /* neon head */
+  content:"";position:absolute;right:-3px;top:-2px;width:6px;height:6px;border-radius:50%;
+  background:#f6ffd0;box-shadow:0 0 6px 1px var(--lime),0 0 16px 3px rgba(213,255,64,.45);
+  animation:pulse 1.4s ease-in-out infinite;
+}
+/* Light sweeping along the lit line. It lives in its own overflow:hidden
+   box so it never runs past the head — clip-path on .fill did that too, but
+   together with the drop-shadow it painted a dark box around the head. */
+.sheen{position:absolute;inset:-1px 0;overflow:hidden;border-radius:2px}
+.sheen::before{
+  content:"";position:absolute;top:0;height:4px;width:40%;left:-40%;border-radius:4px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.95), transparent);
+  opacity:.85;
+  animation:sweep 1.6s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.7)}}
+@keyframes sweep{0%{left:-40%}100%{left:100%}}
+
+/* idle: no progress yet — a lit segment scans the whole track */
+.bar[data-state="idle"] .fill{
+  width:28% !important;transition:none;
+  background:linear-gradient(90deg, rgba(213,255,64,0), var(--lime) 50%, rgba(213,255,64,0));
+  animation:scan 1.5s ease-in-out infinite alternate;
+}
+.bar[data-state="idle"] .fill::after,
+.bar[data-state="idle"] .sheen{display:none}
+@keyframes scan{0%{left:0}100%{left:72%}}
+
+/* done: the whole line lights up once */
+.bar[data-state="done"] .fill{background:var(--lime);filter:drop-shadow(0 0 6px var(--lime-glow))}
+.bar[data-state="done"] .sheen{display:none}
+.bar[data-state="done"] .fill::after{animation:none}
+
+/* error */
+.bar[data-state="error"] .fill{background:var(--err);filter:drop-shadow(0 0 4px rgba(255,90,82,.6))}
+.bar[data-state="error"] .sheen,
+.bar[data-state="error"] .fill::after{display:none}
+
+.meta{
+  display:flex;justify-content:space-between;gap:16px;
+  font-size:11.5px;color:var(--muted);min-height:16px;font-variant-numeric:tabular-nums;
+}
+.meta #detailText{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pct{color:#b9c78a;letter-spacing:.06em;flex-shrink:0}
+
+.note{font-size:10.5px;color:var(--muted);opacity:.75;line-height:1.5;max-width:360px}
+
+@media (prefers-reduced-motion: reduce){
+  .glow,.grain,.sheen::before,.fill::after,.bar[data-state="idle"] .fill{animation:none}
+}

@@ -1,0 +1,20 @@
+{
+  "version": "1",
+  "assets": {
+    "darwin-arm64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/context-model-v1/context-model-1-darwin-arm64.tar.gz",
+      "sha256": "f39c12f338f33561110963adf156f4c9243e4999061035c7754fb5285532ea7f",
+      "bytes": 92394320
+    },
+    "darwin-x64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/context-model-v1/context-model-1-darwin-x64.tar.gz",
+      "sha256": "41d16c95347b611ffefab08b1a1f91186d02f199f7e6286133837bb0593d3e21",
+      "bytes": 93490473
+    },
+    "win32-x64": {
+      "url": "https://github.com/cultivatestd-lang/socl-visuals-releases/releases/download/context-model-v1/context-model-1-win32-x64.tar.gz",
+      "sha256": "6421dcbc126e91371a77afd55c2c30988915bf71982ed17bce5e734a9d4d7d69",
+      "bytes": 99907430
+    }
+  }
+}
