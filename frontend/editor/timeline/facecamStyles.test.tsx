@@ -134,10 +134,10 @@ it("cancels an in-flight render without applying an edit", async () => {
   expect(invoke).toHaveBeenCalledWith("cancel_ai_job");
   expect(useProjectStore.getState().past).toHaveLength(0);
 });
-it("offers all ten styles and editable labels and applies from the Motion panel", async () => {
+it("offers all styles and editable labels and applies from the Motion panel", async () => {
   const p = useProjectStore.getState().project;
   render(<FacecamStylesPanel clip={p.tracks[0].clips[0]} />);
-  expect(screen.getByLabelText("Facecam style").querySelectorAll("option")).toHaveLength(10);
+  expect(screen.getByLabelText("Facecam style").querySelectorAll("option")).toHaveLength(FACECAM_STYLES.length);
   fireEvent.change(screen.getByLabelText("Facecam style"), { target: { value: "name-tag" } });
   fireEvent.change(screen.getByLabelText("Facecam text"), { target: { value: "Pembicara" } });
   await act(async () => fireEvent.click(screen.getByRole("button", { name: "Apply Facecam Style" })));
@@ -146,6 +146,14 @@ it("offers all ten styles and editable labels and applies from the Motion panel"
     "render_text",
     expect.objectContaining({ spec: expect.objectContaining({ content: "Pembicara" }) }),
   );
+});
+
+it('renders Cinema Label as two native text rows without subject separation', async () => {
+  const result = await createFacecamStyle('video', 2, { ...DEFAULT_FACECAM, style: 'cinema-label', text: 'WHERE THE\nMASK ENDS', x: .1, y: .1, textSize: .03, accent: '#E50914' });
+  expect(result.ok).toBe(true);
+  const rows = vi.mocked(invoke).mock.calls.filter(([command]) => command === 'render_text');
+  expect(rows.map(([, args]) => (args as { spec: { content: string } }).spec.content)).toEqual(['WHERE THE', 'MASK ENDS']);
+  expect(invoke).toHaveBeenCalledWith('prepare_facecam_style', expect.objectContaining({ request: expect.objectContaining({ plates: ['/cache/label.png', '/cache/label.png'], settings: expect.objectContaining({ style: 'cinema-label', x: .1, y: .1 }) }) }));
 });
 
 it('offers a nine-point grid, X/Y and Zoom on every style and sends framing separately from the label', async () => {

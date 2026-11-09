@@ -14,7 +14,7 @@ import tempfile
 sys.dont_write_bytecode = True
 FLAGS = subprocess.CREATE_NO_WINDOW if sys.platform == 'win32' else 0
 STYLES = ('lean-in', 'slow-push', 'text-behind', 'backdrop-word', 'spotlight',
-          'name-tag', 'silhouette-intro', 'bottom-fade', 'glass-card', 'freeze-sticker')
+          'name-tag', 'silhouette-intro', 'bottom-fade', 'glass-card', 'freeze-sticker', 'cinema-label')
 SUBJECT_STYLES = ('text-behind', 'backdrop-word', 'spotlight', 'silhouette-intro', 'freeze-sticker')
 
 
@@ -111,6 +111,9 @@ def entry_transform(settings, t):
         return 0.,0.,1.,1.
     p = max(0.,min(1.,(t-delay)/duration))
     k = ease(p)
+    if settings.get('style') == 'cinema-label':
+        # Subtle ease-out-back: fast travel followed by a small settling motion.
+        k = 1+2.05*(p-1)**3+1.05*(p-1)**2
     dx = dy = 0.
     scale = 1.
     if mode in ('slide','slide-pop'):
@@ -122,6 +125,21 @@ def entry_transform(settings, t):
         back = 1+2.70158*(p-1)**3+1.70158*(p-1)**2
         scale = .1+.9*back
     return dx,dy,scale,min(1.,p*5)
+
+
+def text_transform(settings, t, seconds):
+    incoming = entry_transform(settings, t)
+    mode = settings.get('exit', 'follow')
+    if mode == 'follow': mode = settings.get('entry', 'none')
+    direction = settings.get('exitDirection', 'follow')
+    if direction == 'follow': direction = settings.get('entryDirection', 'left')
+    duration = settings.get('exitDuration', .45)
+    if mode == 'none' or t < seconds-duration:
+        return incoming
+    outgoing = entry_transform(dict(settings, entry=mode, entryDirection=direction,
+                                    entryDuration=duration, entryDelay=0), max(0, seconds-t))
+    return (incoming[0]+outgoing[0], incoming[1]+outgoing[1],
+            incoming[2]*outgoing[2], min(incoming[3],outgoing[3]))
 
 
 def render_frame(rgb, mask, settings, plates, t, seconds):
@@ -138,14 +156,45 @@ def _render_style_frame(rgb, mask, settings, plates, t, seconds):
     h,w = rgb.shape[:2]
     style = settings['style']
     k = envelope(t,seconds)
-    if settings.get('entry','none') != 'none' and style in ('text-behind','backdrop-word','name-tag','glass-card','freeze-sticker'):
+    if settings.get('entry','none') != 'none' and style in ('text-behind','backdrop-word','name-tag','glass-card','freeze-sticker','cinema-label'):
         k = ease((seconds-t)/min(.3,seconds/3))
     strength = settings['strength']
     accent = colour(settings['accent'])
     ink = colour(settings['textColor'])
     background = colour(settings['background'])
     x,y = settings['x']*w, settings['y']*h
-    dx,dy,entry_scale,entry_alpha = entry_transform(settings,t)
+    dx,dy,entry_scale,entry_alpha = text_transform(settings,t,seconds)
+    if style in ('text-behind','backdrop-word','spotlight','name-tag','glass-card','freeze-sticker','cinema-label'):
+        exit_mode = settings.get('exit','follow')
+        if exit_mode == 'follow': exit_mode = settings.get('entry','none')
+        if exit_mode != 'none':
+            k = 1. if settings.get('entry','none') != 'none' else ease(t/min(.3,seconds/3))
+    if style == 'cinema-label':
+        result = rgb.copy()
+        rows = [p for p in plates[:2] if p is not None]
+        if not rows:
+            return result
+        # Plates are tightly cropped by read_plate. Both rows share a font
+        # scale, remain left-aligned and sit beside a thin vertical accent.
+        line_h = max(p.shape[0] for p in rows)
+        scale = min(1., w*.7/max(p.shape[1] for p in rows))*entry_scale
+        gap = max(2, round(line_h*.18))
+        total_h = sum(p.shape[0]*scale for p in rows)+gap*(len(rows)-1)
+        label_w = max(p.shape[1]*scale for p in rows)
+        left = min(max(0,x),max(0,w-label_w-gap*2))+dx*(w*.28+label_w)
+        top = min(max(0,y),max(0,h-total_h))+dy*(h*.18+total_h)
+        alpha = max(0,min(1,k*entry_alpha))
+        bar_w = max(1,round(w*.004))
+        x0,y0 = max(0,round(left)),max(0,round(top))
+        x1,y1 = min(w,round(left)+bar_w),min(h,round(top+total_h))
+        if x1>x0 and y1>y0:
+            result[y0:y1,x0:x1] = result[y0:y1,x0:x1]*(1-alpha)+accent*alpha
+        cursor = top
+        for plate in rows:
+            ph,pw = plate.shape[:2]
+            stamp(result,plate,left+bar_w+gap+pw*scale/2,cursor+ph*scale/2,opacity=alpha,scale=scale)
+            cursor += ph*scale+gap
+        return result
     if style == 'lean-in':
         ramp = min(5/30,seconds/4)
         punch = ease(t/ramp)*ease((seconds-t)/min(6/30,seconds/4))

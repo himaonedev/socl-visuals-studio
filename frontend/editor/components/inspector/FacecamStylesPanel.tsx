@@ -82,6 +82,7 @@ export function FacecamStylesPanel({ clip }: { clip: TimelineClip }) {
             const style = e.target.value as FacecamStyle;
             const lower = ["name-tag", "glass-card", "freeze-sticker"].includes(style);
             setSettings((s) => ({ ...s, style, entry: FACECAM_STYLES.find(item=>item.id===style)?.text ? s.entry : 'none', y: lower ? 0.7 : 0.28, textSize: lower ? 0.065 : 0.14 }));
+            if (style === 'cinema-label') setSettings(s => ({ ...s, text: 'WHERE THE\nMASK ENDS', x: 0.1, y: 0.1, textSize: 0.03, accent: '#E50914', textColor: '#FFFFFF', entry: 'slide', entryDuration: 0.65, entryDelay: 0, frameX: 0.5, frameY: 0.5, frameZoom: 1 }));
             setNote(null);
           }}
         >
@@ -113,6 +114,22 @@ export function FacecamStylesPanel({ clip }: { clip: TimelineClip }) {
             <button type="button" className="rounded border px-2 py-1 text-xs" onClick={()=>setSettings(s=>({...s,entry:'none',entryDirection:'left',entryDuration:.45,entryDelay:0}))}>Reset animasi masuk</button>
             <p className="text-xs text-text-muted">Hanya teks, name tag, atau kartu yang masuk. Video/orang tetap di tempat, termasuk selama delay. Posisi akhirnya mengikuti grid Teks/kartu.</p>
           </>}
+          <label className="block text-xs text-text-muted">Animasi keluar teks/kartu
+            <select className={field} value={settings.exit} onChange={e=>set('exit',e.target.value as FacecamSettings['exit'])}>
+              <option value="follow">Ikuti animasi masuk</option><option value="none">Tidak ada</option><option value="slide">Slide keluar</option><option value="pop">Zoom mengecil</option><option value="slide-pop">Slide + Zoom mengecil</option>
+            </select>
+          </label>
+          {settings.exit !== 'none' && <>
+            <label className="block text-xs text-text-muted">Arah keluar teks/kartu
+              <select className={field} value={settings.exitDirection} onChange={e=>set('exitDirection',e.target.value as FacecamSettings['exitDirection'])}>
+                <option value="follow">Sama dengan arah masuk</option><option value="left">Ke kiri</option><option value="right">Ke kanan</option><option value="top">Ke atas</option><option value="bottom">Ke bawah</option>
+              </select>
+            </label>
+            <label className="block text-xs text-text-muted">Durasi keluar teks/kartu (s) <span className="float-right">{settings.exitDuration.toFixed(2)} s</span>
+              <input className="w-full accent-[var(--accent)]" type="range" min="0.1" max="3" step="0.05" value={settings.exitDuration} onChange={e=>set('exitDuration',Number(e.target.value))} />
+            </label>
+          </>}
+          <p className="text-xs text-text-muted">Animasi keluar berlangsung di akhir durasi Facecam. Video/orang tetap di tempat.</p>
         </section>}
         <FacecamPositionControl label="Video/orang" x={settings.frameX} y={settings.frameY} zoom={settings.frameZoom}
           onChange={patch=>setSettings(s=>({...s,frameX:patch.x??s.frameX,frameY:patch.y??s.frameY,frameZoom:patch.zoom??s.frameZoom}))}
@@ -134,11 +151,12 @@ export function FacecamStylesPanel({ clip }: { clip: TimelineClip }) {
           <>
             <label className="block text-xs text-text-muted">
               {settings.style === "spotlight" ? "Facecam text (optional)" : "Facecam text"}
-              <input
+              <textarea
                 className={field}
+                rows={2}
                 value={settings.text}
                 maxLength={48}
-                onChange={(e) => set("text", e.target.value)}
+                onChange={(e) => set("text", settings.style === 'cinema-label' ? e.target.value.split('\n').slice(0, 2).join('\n') : e.target.value.replace(/\n/g, ' '))}
               />
             </label>
             <div className="grid grid-cols-2 gap-2">

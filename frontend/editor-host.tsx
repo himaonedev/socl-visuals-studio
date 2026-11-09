@@ -20,6 +20,7 @@ import { ProjectSchema, type Project } from './editor/project/model';
 import { useSelectionStore } from './editor/store/selection';
 import { useWorkspaceStore } from './editor/store/workspace';
 import { loadEffectsMedia } from './effects-media';
+import { confirmDialog } from './editor/lib/dialog';
 
 export type ClipForEditor = { path: string; cleanPath?: string; title?: string; requestId?: number; clipIndex?: number; reportFile?: string; mode?: 'effects' | 'caption'; captionProject?: unknown; subsBurned?: boolean; captions?: { text: string; start: number; end: number }[] };
 export default function EffectsStudio({ active, clip, onBack }: { active: boolean; clip: ClipForEditor | null; onBack: () => void }) {
@@ -133,6 +134,9 @@ export default function EffectsStudio({ active, clip, onBack }: { active: boolea
           setNotice(captionMode ? 'Pilih caption pada timeline. Tab Text: stabilo, coretan, Blink dan preset custom. Tab Motion: animasi serta Copy/Paste Motion.' : 'Effects mengatur visual saja. Caption tetap diedit di menu Edit SOCL setelah Terapkan ke Clipping.');
         }
         useUiStore.getState().setAppView('editor');
+        // Importing the source and matching its canvas establish the initial
+        // workspace, rather than a user edit that needs applying.
+        useProjectStore.setState(state => ({ saved: state.project, past: [], future: [] }));
         session.current = { key, source, duration: media.duration || 0 };
         setReady(true);
         // Library thumbnails are optional decoration, never an opening gate.
@@ -156,14 +160,15 @@ export default function EffectsStudio({ active, clip, onBack }: { active: boolea
       // Subtitle tracks are imported only in the caption workspace.
       const report = await invoke<ExportReport>('apply_socl_effects', { project, options: defaultOptions(project), reportFile: clip.reportFile || clip.path, clipIndex: clip.clipIndex, captionMode, cleanFile: clip.cleanPath || clip.path });
       await window.__soclApplyEffects({ originalPath: clip.path, clipIndex: clip.clipIndex, path: report.path, ...(captionMode ? { captionProject: project, cleanFile: clip.cleanPath || clip.path } : {}) });
+      useProjectStore.setState({ saved: project });
       onBack();
     } catch (reason) { setError(String(reason)); }
     finally { setApplying(false); }
   };
-  const back = () => {
+  const back = async () => {
     // Project state stays in memory, but saving before leaving also protects it on app exit.
     if (applying) return;
-    if (selectIsDirty(useProjectStore.getState()) && !window.confirm('Kembali tanpa menerapkan efek ke Clipping? Gunakan Terapkan ke Clipping untuk mengirim hasil efek. Proyek tetap tersedia selama aplikasi terbuka.')) return;
+    if (selectIsDirty(useProjectStore.getState()) && !await confirmDialog({ title: 'Kembali ke Clipping?', lines: ['Perubahan efek belum diterapkan. Proyek tetap tersedia selama aplikasi terbuka.'], confirmLabel: 'Kembali tanpa menerapkan' })) return;
     onBack();
   };
   return <div className="socl-effects-workspace" style={{ display: active ? undefined : "none" }}>

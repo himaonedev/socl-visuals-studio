@@ -38,6 +38,12 @@ pub struct Settings {
     entry_duration: f64,
     #[serde(default)]
     entry_delay: f64,
+    #[serde(default = "default_follow")]
+    exit: String,
+    #[serde(default = "default_follow")]
+    exit_direction: String,
+    #[serde(default = "default_entry_duration")]
+    exit_duration: f64,
     accent: String,
     text_color: String,
     background: String,
@@ -53,6 +59,7 @@ fn default_frame_zoom() -> f64 {
     1.0
 }
 fn default_entry() -> String { "none".into() }
+fn default_follow() -> String { "follow".into() }
 fn default_entry_direction() -> String { "left".into() }
 fn default_entry_duration() -> f64 { 0.45 }
 impl Settings {
@@ -62,6 +69,7 @@ impl Settings {
         };
         if ![
             "lean-in",
+            "cinema-label",
             "slow-push",
             "text-behind",
             "backdrop-word",
@@ -83,6 +91,7 @@ impl Settings {
                 self.frame_zoom,
                 self.entry_duration,
                 self.entry_delay,
+                self.exit_duration,
                 self.from_value,
                 self.to_value,
             ]
@@ -99,6 +108,9 @@ impl Settings {
             || !["left", "right", "top", "bottom"].contains(&self.entry_direction.as_str())
             || !(0.1..=3.0).contains(&self.entry_duration)
             || !(0.0..=5.0).contains(&self.entry_delay)
+            || !["follow", "none", "slide", "pop", "slide-pop"].contains(&self.exit.as_str())
+            || !["follow", "left", "right", "top", "bottom"].contains(&self.exit_direction.as_str())
+            || !(0.1..=3.0).contains(&self.exit_duration)
             || self.from_value.abs() > 1e9
             || self.to_value.abs() > 1e9
             || !colour(&self.accent)
@@ -270,6 +282,7 @@ mod tests {
     fn validates_all_templates_and_rejects_invalid_parameters() {
         for style in [
             "lean-in",
+            "cinema-label",
             "slow-push",
             "text-behind",
             "backdrop-word",

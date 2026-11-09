@@ -1,4 +1,7 @@
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { useProjectStore, selectIsDirty } from '../editor/store/project';
+import { confirmDialog } from '../editor/lib/dialog';
+vi.mock('../editor/lib/dialog', () => ({ confirmDialog: vi.fn() }));
 import { invoke } from '@tauri-apps/api/core';
 import EffectsStudio from '../editor-host';
 import { warmEffectsMedia, loadEffectsMedia } from '../effects-media';
@@ -42,4 +45,24 @@ test('prefetch and opening share one metadata request and a failed prefetch is r
   await Promise.resolve();
   await expect(loadEffectsMedia('retry.mp4')).resolves.toEqual(media);
   expect(invoke).toHaveBeenCalledTimes(3);
+});
+
+test('automatic clip import is clean; only real edits ask before returning', async () => {
+  vi.mocked(invoke).mockResolvedValue({ path: 'return-test.mp4', mediaType: 'video', duration: 10, width: 320, height: 180, fpsNum: 30, fpsDen: 1 });
+  vi.mocked(confirmDialog).mockReset();
+  const back = vi.fn();
+  const nativeConfirm = vi.spyOn(window, 'confirm').mockImplementation(() => { throw new Error('dialog.confirm not allowed'); });
+  const view = render(<EffectsStudio active clip={{ path: 'return-test.mp4', requestId: 8, clipIndex: 0, subsBurned: false }} onBack={back} />);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Terapkan ke Clipping' })).toBeEnabled());
+  expect(selectIsDirty(useProjectStore.getState())).toBe(false);
+  fireEvent.click(screen.getByRole('button', { name: '← Clipping' }));
+  expect(back).toHaveBeenCalledTimes(1);
+  expect(confirmDialog).not.toHaveBeenCalled();
+  act(() => { useProjectStore.getState().execute({ label: 'Rename', apply: project => ({ ok: true, project: { ...project, name: 'Changed' } }) }); });
+  vi.mocked(confirmDialog).mockResolvedValueOnce(false);
+  fireEvent.click(screen.getByRole('button', { name: '← Clipping' }));
+  await waitFor(() => expect(confirmDialog).toHaveBeenCalledTimes(1));
+  expect(back).toHaveBeenCalledTimes(1);
+  expect(nativeConfirm).not.toHaveBeenCalled();
+  nativeConfirm.mockRestore(); view.unmount();
 });

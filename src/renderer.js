@@ -8840,8 +8840,28 @@ function updateBoxHighlightPreview(tx, cue, t, boxColor, style) {
 // This does not repair a half-wired editor — it cannot. It makes the failure
 // LOUD, names Apply specifically (the control users actually notice missing),
 // and tells them the one thing that helps: reopen the editor.
-function openCaptionEditor(clipIdx) {
+function captionRenderStyle(cfg) {
+    const keys = ['subtitleStyle', 'subtitleFont', 'subtitleFontSize', 'subtitleY', 'subtitleX', 'subtitleAnim', 'subtitleCase', 'subtitleWordsPerChunk', 'subtitleGlow', 'subtitleBoxColor', 'subtitleBoxRotation', 'subtitleOffsetMs', 'captionKinetic', 'captionAlign', 'captionDim', 'videoFx', 'burnSubtitles'];
+    return Object.fromEntries(keys.filter(key => cfg?.[key] !== undefined).map(key => [key, cfg[key]]));
+}
+async function openCaptionEditor(clipIdx) {
     try {
+        const clip = state.clips[clipIdx];
+        if (clip && !clip.captionRenderStyle) {
+            try {
+                const sessions = await window.socl.listHistory();
+                for (const session of sessions || []) {
+                    const saved = session.report?.clips?.find(item => item.file === clip.file || item.rawFile === clip.rawFile && clip.rawFile);
+                    if (saved) {
+                        clip.captionRenderStyle = captionRenderStyle(saved.captionRenderStyle || session.report.cfg);
+                        break;
+                    }
+                }
+            }
+            catch (error) {
+                console.warn('[caption] render settings recovery', error);
+            }
+        }
         openCaptionEditorInner(clipIdx);
     }
     catch (e) {
@@ -8864,6 +8884,7 @@ function openCaptionEditorInner(clipIdx) {
     }
     let savedCfg = structuredClone(state.cfg);
     let savedClip = structuredClone(clip);
+    Object.assign(state.cfg, clip.captionRenderStyle || {});
     // Editor controls update the live draft for preview, never persisted settings.
     async function saveCfg(patch) { Object.assign(state.cfg, patch); return state.cfg; }
     rollbackCaptionDraft = () => {
@@ -8877,7 +8898,7 @@ function openCaptionEditorInner(clipIdx) {
         Object.assign(clip, structuredClone(savedClip));
         persistClippingSession();
     };
-    let proxyMode = !!(clip.subsBurned && (!clip.rawFile || clip.rawFile === clip.file));
+    let proxyMode = !!(clip.file && (clip.subsBurned || clip.brollBurned || clip.timelineBurned || clip.titlesBurned));
     let cleanSourceLoading = false;
     // [RAW-SRC] Snapshot the pre-edit file once. clip.file gets overwritten with the
     // burned output after "Render edit"; clip.rawFile always stays the untouched
@@ -8901,7 +8922,7 @@ function openCaptionEditorInner(clipIdx) {
         </div>
         <button type="button" id="ce_max" class="stage-max-btn" title="Perbesar preview">⛶</button>
         <div class="cap-stage" id="capStage">
-          <video id="capVideo" src="${toFileURL(clip.rawFile || clip.file || clip.srcVideo || '')}" controls controlsList="nofullscreen" disablePictureInPicture></video>
+          <video id="capVideo" src="${toFileURL((proxyMode ? clip.file : clip.rawFile) || clip.file || clip.srcVideo || '')}" controls controlsList="nofullscreen" disablePictureInPicture></video>
           <div class="cap-overlay" id="capOv"><span id="capTx"></span></div>
           <!-- [TITLE-V1] Persistent-title overlay layer. Sits above the subtitle
                overlay so titles are always drawn (subtitle can only show one cue
@@ -12153,6 +12174,7 @@ function openCaptionEditorInner(clipIdx) {
             // Flag this clip as edited so the gallery batch-bar surfaces the
             // "N edit di Caption Editor · re-render pakai styling terbaru?" prompt.
             clip.editDirty = true;
+            clip.captionRenderStyle = captionRenderStyle(state.cfg);
             // Apply establishes the new checkpoint; later un-applied edits are discarded.
             await persistCaptionSettings({ ...state.cfg });
             savedCfg = structuredClone(state.cfg);

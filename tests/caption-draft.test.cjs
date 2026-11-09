@@ -3,6 +3,14 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const source = fs.readFileSync('frontend/legacy-src/renderer.ts', 'utf8');
+test('opening Edit uses the finished composite, including caption and B-roll, until editing starts', () => {
+  const match = source.match(/let proxyMode = ([^;]+);/);
+  for (const flag of ['subsBurned', 'brollBurned', 'timelineBurned', 'titlesBurned']) {
+    const clip = { file: 'finished.mp4', rawFile: 'clean.mp4', [flag]: true };
+    assert.equal(vm.runInNewContext(match[1], { clip }), true);
+  }
+  assert.ok(source.includes('(proxyMode ? clip.file : clip.rawFile)'));
+});
 test('caption draft changes stay local and closing restores the last Apply checkpoint', async () => {
   const start = source.indexOf('  let savedCfg = structuredClone(state.cfg);');
   const end = source.indexOf('  let proxyMode', start);

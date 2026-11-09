@@ -15,6 +15,12 @@ import {
 
 export const FACECAM_STYLES = [
   {
+    id: 'cinema-label',
+    name: 'Cinema Label',
+    description: 'Label judul dua baris dengan garis aksen vertikal, seperti judul serial di pojok video.',
+    text: true,
+  },
+  {
     id: "lean-in",
     name: "Lean-in / Punch-in",
     description: "Fast eased zoom, a gentle drift, then return.",
@@ -93,6 +99,9 @@ export interface FacecamSettings {
   entryDirection: 'left' | 'right' | 'top' | 'bottom';
   entryDuration: number;
   entryDelay: number;
+  exit: 'follow' | 'none' | 'slide' | 'pop' | 'slide-pop';
+  exitDirection: 'follow' | 'left' | 'right' | 'top' | 'bottom';
+  exitDuration: number;
   accent: string;
   textColor: string;
   background: string;
@@ -118,6 +127,9 @@ export const DEFAULT_FACECAM: FacecamSettings = {
   entryDirection: 'left',
   entryDuration: 0.45,
   entryDelay: 0,
+  exit: 'follow',
+  exitDirection: 'follow',
+  exitDuration: 0.45,
   accent: "#E5733A",
   textColor: "#FFFFFF",
   background: "#14141C",
@@ -141,6 +153,9 @@ export function facecamWindow(project: Project, clipId: string, time: number, s:
   const definition = FACECAM_STYLES.find((t) => t.id === s.style);
   if (
     !definition ||
+    !['follow','none','slide','pop','slide-pop'].includes(s.exit) ||
+    !['follow','left','right','top','bottom'].includes(s.exitDirection) ||
+    !Number.isFinite(s.exitDuration) || s.exitDuration < .1 || s.exitDuration > 3 ||
     !['none','slide','pop','slide-pop'].includes(s.entry) ||
     !['left','right','top','bottom'].includes(s.entryDirection) ||
     ![s.entryDuration,s.entryDelay].every(Number.isFinite) ||
@@ -173,6 +188,9 @@ export function facecamWindow(project: Project, clipId: string, time: number, s:
       "Choose valid facecam settings, text up to 48 characters and a duration of 0.2–30 seconds",
     );
   const window = freezeWindow(project, clipId, time, facecamWindowSettings(s));
+  const exitMode = s.exit === 'follow' ? s.entry : s.exit;
+  if (definition.text && exitMode !== 'none' && s.exitDuration + (s.entry === 'none' ? 0 : s.entryDelay+s.entryDuration) > window.stop-window.start+EPS)
+    throw new Error('Durasi masuk dan keluar melebihi durasi Facecam. Kurangi durasi animasi.');
   if (s.entry !== 'none' && s.entryDelay+s.entryDuration > window.stop-window.start+EPS)
     throw new Error('Durasi masuk + delay melebihi durasi Facecam yang tersedia. Kurangi durasi/delay atau pindahkan playhead.');
   if (window.clip.reversed)
@@ -215,6 +233,8 @@ export async function createFacecamStyle(
   const pieces =
     !definition.text || !settings.text.trim()
       ? []
+      : settings.style === 'cinema-label'
+        ? settings.text.trim().split(/\n/).slice(0, 2).filter(line => line.trim())
       : settings.style === "backdrop-word"
         ? [...settings.text.trim()]
         : [settings.text.trim()];
